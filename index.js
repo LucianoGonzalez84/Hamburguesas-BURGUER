@@ -1,12 +1,48 @@
+// Lista de productos
+const productos = [
+    { id: 1, nombre: "Hamburguesa Americana", precio: 920 },
+    { id: 2, nombre: "Hamburguesa Deluxe", precio: 910 },
+    { id: 3, nombre: "Hamburguesa Cuatro Quesos", precio: 910 },
+    { id: 4, nombre: "Hamburguesa Clasica", precio: 880 },
+];
+
+// Objeto Constructor
+class producto {
+  constructor(id, nombre, precio) {
+    this.id = id;
+    this.nombre = nombre;
+    this.precio = precio;
+  }
+}
+
+// Con la siguiente funcion se agrega un objeto nuevo al array mediante la utilizacion del Objeto constructor. En primera instancia nos indica cual es el ultimo elemento agregado
+function agregarProducto() {
+  let decision = "si";
+  while (decision === "si") {
+    alert(`Ultimo producto agregado:\nID: ${productos[productos.length-1].id}\nNombre: ${productos[productos.length-1].nombre}\nPrecio: ${productos[productos.length-1].precio}\n`);
+    let id = parseInt(prompt("Ingrese ID del producto: "));
+    let nombre = prompt("Ingrese nombre del producto: ");
+    let precio = parseInt(prompt("Ingrese precio del producto: ")).toFixed(2);
+    productos.push(new producto(id, nombre, precio));
+    decision = prompt("Desea agregar un nuevo producto: ").toLowerCase();
+  }
+}
+
+console.log(productos);
+agregarProducto();
+console.log(productos);
+
+
+/*
 // Determina el tipo de hamburguesa
 function tipoHamburguesa() {
     let tipo = parseInt(
         prompt(
             `Indica la hamburguesa que queres:\n
-            1 - Hamburguesa Americana (Valor $920,00)\n
-            2 - Hamburguesa Deluxe (Valor $910,00)\n
-            3 - Hamburguesa Cuatro Quesos (Valor $900,00)\n
-            4 - Hamburguesa Clasica (Valor $880,00)\n`
+            ${productos[0].id} - ${productos[0].nombre} (Valor $${productos[0].precio.toFixed(2)})\n
+            ${productos[1].id} - ${productos[1].nombre} (Valor $${productos[1].precio.toFixed(2)})\n
+            ${productos[2].id} - ${productos[2].nombre} (Valor $${productos[2].precio.toFixed(2)})\n
+            ${productos[3].id} - ${productos[3].nombre} (Valor $${productos[3].precio.toFixed(2)})\n`
         )
     );
     return tipo;
@@ -101,3 +137,11 @@ let costoTotal = costoEnvio(cuponDescuento(carrito()));
 costoTotal = costoTotal.toFixed(2);
 alert(`El total a abonar es: $${costoTotal}\n
 GRACIAS POR TU COMPRA`);
+*/
+
+
+
+
+
+
+
