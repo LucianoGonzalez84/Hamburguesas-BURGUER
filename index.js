@@ -8,29 +8,29 @@ CLIENTE
 //Lista de productos total
 const listaProductos = [
     // Hamburgesas Simples
-    { id: 1, nombre: "Hamburguesa americana simple", precio: 930, tipo: "simple", ingredientes: "medallón de carne, cebolla, barbacoa, cheddar, panceta, huevo a la plancha" },
-    { id: 2, nombre: "Hamburguesa deluxe simple", precio: 920, tipo: "simple", ingredientes: "medallón de carne, rúcula, tomates hidratados en vino blanco, queso suizo, cebolla morada, salsa alioli" },
-    { id: 3, nombre: "Hamburguesa cuatro quesos simple", precio: 900, tipo: "simple", ingredientes: "medallón de carne, pasta de roquefort, mozzarella, queso tybo, crema de cheddar." },
-    { id: 4, nombre: "Hamburguesa mexicana simple", precio: 900, tipo: "simple", ingredientes: "medallón de carne, cheddar, lechuga, tomate, cebolla, guacamole, salsa dragón" },
-    { id: 5, nombre: "Hamburguesa queso azul simple", precio: 900, tipo: "simple", ingredientes: "medallón de carne, cebolla colorada, hongos rehogados, roquefort, mozzarella" },
-    { id: 6, nombre: "Hamburguesa clasica simple", precio: 880, tipo: "simple", ingredientes: "medallón de carne, lechuga, tomate, queso provolone, tybo, mayonesa, ketchup" },
-    { id: 7, nombre: "Hamburguesa de pollo simple", precio: 880, tipo: "simple", ingredientes: "medallón de pollo, colchón de hojas verdes, tomates , queso suizo, salsa alioli" },
-    { id: 8, nombre: "Hamburguesa de cheddar y panceta simple", precio: 880, tipo: "simple", ingredientes: "medallón de carne, cheddar, panceta" },
+    { id: 1, nombre: "Hamburguesa americana simple", precio: 930, tipo: "simple", ingredientes: "medallón de carne, cebolla, barbacoa, cheddar, panceta, huevo a la plancha", img: "./assets/img/hamburguesa.jpg" },
+    { id: 2, nombre: "Hamburguesa deluxe simple", precio: 920, tipo: "simple", ingredientes: "medallón de carne, rúcula, tomates hidratados en vino blanco, queso suizo, cebolla morada, salsa alioli", img: "./assets/img/hamburguesa.jpg" },
+    { id: 3, nombre: "Hamburguesa cuatro quesos simple", precio: 900, tipo: "simple", ingredientes: "medallón de carne, pasta de roquefort, mozzarella, queso tybo, crema de cheddar.", img: "./assets/img/hamburguesa.jpg" },
+    { id: 4, nombre: "Hamburguesa mexicana simple", precio: 900, tipo: "simple", ingredientes: "medallón de carne, cheddar, lechuga, tomate, cebolla, guacamole, salsa dragón", img: "./assets/img/hamburguesa.jpg" },
+    { id: 5, nombre: "Hamburguesa queso azul simple", precio: 900, tipo: "simple", ingredientes: "medallón de carne, cebolla colorada, hongos rehogados, roquefort, mozzarella", img: "./assets/img/hamburguesa.jpg" },
+    { id: 6, nombre: "Hamburguesa clasica simple", precio: 880, tipo: "simple", ingredientes: "medallón de carne, lechuga, tomate, queso provolone, tybo, mayonesa, ketchup", img: "./assets/img/hamburguesa.jpg" },
+    { id: 7, nombre: "Hamburguesa de pollo simple", precio: 880, tipo: "simple", ingredientes: "medallón de pollo, colchón de hojas verdes, tomates , queso suizo, salsa alioli", img: "./assets/img/hamburguesa.jpg" },
+    { id: 8, nombre: "Hamburguesa de cheddar y panceta simple", precio: 880, tipo: "simple", ingredientes: "medallón de carne, cheddar, panceta", img: "./assets/img/hamburguesa.jpg" },
     // Hamburguesas Dobles
-    { id: 9, nombre: "Hamburguesa americana doble", precio: 1120, tipo: "doble", ingredientes: "doble medallón de carne, cebolla, barbacoa, cheddar, panceta, huevo a la plancha" },
-    { id: 10, nombre: "Hamburguesa deluxe doble", precio: 1090, tipo: "doble", ingredientes: "doble medallón de carne, rúcula, tomates hidratados en vino blanco, queso suizo, cebolla morada, salsa alioli" },
-    { id: 11, nombre: "Hamburguesa cuatro quesos doble", precio: 1070, tipo: "doble", ingredientes: "doble medallón de carne, pasta de roquefort, mozzarella, queso tybo, crema de cheddar." },
-    { id: 12, nombre: "Hamburguesa mexicana doble", precio: 1085, tipo: "doble", ingredientes: "doble medallón de carne, cheddar, lechuga, tomate, cebolla, guacamole, salsa dragón" },
-    { id: 13, nombre: "Hamburguesa queso azul doble", precio: 1075, tipo: "doble", ingredientes: "doble medallón de carne, cebolla colorada, hongos rehogados, roquefort, mozzarella" },
-    { id: 14, nombre: "Hamburguesa clasica doble", precio: 1065, tipo: "doble", ingredientes: "doble medallón de carne, lechuga, tomate, queso provolone, tybo, mayonesa, ketchup" },
-    { id: 15, nombre: "Hamburguesa de pollo doble", precio: 1080, tipo: "doble", ingredientes: "doble medallón de pollo, colchón de hojas verdes, tomates , queso suizo, salsa alioli" },
-    { id: 16, nombre: "Hamburguesa de cheddar y panceta doble", precio: 1085, tipo: "doble", ingredientes: "doble medallón de carne, cheddar, panceta" },
+    { id: 9, nombre: "Hamburguesa americana doble", precio: 1120, tipo: "doble", ingredientes: "doble medallón de carne, cebolla, barbacoa, cheddar, panceta, huevo a la plancha", img: "./assets/img/hamburguesa.jpg" },
+    { id: 10, nombre: "Hamburguesa deluxe doble", precio: 1090, tipo: "doble", ingredientes: "doble medallón de carne, rúcula, tomates hidratados en vino blanco, queso suizo, cebolla morada, salsa alioli", img: "./assets/img/hamburguesa.jpg" },
+    { id: 11, nombre: "Hamburguesa cuatro quesos doble", precio: 1070, tipo: "doble", ingredientes: "doble medallón de carne, pasta de roquefort, mozzarella, queso tybo, crema de cheddar.", img: "./assets/img/hamburguesa.jpg" },
+    { id: 12, nombre: "Hamburguesa mexicana doble", precio: 1085, tipo: "doble", ingredientes: "doble medallón de carne, cheddar, lechuga, tomate, cebolla, guacamole, salsa dragón", img: "./assets/img/hamburguesa.jpg" },
+    { id: 13, nombre: "Hamburguesa queso azul doble", precio: 1075, tipo: "doble", ingredientes: "doble medallón de carne, cebolla colorada, hongos rehogados, roquefort, mozzarella", img: "./assets/img/hamburguesa.jpg" },
+    { id: 14, nombre: "Hamburguesa clasica doble", precio: 1065, tipo: "doble", ingredientes: "doble medallón de carne, lechuga, tomate, queso provolone, tybo, mayonesa, ketchup", img: "./assets/img/hamburguesa.jpg" },
+    { id: 15, nombre: "Hamburguesa de pollo doble", precio: 1080, tipo: "doble", ingredientes: "doble medallón de pollo, colchón de hojas verdes, tomates , queso suizo, salsa alioli", img: "./assets/img/hamburguesa.jpg" },
+    { id: 16, nombre: "Hamburguesa de cheddar y panceta doble", precio: 1085, tipo: "doble", ingredientes: "doble medallón de carne, cheddar, panceta", img: "./assets/img/hamburguesa.jpg" },
     // Hamburguesas Vegetarianas
-    { id: 17, nombre: "Hamburguesa vegetariana simple", precio: 920, tipo: "vegetariana", ingredientes: "medallón de lentejas, cebolla colorada, rúcula, mozarella, queso provolone, pasta de berenjenas" },
-    { id: 18, nombre: "Hamburguesa vegetariana doble", precio: 1050, tipo: "vegetariana", ingredientes: "doble medallón de lentejas, cebolla colorada, rúcula, mozarella, queso provolone, pasta de berenjenas" },
+    { id: 17, nombre: "Hamburguesa vegetariana simple", precio: 920, tipo: "vegetariana", ingredientes: "medallón de lentejas, cebolla colorada, rúcula, mozarella, queso provolone, pasta de berenjenas", img: "./assets/img/hamburguesa.jpg" },
+    { id: 18, nombre: "Hamburguesa vegetariana doble", precio: 1050, tipo: "vegetariana", ingredientes: "doble medallón de lentejas, cebolla colorada, rúcula, mozarella, queso provolone, pasta de berenjenas", img: "./assets/img/hamburguesa.jpg" },
     // Hamburguesas Sin TACC
-    { id: 19, nombre: "Hamburguesa simple sin TACC", precio: 1000, tipo: "sin tacc", ingredientes: "medallón de carne, cheddar, panceta, pan sin TACC" },
-    { id: 20, nombre: "Hamburguesa doble sin TACC", precio: 1080, tipo: "sin tacc", ingredientes: "doble medallón de carne, cheddar, panceta, pan sin TACC" },
+    { id: 19, nombre: "Hamburguesa simple sin TACC", precio: 1000, tipo: "sin tacc", ingredientes: "medallón de carne, cheddar, panceta, pan sin TACC", img: "./assets/img/hamburguesa.jpg" },
+    { id: 20, nombre: "Hamburguesa doble sin TACC", precio: 1080, tipo: "sin tacc", ingredientes: "doble medallón de carne, cheddar, panceta, pan sin TACC", img: "./assets/img/hamburguesa.jpg" },
 ]
 
 // Objeto Constructor
@@ -65,6 +65,14 @@ EL
 USUARIO
 */
 
+let encabezado = document.getElementById("encabezado");
+encabezado.className = "encabezado";
+
+let hamburguesas = document.getElementById("hamburguesas");
+hamburguesas.className = "hamburguesas";
+
+let titulo = document.getElementById("titulo");
+let subtitulo = document.getElementById("subtitulo");
 
 /* Filtros */
 
@@ -77,22 +85,18 @@ function filtrarPorTipo(productos) {
             case 1:
                 tipo = "simple"
                 const simple = productos.filter(elemento => elemento.tipo.includes(tipo));
-                alert(`LISTADO DE HAMBURGUESAS ${tipo.toUpperCase()}S`);
                 return simple;
             case 2:
                 tipo = "doble"
                 const doble = productos.filter(elemento => elemento.tipo.includes(tipo));
-                alert(`LISTADO DE HAMBURGUESAS ${tipo.toUpperCase()}S`);
                 return doble;
             case 3:
                 tipo = "vegetariana"
                 const vegetariana = productos.filter(elemento => elemento.tipo.includes(tipo));
-                alert(`LISTADO DE HAMBURGUESAS ${tipo.toUpperCase()}S`);
                 return vegetariana;
             case 4:
                 tipo = "sin tacc"
                 const sinTACC = productos.filter(elemento => elemento.tipo.includes(tipo));
-                alert(`LISTADO DE HAMBURGUESAS ${tipo.toUpperCase()}`);
                 return sinTACC;
             default:
                 alert("La opcion seleccionanda no existe");
@@ -101,16 +105,17 @@ function filtrarPorTipo(productos) {
     }
 }
 
+
 // Filtro por precio de hamburguesa
 function filtrarPorPrecio(productos) {
     let eleccionPrecio = "si";
     while (eleccionPrecio === "si") {
         let precioMaximo = parseInt(prompt("Indica el precio maximo de tu hamburguesa: "));
         const filtroPrecioMaximo = productos.filter(elemento => elemento.precio <= precioMaximo);
+        filtroPrecioMaximo.push(precioMaximo);
         if (filtroPrecioMaximo.length === 0) {
             alert("No existe ninguna hamburguesa para el precio que indicaste");
         } else {
-            alert(`LISTADO DE HAMBURGUESAS CON PRECIO INFERIOR A: $${precioMaximo.toFixed(2)}`);
             return filtroPrecioMaximo;
         }
     }
@@ -125,7 +130,6 @@ function filtrarPorIngredientes(productos) {
         if (ingredientes.length === 0) {
             alert("El ingrediente indicado no existe");
         } else {
-            alert(`LISTADO DE HAMBURGUESAS QUE CONTIENEN EL INGREDIENTE: ${ingrediente.toUpperCase()}`);
             return ingredientes;
         }
     }
@@ -133,11 +137,18 @@ function filtrarPorIngredientes(productos) {
 
 // Devuelve un objeto (Hamburguesa), de acuerdo al filtro seleccionado
 function elegirHamburguesa(arreglo) {
-    let listaDeProductos = "";
-    arreglo.forEach(elemento => listaDeProductos = listaDeProductos + (`${elemento.id} - ${elemento.nombre} | Precio : $${elemento.precio.toFixed(2)}\nIngredientes: ${elemento.ingredientes}\n`))
-    let elegirOpcion = parseInt(prompt(`Indica el numero correspondiente a la opcion seleccionada:\n\n` + listaDeProductos));
-    let opcionElegida = arreglo.find(elemento => elemento.id === elegirOpcion);
-    return opcionElegida;
+    titulo.innerText = "LISTADO DE HAMBURGUESAS";
+    subtitulo.innerText = "Selecciona tu hamurguesa favorita"
+    for (const producto of arreglo) {
+        let tarjeta = document.createElement("div");
+        tarjeta.className = "tarjeta";
+        tarjeta.innerHTML = `<h3>${producto.nombre}</h3>
+                           <img src=${producto.img} alt="hamburguesa">
+                           <h4>PRECIO = $${producto.precio.toFixed(2)}</h4>
+                           <p><b>Ingredientes:</b> ${producto.ingredientes}</p>
+                           <button>COMPRAR</button>`
+        hamburguesas.append(tarjeta);
+    }
 }
 
 // Selecciona el tipo de filtro requerido por el usuario

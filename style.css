@@ -1,0 +1,61 @@
+body{
+    background-color: black;
+} 
+
+
+.encabezado{
+    color: orange;
+    text-align: center;
+}
+
+.hamburguesas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15rem;
+    height:auto;
+    background-color: orange;
+    color: black;
+    margin: 1rem 1rem; 
+}
+.tarjeta img{
+    overflow: hidden;
+    object-fit: cover;
+}
+.tarjeta h3{
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight:800;
+    text-align: center;
+    margin: 1rem 0.25rem 0.5rem 0.25rem;
+    height: 3rem;
+    
+}
+.tarjeta h4{
+    font-size: 0.9rem;
+    margin: 1rem 0.5rem 0.5rem 0.5rem;
+}
+.tarjeta p{
+    font-size: 0.9rem;
+    margin: 1rem 0.5rem 0.5rem 0.5rem;
+    height: 4rem;
+}
+.tarjeta button{
+    margin: 0 auto 1rem auto;
+    height: 2rem;
+    width: 50%;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: orange;
+    cursor: pointer;
+}
