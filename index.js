@@ -137,7 +137,7 @@ function filtrarPorIngredientes(productos) {
 // Devuelve un objeto (Hamburguesa), de acuerdo al filtro seleccionado
 function elegirHamburguesa(arreglo) {
     titulo.innerText = "LISTADO DE HAMBURGUESAS";
-    subtitulo.innerText = "Selecciona tu hamurguesa favorita"
+    subtitulo.innerText = "Selecciona tu hamburguesa favorita"
     for (const producto of arreglo) {
         let tarjeta = document.createElement("div");
         tarjeta.className = "tarjeta";
