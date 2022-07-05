@@ -105,7 +105,6 @@ function filtrarPorTipo(productos) {
     }
 }
 
-
 // Filtro por precio de hamburguesa
 function filtrarPorPrecio(productos) {
     let eleccionPrecio = "si";
@@ -170,7 +169,6 @@ function elegirFiltro() {
                     break;
             }
         } else if (eleccionFiltro === 2) {
-            alert("LISTADO DE HAMBURGUESAS COMPLETO")
             return elegirHamburguesa(listaProductos);
         } else {
             alert("Opcion incorrecta. Por favor volve a seleccionar");
