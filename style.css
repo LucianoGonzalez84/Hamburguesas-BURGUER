@@ -1,61 +1,243 @@
-body{
-    background-color: black;
-} 
-
-
-.encabezado{
-    color: orange;
-    text-align: center;
-}
-
-.hamburguesas{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 90%;
-    height: auto;
+:root {
+    /* Colores */
+    --colorLetra: #C71907;
+    --colorBlanco: #fdfffc;
+    --colorNegro: #000000;
+    --colorSombra: rgba(0, 0, 0, 0.2);
+    --colorBordeProducto: #dbdbdb;
+    /* Fuentes */
+    --fuentePrincipal: 'Holtwood One SC', serif;
+    --fuenteSecundaria: 'Quicksand', sans-serif;
+    ;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  
+  body {
+    background-color: var(--colorBlanco);
+  }
+  
+  /* 
+  
+  HEADER
+  
+  */
+  
+  header {
+    width: 100%;
+    height: 10rem;
+    background-color: var(--colorNegro);
+    margin-bottom: 5rem;
+  }
+  
+  /* Buscador */
+  .contenedorBuscador {
+    position: relative;
+    height: 2.5rem;
+    width: 45rem;
     margin: 0 auto;
-}
-
-.tarjeta{
+    top: 6.5rem;
+  }
+  
+  .estiloBuscador {
+    font-family: var(--fuenteSecundaria);
+    font-weight: 900;
+    font-size: 1.3rem;
+    background-color: var(--colorBlanco);
+    color: var(--colorNegro);
+    border-radius: 0.5rem;
+    border: 2px solid var(--colorBlanco);
+    height: 2.5rem;
+    width: 45rem;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  
+  .estiloProductos {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--colorBlanco);
+    width: 40rem;
+    height: auto;
+    max-height: 40rem;
+    overflow: auto;
+    position: absolute;
+    right: 2.5rem;
+    z-index: 10;
+  }
+  
+  .estiloProductos::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  
+  .estiloProductos::-webkit-scrollbar:vertical {
+    width: 10px;
+  }
+  
+  .estiloProductos::-webkit-scrollbar:horizontal {
+    display: none;
+  }
+  
+  .estiloProductos::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid var(--colorBlanco);
+  }
+  
+  .hamburguesa {
+    display: flex;
+    margin: 1rem 2.5rem;
+    text-decoration: none;
+    width: 35rem;
+    padding-bottom: 1rem;
+  }
+  
+  .hamburguesaImagen {
+    width: 5.3rem;
+    height: 4rem;
+    object-fit: cover;
+    margin-left: 1.5rem;
+  }
+  
+  .hamburguesaInfo {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 15rem;
-    height:auto;
-    background-color: orange;
-    color: black;
-    margin: 1rem 1rem; 
-}
-.tarjeta img{
-    overflow: hidden;
-    object-fit: cover;
-}
-.tarjeta h3{
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight:800;
+    font-size: 2rem;
+    margin-left: 1rem;
+    color: var(--colorNegro);
+    font-family: var(--fuenteSecundaria);
+    font-weight: 900;
+  
+  }
+  
+  /* 
+  
+  MAIN
+  
+  */
+  
+  .hamburguesas {
+    width: 100%;
+    height: 30rem;
+    background-image: url(./assets/images/hamburguesa1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hamburguesas__titulo {
+    font-family: var(--fuentePrincipal);
+    font-size: 5rem;
+    color: var(--colorBlanco);
     text-align: center;
-    margin: 1rem 0.25rem 0.5rem 0.25rem;
-    height: 3rem;
-    
-}
-.tarjeta h4{
-    font-size: 0.9rem;
-    margin: 1rem 0.5rem 0.5rem 0.5rem;
-}
-.tarjeta p{
-    font-size: 0.9rem;
-    margin: 1rem 0.5rem 0.5rem 0.5rem;
-    height: 4rem;
-}
-.tarjeta button{
-    margin: 0 auto 1rem auto;
-    height: 2rem;
-    width: 50%;
+    letter-spacing: 0.2rem;
+  }
+  
+  .listaHamburguesas {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 5rem 0 5rem 0;
+  }
+  
+  .card {
+    position: relative;
+    overflow: hidden;
+    width: 60rem;
+    height: 20rem;
+    border-radius: 5px;
+    background-color: var(--colorBlanco);
+    margin: 2rem;
+    box-shadow: 0rem 0rem 2rem var(--colorSombra);
+    border: 1px solid var(--colorBordeProducto);
+  }
+  
+  .cardActiva {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 1rem;
+  }
+  
+  .cardActiva img {
     border-radius: 10px;
+    height: 18rem;
+    margin-right: 1.5rem;
+  }
+  
+  .cardActiva h3 {
+    font-family: var(--fuentePrincipal);
+    font-weight: 100;
+    color: var(--colorNegro);
+    font-size: 1.7rem;
+    text-align: center;
+    width: 100%;
+    height: 5.5rem;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .cardActiva p {
+    font-family: var(--fuenteSecundaria);
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--colorNegro);
+    margin: 2rem 0 2rem 0;
+    height: 5.5rem;
+    text-align: center;
+  
+  }
+  
+  .card h4 {
+    color: var(--colorLetra);
+    font-family: var(--fuentePrincipal);
+    font-size: 1.7rem;
+    text-align: center;
+  
+  }
+  
+  .cardInactiva {
+    background: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cardInactiva button {
+    height: 3rem;
+    width: 15rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-family: var(--fuenteSecundaria);
+    font-size: 1.4rem;
+    font-weight: 800;
+    background-color: var(--colorLetra);
+    color: var(--colorBlanco);
     border: none;
-    background-color: black;
-    color: orange;
     cursor: pointer;
-}
+  }
+  
+  /* Clase auxiliar  */
+  .inactivo {
+    display: none;
+  }

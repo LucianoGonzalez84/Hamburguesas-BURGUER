@@ -4,16 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAMBURGUESAS *******</title>
+    <title>Document</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id="encabezado">
-        <h1 id="titulo"></h1>
-        <h2 id="subtitulo"></h2>
-    </div>
-    <div id="hamburguesas"></div>
+    <!-- Header -->
+    <header>
+        <!-- Buscador -->
+        <section class="contenedorBuscador">
+            <input type="search" name="busqueda" id="buscador" placeholder="Que estas buscando">
+            <ul id="productos" class="estiloProductos">
+            </ul>
+        </section>
+    </header>
+    
+    <main id="main">
+        <div class="hamburguesas">
+            <h2 class="hamburguesas__titulo">hamburguesas simples</h2>
+        </div>
+        <div id="listaHamburguesasSimples" class="listaHamburguesas"></div>
+        <div class="hamburguesas">
+            <h2 class="hamburguesas__titulo">hamburguesas dobles</h2>
+        </div>
+        <div id="listaHamburguesasDobles" class="listaHamburguesas"></div>
+        <div class="hamburguesas">
+            <h2 class="hamburguesas__titulo">hamburguesas vegetarianas</h2>
+        </div>
+        <div id="listaHamburguesasVegetarianas" class="listaHamburguesas"></div>
+        <div class="hamburguesas">
+            <h2 class="hamburguesas__titulo">hamburguesas sin tacc</h2>
+        </div>
+        <div id="listaHamburguesasSinTacc" class="listaHamburguesas"></div>
+    </main>
 
+    <!-- JavaScript -->
     <script src="./index.js"></script>
 </body>
 </html>
