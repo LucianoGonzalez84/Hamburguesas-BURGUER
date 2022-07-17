@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Quicksand:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <!-- Header -->
     <header>
-        <!-- Buscador -->
-        <section class="contenedorBuscador">
-            <input type="search" name="busqueda" id="buscador" placeholder="Que estas buscando">
-            <ul id="productos" class="estiloProductos">
-            </ul>
-        </section>
+        <nav id="navegacion">
+            <div class="icono">
+                <img src="./assets/images/IconoNegro.png" alt="icono" class="iconoNegro" id="icono_negro">
+                <img src="./assets/images/iconoBlanco.png" alt="icono" class="iconoBlanco" id="icono_blanco">
+
+            </div>
+            
+            <ul class="navegadorItems">
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Faq's</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                <!-- <li><section class="contenedorBuscador">
+                    <input type="search" name="busqueda" id="buscador" placeholder="Que estas buscando">
+                    <ul id="productos" class="estiloProductos">
+                    </ul>
+                </section></li>
+                <li> -->
+            </ul><!-- Buscador -->
+            
+            <div class="botonCarrito" id="boton_carrito">
+                <button><i class="fa-solid fa-cart-shopping"></i></button>
+                <div class="cantidad_productos" id="cantidad_productos">
+                    <span id="productos_en_carrito">0</span>
+                </div>
+            </div>
+
+
+
+            
+        </nav>
     </header>
-    
     <main id="main">
+        <div id="mainCarritoActivo" class="inactivo">
+
+        </div>
         <div class="hamburguesas">
             <h2 class="hamburguesas__titulo">hamburguesas simples</h2>
         </div>
@@ -40,7 +75,25 @@
         <div id="listaHamburguesasSinTacc" class="listaHamburguesas"></div>
     </main>
 
+    <div id="contenedor_carrito" class="inactivo">
+        <div class="carrito_encabezado">
+            <h2>carrito</h2>
+            <button id="boton_cerrar_carrito"><i class="fa-solid fa-x"></i></button>
+        </div>
+        <div id="carrito" class="carrito"></div>
+        <div class="carrito_pie">
+            <div class="carrito_pie_precio">
+                <h3>Precio total = $ <span id="precio_total">0,00</span></h3>
+            </div>
+            <div class="carrito_pie_botones">
+                <button id="vaciar_carrito">Vaciar Carrito</button>
+                <button>Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="./index.js"></script>
 </body>
+
 </html>

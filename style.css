@@ -5,10 +5,12 @@
     --colorNegro: #000000;
     --colorSombra: rgba(0, 0, 0, 0.2);
     --colorBordeProducto: #dbdbdb;
+    --colorVerde: #165a2b;
+    --colorAmarillo: #FF9900;
     /* Fuentes */
     --fuentePrincipal: 'Holtwood One SC', serif;
     --fuenteSecundaria: 'Quicksand', sans-serif;
-    ;
+    --fuenteEnlaces: 'Roboto Condensed', sans-serif;
   }
   
   * {
@@ -20,6 +22,9 @@
   
   body {
     background-color: var(--colorBlanco);
+    position: relative;
+    
+    
   }
   
   /* 
@@ -27,12 +32,118 @@
   HEADER
   
   */
-  
-  header {
+  header{
+    height: 100vh;
+    width: 100%;
+    background-image: url(./assets/images/hamburguesa1.jpg);
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:local
+    
+  }
+
+
+  /* NAVEGADOR */
+  .navegador {
     width: 100%;
     height: 10rem;
-    background-color: var(--colorNegro);
-    margin-bottom: 5rem;
+    background-color: inherit;
+    color: var(--colorBlanco);
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    transition: all 0.5s;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .navegadorScroll{
+    width: 100%;
+    height: 10rem;
+    background-color: var(--colorBlanco);
+    color: var(--colorNegro);
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    transition: all 0.5s;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid var(--colorBordeProducto);
+    box-shadow: 0rem 0rem 2rem var(--colorSombra);
+  }
+  .icono{
+    height: 5rem;
+    width: 16rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .icono .iconoNegro{
+    position: absolute;
+  }
+  .navegadorItems{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50rem;
+    height: 5rem;
+  }
+  .navegadorItems a{
+    font-family: var(--fuenteSecundaria);
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    color:inherit;
+    letter-spacing: 0.2rem;
+  }
+
+  .navegadorItems a:hover{
+    color: var(--colorAmarillo);
+    transition: all 400ms;
+  }
+  .navegadorItems i{
+    transform: scale(3);
+    cursor: pointer;
+  }
+  .botonCarrito{
+    height: 5rem;
+    width: 16rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .botonCarrito button{
+    cursor: pointer;
+    height: auto;
+    width: auto;
+    border: none;
+    background-color: inherit;
+  }
+  .botonCarrito button i{
+    font-size: 2.5rem;
+    color: var(--colorNegro);
+  }
+  
+  .cantidad_productos{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: var(--colorLetra);
+    left: -0.5rem;
+    top: -1.25rem;
+    position: relative;
+    color: var(--colorBlanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cantidad_productos span{
+    font-family: var(--fuenteSecundaria);
+    font-size: 1.5rem;
+    font-weight: 800;
+
   }
   
   /* Buscador */
@@ -41,7 +152,7 @@
     height: 2.5rem;
     width: 45rem;
     margin: 0 auto;
-    top: 6.5rem;
+    top: 3rem;
   }
   
   .estiloBuscador {
@@ -122,13 +233,29 @@
   MAIN
   
   */
+  main{
+    position: relative;
+    top: 50rem
+  }
+
+  .mainSeleccionado{
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    z-index: 2;
+    position: absolute;
+    opacity: .7;
+  }
+
   
+
   .hamburguesas {
     width: 100%;
-    height: 30rem;
+    height: 25rem;
     background-image: url(./assets/images/hamburguesa1.jpg);
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,37 +278,30 @@
     padding: 5rem 0 5rem 0;
   }
   
-  .card {
+  .tarjeta {
     position: relative;
     overflow: hidden;
     width: 60rem;
     height: 20rem;
-    border-radius: 5px;
     background-color: var(--colorBlanco);
     margin: 2rem;
     box-shadow: 0rem 0rem 2rem var(--colorSombra);
     border: 1px solid var(--colorBordeProducto);
-  }
-  
-  .cardActiva {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
     padding: 1rem;
+    display: flex;
   }
   
-  .cardActiva img {
+  .tarjeta img {
     border-radius: 10px;
     height: 18rem;
     margin-right: 1.5rem;
   }
   
-  .cardActiva h3 {
+  .tarjeta h3 {
     font-family: var(--fuentePrincipal);
     font-weight: 100;
     color: var(--colorNegro);
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     text-align: center;
     width: 100%;
     height: 5.5rem;
@@ -190,8 +310,7 @@
     margin-bottom: 1rem;
     text-align: center;
   }
-  
-  .cardActiva p {
+  .tarjeta p {
     font-family: var(--fuenteSecundaria);
     font-weight: 800;
     font-size: 1.4rem;
@@ -201,43 +320,201 @@
     text-align: center;
   
   }
-  
-  .card h4 {
+  .tarjeta h4 {
     color: var(--colorLetra);
     font-family: var(--fuentePrincipal);
     font-size: 1.7rem;
     text-align: center;
   
   }
-  
-  .cardInactiva {
-    background: rgba(255, 255, 255, 0.9);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+  .tarjetaAgregarCarrito{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;  
+    align-items: center;  
   }
-  
-  .cardInactiva button {
-    height: 3rem;
-    width: 15rem;
+  .tarjeta button {
+    height: 2.9rem;
+    width: 14rem;
     border-radius: 0.5rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     font-family: var(--fuenteSecundaria);
     font-size: 1.4rem;
     font-weight: 800;
-    background-color: var(--colorLetra);
+    background-color: var(--colorVerde);
     color: var(--colorBlanco);
     border: none;
     cursor: pointer;
+  }
+  .tarjeta button i{
+    transform: scale(1.8);
+    margin-left: 1.2rem;
   }
   
   /* Clase auxiliar  */
   .inactivo {
     display: none;
   }
+
+  
+
+  .contenedor_carrito{
+    position: fixed;
+    width: 70rem;
+    height:47rem;
+    top: 12.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--colorBlanco);
+    border: 1px solid var(--colorBordeProducto);
+    padding: 2rem;
+    transition: all 2s;
+    z-index: 3;
+  }
+
+  .contenedor_carrito h2{
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6rem;
+  }
+  .contenedor_carrito h3{
+    font-family: var(--fuentePrincipal);
+    font-size: 1.4rem;
+  }
+
+  .carrito_encabezado{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--colorNegro);
+    padding-bottom: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .carrito_encabezado button{
+    height: 2rem;
+    width: 2.5rem;
+    background-color:var(--colorLetra);
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .carrito_encabezado button i{
+    color: var(--colorBlanco);
+    transform: scale(1.7);
+    
+  }
+
+  .carrito{
+    height: 26rem;
+    overflow: auto;
+    
+  }
+
+  .carrito::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  
+  .carrito::-webkit-scrollbar:vertical {
+    width: 10px;
+  }
+  
+  .carrito::-webkit-scrollbar:horizontal {
+    display: none;
+  }
+  
+  .carrito::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid var(--colorBlanco);
+  }
+
+  .productoAgregado{
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .productoAgregado p {
+    font-family: var(--fuenteSecundaria);
+    font-size: 1.5rem;
+    font-weight: 800;
+    
+  }
+  .productoAgregado p:first-child{
+    width: 34rem;
+    margin-right: 1.5rem;
+    margin-left: 0.5rem;
+    border-right: 0.1rem solid var(--colorBordeProducto);
+  }
+  .productoAgregado p:nth-child(2){
+    width: 13.5rem;
+    margin-right: 1.5rem;
+    border-right: 0.1rem solid var(--colorBordeProducto);
+  }
+  .productoAgregado p:nth-child(3){
+    width: 10rem;
+    margin-right: 1.5rem;
+    border-right: 0.1rem solid var(--colorBordeProducto);
+  }
+  .productoAgregado button{
+    border: none;
+    cursor: pointer;
+    color: var(--colorLetra);
+  }
+  .productoAgregado button i{
+    scale: 2.5;
+  }
+  .carrito_pie{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
+    
+  }
+  .carrito_pie .carrito_pie_precio{
+    
+    margin-bottom: 1rem;
+    text-align: end;
+    position: relative;
+    display: inline;
+    width: 30rem;
+    left: 100%;
+    transform: translateX(-100%);
+  }
+  .carrito_pie .carrito_pie_precio span{
+    font-family: var(--fuentePrincipal);
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .carrito_pie_botones{
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.1rem solid var(--colorNegro);
+    padding-top: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .carrito_pie_botones button{
+    width: 15rem;
+    height: 2.9rem;
+    border-radius: 0.5rem;
+    font-family: var(--fuenteSecundaria);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--colorBordeProducto);
+    border: none;
+    cursor: pointer;
+  }
+  .carrito_pie_botones button:first-child{
+    background-color: var(--colorLetra);
+  }
+  .carrito_pie_botones button:last-child{
+    background-color: var(--colorVerde);
+  }
+  
+
+  
