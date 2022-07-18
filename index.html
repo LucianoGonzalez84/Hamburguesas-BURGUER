@@ -24,60 +24,57 @@
         <nav class="navegador" id="navegador">
             <div class="navegador__icono">
                 <img src="./assets/images/IconoNegro.png" alt="icono" class="icono_negro" id="icono-negro">
-                <img src="./assets/images/iconoBlanco.png" alt="icono"  
-                class="icono_blanco" id="icono-blanco">
+                <img src="./assets/images/iconoBlanco.png" alt="icono" class="icono_blanco" id="icono-blanco">
             </div>
-            <div class="navegadorItems">
-                <ul>
-                    <li><a href="">Nuestras hamburguesas<i class="fa-solid fa-angle-down"></i></a>
-                        <ul>
-                            <li><a href="#">Hamburguesas Simples</a></li>
-                            <li><a href="#">Hamburguesas Dobles</a></li>
-                            <li><a href="#">Hamburguesas Vegetarianas</a></li>
-                            <li><a href="#">Hamburguesas Sin TACC</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Faq's</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    
-                </ul>
-            </div>
+            <ul class="navegador__menu">
+                <li class="menu__items" id="item-desplegable"><a>Nuestras hamburguesas<i
+                            class="fa-solid fa-angle-right item__desplegable__icono"
+                            id="item-desplegable-icono"></i></a>
+                    <ul class="menu_desplegado" id="menu-desplegado">
+                        <li><a href="#simples">Hamburguesas Simples</a></li>
+                        <li><a href="#dobles">Hamburguesas Dobles</a></li>
+                        <li><a href="#vegetarianas">Hamburguesas Vegetarianas</a></li>
+                        <li><a href="#sintacc">Hamburguesas Sin TACC</a></li>
+                    </ul>
+                </li>
+                <li class="menu__items"><a href="#">Nosotros</a></li>
+                <li class="menu__items"><a href="#">Faq's</a></li>
+                <li class="menu__items"><a href="#">Contacto</a></li>
+            </ul>
             <div class="navegador__carrito" id="boton-carrito">
                 <button><i class="fa-solid fa-cart-shopping"></i></button>
                 <div class="cantidad_productos">
                     <span id="productos-en-carrito">0</span>
                 </div>
             </div>
-
-
-
-            
         </nav>
     </header>
-    
-    
-    <main id="main">
-        
-        <div id="mainCarritoActivo" class="inactivo">
 
-        </div>
-        <div class="hamburguesas">
-            <h2 class="hamburguesas__titulo">hamburguesas simples</h2>
-        </div>
-        <div id="listaHamburguesasSimples" class="listaHamburguesas"></div>
-        <div class="hamburguesas">
-            <h2 class="hamburguesas__titulo">hamburguesas dobles</h2>
-        </div>
-        <div id="listaHamburguesasDobles" class="listaHamburguesas"></div>
-        <div class="hamburguesas">
-            <h2 class="hamburguesas__titulo">hamburguesas vegetarianas</h2>
-        </div>
-        <div id="listaHamburguesasVegetarianas" class="listaHamburguesas"></div>
-        <div class="hamburguesas">
-            <h2 class="hamburguesas__titulo">hamburguesas sin tacc</h2>
-        </div>
-        <div id="listaHamburguesasSinTacc" class="listaHamburguesas"></div>
+
+    <main id="main">
+        <section>
+
+        </section>
+        <section>
+            <div class="hamburguesas" id="simples">
+                <h2 class="hamburguesas__titulo">hamburguesas simples</h2>
+            </div>
+            <div id="listaHamburguesasSimples" class="listaHamburguesas"></div>
+            <div class="hamburguesas" id="dobles">
+                <h2 class="hamburguesas__titulo">hamburguesas dobles</h2>
+            </div>
+            <div id="listaHamburguesasDobles" class="listaHamburguesas"></div>
+            <div class="hamburguesas" id="vegetarianas">
+                <h2 class="hamburguesas__titulo">hamburguesas vegetarianas</h2>
+            </div>
+            <div id="listaHamburguesasVegetarianas" class="listaHamburguesas"></div>
+            <div class="hamburguesas" id="sintacc">
+                <h2 class="hamburguesas__titulo">hamburguesas sin tacc</h2>
+            </div>
+            <div id="listaHamburguesasSinTacc" class="listaHamburguesas"></div>
+            <div id="mainCarritoActivo" class="inactivo"></div>
+        </section>
+        
     </main>
 
     <div id="contenedor_carrito" class="inactivo">
@@ -97,7 +94,7 @@
         </div>
     </div>
 
-    
+
 
     <!-- JavaScript -->
     <script src="./index.js"></script>

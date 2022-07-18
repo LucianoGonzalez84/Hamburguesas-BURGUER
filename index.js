@@ -271,6 +271,8 @@ let precioTotal = document.getElementById("precio_total");
 // NAVEGADOR
 let DOMiconoNegro = document.getElementById("icono-negro");
 let DOMiconoBlanco = document.getElementById("icono-blanco");
+let DOMitemDesplegable = document.getElementById("item-desplegable");
+
 let DOMbotonCarrito = document.getElementById("boton-carrito");
 DOMbotonCarrito.style.opacity=0;
 let DOMproductosEnCarrito = document.getElementById("productos-en-carrito");
@@ -377,6 +379,14 @@ DOMbotonCarrito.addEventListener("click", () => {
 let DOMnavegador = document.getElementById("navegador");
 DOMnavegador.classList="navegador";
 
+DOMitemDesplegable.addEventListener("click", ()=>{
+    let DOMitemDesplegableIcono = document.getElementById("item-desplegable-icono");
+    let DOMmenuDesplegado = document.getElementById("menu-desplegado");
+    
+    DOMitemDesplegableIcono.classList.toggle("rotacion");
+    DOMmenuDesplegado.classList.toggle("alturaAuto");
+    
+});
 
 
 window.addEventListener("scroll", ()=>{
