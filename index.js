@@ -1,4 +1,7 @@
-// LISTA DE HAMBURGUESAS
+/*
+LISTA DE PRODUCTOS
+*/
+
 const baseDeDatosHamburguesas = [
     {
         id: 1,
@@ -218,72 +221,36 @@ const baseDeDatosHamburguesas = [
     },
 ];
 
+/*
+INICIAMOS VARIABLES
+*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Iniciamos variables
-
-let carrito = document.getElementById("carrito");
-const carritoProductos = [];
-
-let contenedorCarrito = document.getElementById("contenedor_carrito");
-let botoCerrarCarrito = document.getElementById("boton_cerrar_carrito");
-
-
-let mainCarritoActivo=document.getElementById("mainCarritoActivo");
-let botonVaciarCarrito = document.getElementById("vaciar_carrito");
-
-
-
-
-
-let precioTotal = document.getElementById("precio_total");
-
-
-
-
-// NAVEGADOR
+// Header
+let DOMnavegador = document.getElementById("navegador");
+DOMnavegador.classList="navegador";
 let DOMiconoNegro = document.getElementById("icono-negro");
 let DOMiconoBlanco = document.getElementById("icono-blanco");
 let DOMitemDesplegable = document.getElementById("item-desplegable");
-
 let DOMbotonCarrito = document.getElementById("boton-carrito");
 DOMbotonCarrito.style.opacity=0;
 let DOMproductosEnCarrito = document.getElementById("productos-en-carrito");
+//Main
+let carritoProductos = [];
+let DOMcarrito = document.getElementById("carrito");
+let DOMcontenedorCarrito = document.getElementById("contenedor-carrito");
+let DOMbotonCerrarCarrito = document.getElementById("boton-cerrar-carrito");
+let DOMmainCarritoActivo=document.getElementById("main-carrito-activo");
+let DOMbotonVaciarCarrito = document.getElementById("vaciar-carrito");
+let DOMprecioTotal = document.getElementById("precio-total");
 
+/*
+INSERTAMOS LOS PRODUCTOS EN INDEX.HTML
+*/
 
-
-//Se insertan los productos en index.html
 baseDeDatosHamburguesas.forEach((elemento) => {
     //Cuerpo de tarjeta
     let cuerpoTarjeta = document.createElement("div");
-    cuerpoTarjeta.className = "tarjeta";
+    cuerpoTarjeta.className = "tarjeta_producto";
     //Imagen de tarjeta
     let tarjetaImagen = document.createElement("img");
     tarjetaImagen.setAttribute("src", `${elemento.img}`);
@@ -302,13 +269,13 @@ baseDeDatosHamburguesas.forEach((elemento) => {
     tarjetaInfo.appendChild(agregarCarrito)
     //Insertamos en html segun tipo de hamburguesa
     if (elemento.tipo === "simple") {
-        document.getElementById("listaHamburguesasSimples").appendChild(cuerpoTarjeta);
+        document.getElementById("lista-hamburguesas-simples").appendChild(cuerpoTarjeta);
     } else if (elemento.tipo === "doble") {
-        document.getElementById("listaHamburguesasDobles").appendChild(cuerpoTarjeta);
+        document.getElementById("lista-hamburguesas-dobles").appendChild(cuerpoTarjeta);
     } else if (elemento.tipo === "vegetariana") {
-        document.getElementById("listaHamburguesasVegetarianas").appendChild(cuerpoTarjeta);
+        document.getElementById("lista-hamburguesas-vegetarianas").appendChild(cuerpoTarjeta);
     } else if (elemento.tipo === "sin tacc") {
-        document.getElementById("listaHamburguesasSinTacc").appendChild(cuerpoTarjeta);
+        document.getElementById("lista-hamburguesas-sintacc").appendChild(cuerpoTarjeta);
     }
     let boton = document.getElementById(`boton${elemento.id}`);
     boton.addEventListener("click", () => {
@@ -317,78 +284,86 @@ baseDeDatosHamburguesas.forEach((elemento) => {
 });
 
 
-//FUNCIONES
+/*
+FUNCIONES
+*/
 
+//Funcion que agrega los productos seleccionados al carrito
 function agregarAlCarrito(productoId) {
     let hamburguesa = baseDeDatosHamburguesas.find(hamburguesa => hamburguesa.id === productoId);
     carritoProductos.push(hamburguesa);
     dibujarCarrito();
 }
-
+//Funcion que elimina productos del carrito
 function eliminarProductoCarrito(productoId) {
     let hamburguesa = carritoProductos.find(hamburguesa => hamburguesa.id === productoId);
     let indice = carritoProductos.indexOf(hamburguesa);
     carritoProductos.splice(indice, 1);
+    localStorage.setItem("carrito", JSON.stringify(carritoProductos));
     dibujarCarrito()
 }
-
-
-
+//Funcion que renderiza el carrito
 function dibujarCarrito() {
-    carrito.innerHTML = "";
+    DOMcarrito.innerHTML = "";
     carritoProductos.forEach((elemento) => {
-        let productoAgregado = document.createElement("div");
-        productoAgregado.className = "productoAgregado"
-        productoAgregado.innerHTML = `
+        let DOMproductoAgregado = document.createElement("div");
+        DOMproductoAgregado.className = "productoAgregado"
+        DOMproductoAgregado.innerHTML = `
         <p>- ${elemento.nombre}</p>
         <p>Precio: $${elemento.precio.toFixed(2)}</p>
         <p>Cantidad: ${elemento.cantidad}</p>
         <button id="eliminar${elemento.id}"><i class="fa-solid fa-trash-can"></i></button>
         `
-        carrito.appendChild(productoAgregado);
-        let boton = document.getElementById(`eliminar${elemento.id}`);
-        boton.addEventListener("click", () => {
+        DOMcarrito.appendChild(DOMproductoAgregado);
+        localStorage.setItem("carrito", JSON.stringify(carritoProductos));
+        let DOMboton = document.getElementById(`eliminar${elemento.id}`);
+        DOMboton.addEventListener("click", () => {
             eliminarProductoCarrito(elemento.id);
         })
     })
-    precioTotal.innerText = carritoProductos.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precio, 0).toFixed(2);
+    DOMprecioTotal.innerText = carritoProductos.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precio, 0).toFixed(2);
     DOMproductosEnCarrito.innerText = carritoProductos.length;
 }
 
 
-//EVENTOS
-botonVaciarCarrito.addEventListener("click", () => {
-    carritoProductos.length = 0;
-    dibujarCarrito()
-})
+/*
+EVENTOS
+*/
 
-botoCerrarCarrito.addEventListener("click", () => {
-    contenedorCarrito.classList.add("inactivo");
-    mainCarritoActivo.classList.add("inactivo");
-    mainCarritoActivo.classList.remove("mainSeleccionado");
+//LocalStorage
+document.addEventListener("DOMContentLoaded",()=>{
+    if (localStorage.getItem("carrito")) {
+        carritoProductos = JSON.parse(localStorage.getItem("carrito"))
+        dibujarCarrito()    
+    }
 });
+//Vacia el carrito por completo
+DOMbotonVaciarCarrito.addEventListener("click", () => {
+    carritoProductos.length = 0;
+    localStorage.setItem("carrito", JSON.stringify(carritoProductos));
+    dibujarCarrito()
+});
+//Abre el carrito
 DOMbotonCarrito.addEventListener("click", () => {
-    contenedorCarrito.classList.remove("inactivo");
-    contenedorCarrito.classList.add("contenedor_carrito");
-    mainCarritoActivo.classList.remove("inactivo");
-    mainCarritoActivo.classList.add("mainSeleccionado");
-    
-})
-
-
-let DOMnavegador = document.getElementById("navegador");
-DOMnavegador.classList="navegador";
-
+    DOMcontenedorCarrito.classList.remove("inactivo");
+    DOMcontenedorCarrito.classList.add("contenedor_carrito");
+    DOMmainCarritoActivo.classList.remove("inactivo");
+    DOMmainCarritoActivo.classList.add("mainSeleccionado");
+});
+//Cierra el carrito
+DOMbotonCerrarCarrito.addEventListener("click", () => {
+    DOMcontenedorCarrito.classList.add("inactivo");
+    DOMmainCarritoActivo.classList.add("inactivo");
+    DOMmainCarritoActivo.classList.remove("mainSeleccionado");
+});
+//Despliega opcion "nuestras hamburguesas" en el nav
 DOMitemDesplegable.addEventListener("click", ()=>{
     let DOMitemDesplegableIcono = document.getElementById("item-desplegable-icono");
     let DOMmenuDesplegado = document.getElementById("menu-desplegado");
-    
     DOMitemDesplegableIcono.classList.toggle("rotacion");
     DOMmenuDesplegado.classList.toggle("alturaAuto");
-    
 });
-
-
+//Cambia estilos del nav al scrollear
 window.addEventListener("scroll", ()=>{
     let altura=window.scrollY;
     let DOMalturaAparicionNav = (document.getElementById("main").offsetTop);
@@ -397,18 +372,11 @@ window.addEventListener("scroll", ()=>{
         DOMiconoBlanco.classList="transparente";
         DOMiconoNegro.classList="icono_negro";
         DOMbotonCarrito.style.opacity=1;
-        
-        
-        
-        
-        
     } else {
         DOMnavegador.classList="navegador";
         DOMiconoBlanco.classList="icono_blanco";
         DOMiconoNegro.classList="transparente";
         DOMbotonCarrito.style.opacity=0;
-
     }
-    
-})
+});
 

@@ -37,9 +37,9 @@
                         <li><a href="#sintacc">Hamburguesas Sin TACC</a></li>
                     </ul>
                 </li>
-                <li class="menu__items"><a href="#">Nosotros</a></li>
-                <li class="menu__items"><a href="#">Faq's</a></li>
-                <li class="menu__items"><a href="#">Contacto</a></li>
+                <li class="menu__items"><a>Nosotros</a></li>
+                <li class="menu__items"><a>Faq's</a></li>
+                <li class="menu__items"><a>Contacto</a></li>
             </ul>
             <div class="navegador__carrito" id="boton-carrito">
                 <button><i class="fa-solid fa-cart-shopping"></i></button>
@@ -56,44 +56,50 @@
 
         </section>
         <section>
-            <div id="mainCarritoActivo" class="inactivo"></div>
-            <div class="hamburguesas" id="simples">
-                <h2 class="hamburguesas__titulo">hamburguesas simples</h2>
+            <div class="inactivo" id="main-carrito-activo"></div>
+            <div class="nuestras_hamburguesas" id="simples">
+                <h2 class="nuestras_hamburguesas__titulo">hamburguesas simples</h2>
             </div>
-            <div id="listaHamburguesasSimples" class="listaHamburguesas"></div>
-            <div class="hamburguesas" id="dobles">
-                <h2 class="hamburguesas__titulo">hamburguesas dobles</h2>
+            <div class="lista_hamburguesas" id="lista-hamburguesas-simples"></div>
+            <div class="nuestras_hamburguesas" id="dobles">
+                <h2 class="nuestras_hamburguesas__titulo">hamburguesas dobles</h2>
             </div>
-            <div id="listaHamburguesasDobles" class="listaHamburguesas"></div>
-            <div class="hamburguesas" id="vegetarianas">
-                <h2 class="hamburguesas__titulo">hamburguesas vegetarianas</h2>
+            <div class="lista_hamburguesas" id="lista-hamburguesas-dobles" ></div>
+            <div class="nuestras_hamburguesas" id="vegetarianas">
+                <h2 class="nuestras_hamburguesas__titulo">hamburguesas vegetarianas</h2>
             </div>
-            <div id="listaHamburguesasVegetarianas" class="listaHamburguesas"></div>
-            <div class="hamburguesas" id="sintacc">
-                <h2 class="hamburguesas__titulo">hamburguesas sin tacc</h2>
+            <div class="lista_hamburguesas" id="lista-hamburguesas-vegetarianas" ></div>
+            <div class="nuestras_hamburguesas" id="sintacc">
+                <h2 class="nuestras_hamburguesas__titulo">hamburguesas sin tacc</h2>
             </div>
-            <div id="listaHamburguesasSinTacc" class="listaHamburguesas"></div>
+            <div class="lista_hamburguesas" id="lista-hamburguesas-sintacc" ></div>
             
         </section>
+
+        <section>
+            <div class="inactivo" id="contenedor-carrito" >
+                <div class="contenedor_carrito__encabezado">
+                    <h3>tu pedido</h3>
+                    <button id="boton-cerrar-carrito"><i class="fa-solid fa-x"></i></button>
+                </div>
+                <div class="contenedor_carrito__contenido" id="carrito"></div>
+                <div class="contenedor_carrito__pie">
+                    <div class="precio">
+                        <h4>Precio total = $ <span id="precio-total">0,00</span></h4>
+                    </div>
+                    <div class="botones">
+                        <button id="vaciar-carrito">Vaciar Carrito</button>
+                        <button>Procesar Compra</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
         
     </main>
 
-    <div id="contenedor_carrito" class="inactivo">
-        <div class="carrito_encabezado">
-            <h2>carrito</h2>
-            <button id="boton_cerrar_carrito"><i class="fa-solid fa-x"></i></button>
-        </div>
-        <div id="carrito" class="carrito"></div>
-        <div class="carrito_pie">
-            <div class="carrito_pie_precio">
-                <h3>Precio total = $ <span id="precio_total">0,00</span></h3>
-            </div>
-            <div class="carrito_pie_botones">
-                <button id="vaciar_carrito">Vaciar Carrito</button>
-                <button>Procesar Compra</button>
-            </div>
-        </div>
-    </div>
+    
 
 
 
