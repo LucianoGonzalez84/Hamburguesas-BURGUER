@@ -261,7 +261,7 @@ baseDeDatosHamburguesas.forEach((elemento) => {
     //Precio y boton agregar al carrito
     let agregarCarrito = document.createElement("div");
     agregarCarrito.innerHTML = `<h4>$ ${elemento.precio.toFixed(2)}</h4>
-                                <button id="boton${elemento.id}">Agregar<i class="fa-solid fa-cart-arrow-down"></i></button>`;
+                                <button id="boton${elemento.id}">Agregar<i class="fas fa-cart-plus"></i></button>`;
     agregarCarrito.className = "tarjetaAgregarCarrito"
     //Insertamos
     cuerpoTarjeta.appendChild(tarjetaImagen);
@@ -292,6 +292,13 @@ FUNCIONES
 function agregarAlCarrito(productoId) {
     let hamburguesa = baseDeDatosHamburguesas.find(hamburguesa => hamburguesa.id === productoId);
     carritoProductos.push(hamburguesa);
+    Swal.fire({
+        position: 'center-center',
+        icon: 'success',
+        title: 'Producto agregado',
+        showConfirmButton: false,
+        timer: 1500,
+      })
     dibujarCarrito();
 }
 //Funcion que elimina productos del carrito
@@ -312,7 +319,7 @@ function dibujarCarrito() {
         <p>- ${elemento.nombre}</p>
         <p>Precio: $${elemento.precio.toFixed(2)}</p>
         <p>Cantidad: ${elemento.cantidad}</p>
-        <button id="eliminar${elemento.id}"><i class="fa-solid fa-trash-can"></i></button>
+        <button id="eliminar${elemento.id}"><i class="fas fa-trash-alt"></i></button>
         `
         DOMcarrito.appendChild(DOMproductoAgregado);
         localStorage.setItem("carrito", JSON.stringify(carritoProductos));
@@ -366,7 +373,7 @@ DOMitemDesplegable.addEventListener("click", ()=>{
 //Cambia estilos del nav al scrollear
 window.addEventListener("scroll", ()=>{
     let altura=window.scrollY;
-    let DOMalturaAparicionNav = (document.getElementById("main").offsetTop);
+    let DOMalturaAparicionNav = (document.getElementById("limite-scroll").offsetTop);
     if(altura >= DOMalturaAparicionNav){
         DOMnavegador.classList="navegadorScroll";
         DOMiconoBlanco.classList="transparente";
@@ -379,4 +386,3 @@ window.addEventListener("scroll", ()=>{
         DOMbotonCarrito.style.opacity=0;
     }
 });
-

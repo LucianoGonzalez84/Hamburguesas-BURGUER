@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/456b057e2f.js" crossorigin="anonymous"></script>
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Quicksand:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
     <!-- Header -->
     <header>
@@ -28,8 +24,7 @@
             </div>
             <ul class="navegador__menu">
                 <li class="menu__items" id="item-desplegable"><a>Nuestras hamburguesas<i
-                            class="fa-solid fa-angle-right item__desplegable__icono"
-                            id="item-desplegable-icono"></i></a>
+                            class="fas fa-angle-right item__desplegable__icono" id="item-desplegable-icono"></i></a>
                     <ul class="menu_desplegado" id="menu-desplegado">
                         <li><a href="#simples">Hamburguesas Simples</a></li>
                         <li><a href="#dobles">Hamburguesas Dobles</a></li>
@@ -42,21 +37,24 @@
                 <li class="menu__items"><a>Contacto</a></li>
             </ul>
             <div class="navegador__carrito" id="boton-carrito">
-                <button><i class="fa-solid fa-cart-shopping"></i></button>
+                <button><i class="fas fa-shopping-cart"></i></button>
                 <div class="cantidad_productos">
                     <span id="productos-en-carrito">0</span>
                 </div>
             </div>
         </nav>
+        <h2 id="limite-scroll">Siempre es un buen momento para una Burguer</h2>
+        <h3>Queremos que experimentes sensaciones inigualables en cada bocado, por eso combinamos cuidadosamente cada
+            ingrediente y lo transformamos en la mejor hamburguesa.</h3>
+        <button class="boton_pedido"><a href="#simples">Hace tu pedido</a>
+        </button>
     </header>
-
-
-    <main id="main">
-        <section>
-
+    <!-- Main -->
+    <main>
+        <div class="inactivo" id="main-carrito-activo"></div>
+        <section class="info">
         </section>
         <section>
-            <div class="inactivo" id="main-carrito-activo"></div>
             <div class="nuestras_hamburguesas" id="simples">
                 <h2 class="nuestras_hamburguesas__titulo">hamburguesas simples</h2>
             </div>
@@ -64,23 +62,21 @@
             <div class="nuestras_hamburguesas" id="dobles">
                 <h2 class="nuestras_hamburguesas__titulo">hamburguesas dobles</h2>
             </div>
-            <div class="lista_hamburguesas" id="lista-hamburguesas-dobles" ></div>
+            <div class="lista_hamburguesas" id="lista-hamburguesas-dobles"></div>
             <div class="nuestras_hamburguesas" id="vegetarianas">
                 <h2 class="nuestras_hamburguesas__titulo">hamburguesas vegetarianas</h2>
             </div>
-            <div class="lista_hamburguesas" id="lista-hamburguesas-vegetarianas" ></div>
+            <div class="lista_hamburguesas" id="lista-hamburguesas-vegetarianas"></div>
             <div class="nuestras_hamburguesas" id="sintacc">
                 <h2 class="nuestras_hamburguesas__titulo">hamburguesas sin tacc</h2>
             </div>
-            <div class="lista_hamburguesas" id="lista-hamburguesas-sintacc" ></div>
-            
+            <div class="lista_hamburguesas" id="lista-hamburguesas-sintacc"></div>
         </section>
-
         <section>
-            <div class="inactivo" id="contenedor-carrito" >
+            <div class="inactivo" id="contenedor-carrito">
                 <div class="contenedor_carrito__encabezado">
                     <h3>tu pedido</h3>
-                    <button id="boton-cerrar-carrito"><i class="fa-solid fa-x"></i></button>
+                    <button id="boton-cerrar-carrito"><i class="fas fa-times"></i></button>
                 </div>
                 <div class="contenedor_carrito__contenido" id="carrito"></div>
                 <div class="contenedor_carrito__pie">
@@ -93,18 +89,14 @@
                     </div>
                 </div>
             </div>
-
         </section>
-        
-        
     </main>
-
-    
-
-
-
+    <!-- Footer -->
+    <footer>
+    </footer>
     <!-- JavaScript -->
     <script src="./index.js"></script>
+    <!-- SweetAlert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
-
 </html>
