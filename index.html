@@ -14,7 +14,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body >
+    <div class="inactivo" id="carrito-seleccionado"></div>
     <!-- Header -->
     <header>
         <nav class="navegador" id="navegador">
@@ -51,41 +52,40 @@
     </header>
     <!-- Main -->
     <main>
-        <div class="inactivo" id="main-carrito-activo"></div>
         <section class="info">
         </section>
-        <section>
-            <div class="nuestras_hamburguesas" id="simples">
-                <h2 class="nuestras_hamburguesas__titulo">hamburguesas simples</h2>
+        <section id="catalogo-productos" class="catalogo_productos">
+            <div class="catalogo_productos__titulo" id="simples">
+                <h2>hamburguesas simples</h2>
             </div>
             <div class="lista_hamburguesas" id="lista-hamburguesas-simples"></div>
-            <div class="nuestras_hamburguesas" id="dobles">
-                <h2 class="nuestras_hamburguesas__titulo">hamburguesas dobles</h2>
+            <div class="catalogo_productos__titulo" id="dobles">
+                <h2>hamburguesas dobles</h2>
             </div>
             <div class="lista_hamburguesas" id="lista-hamburguesas-dobles"></div>
-            <div class="nuestras_hamburguesas" id="vegetarianas">
-                <h2 class="nuestras_hamburguesas__titulo">hamburguesas vegetarianas</h2>
+            <div class="catalogo_productos__titulo" id="vegetarianas">
+                <h2>hamburguesas vegetarianas</h2ss=>
             </div>
             <div class="lista_hamburguesas" id="lista-hamburguesas-vegetarianas"></div>
-            <div class="nuestras_hamburguesas" id="sintacc">
-                <h2 class="nuestras_hamburguesas__titulo">hamburguesas sin tacc</h2>
+            <div class="catalogo_productos__titulo" id="sintacc">
+                <h2>hamburguesas sin tacc</h2s=>
             </div>
             <div class="lista_hamburguesas" id="lista-hamburguesas-sintacc"></div>
         </section>
         <section>
-            <div class="inactivo" id="contenedor-carrito">
-                <div class="contenedor_carrito__encabezado">
+            <div class="inactivo" id="modal-carrito">
+                <div class="modal_carrito__encabezado">
                     <h3>tu pedido</h3>
                     <button id="boton-cerrar-carrito"><i class="fas fa-times"></i></button>
                 </div>
-                <div class="contenedor_carrito__contenido" id="carrito"></div>
-                <div class="contenedor_carrito__pie">
+                <div class="modal_carrito__contenido" id="carrito"></div>
+                <div class="modal_carrito__pie">
                     <div class="precio">
                         <h4>Precio total = $ <span id="precio-total">0,00</span></h4>
                     </div>
                     <div class="botones">
                         <button id="vaciar-carrito">Vaciar Carrito</button>
-                        <button>Procesar Compra</button>
+                        <button id="procesar-compra">Procesar Compra</button>
                     </div>
                 </div>
             </div>
