@@ -279,18 +279,13 @@
             DOMhamburguesa.precioAcumulado = DOMhamburguesa.precioUnitario * DOMhamburguesa.cantidad;
             carritoProductos.push(DOMhamburguesa);
         }
-        
-        
         Swal.fire({
-            
-            title: `Agregaste ${DOMhamburguesa.nombre} al carrito`,
-            
-                        showConfirmButton: false,
+            position: 'center',
             icon: 'success',
-  timer: 1500
-            
+            title: `Agregaste "${DOMhamburguesa.nombre}" al carrito`,
+            showConfirmButton: false,
+            timer: 1500
           })
-
         dibujarCarrito();
     }
     //Funcion que elimina productos del carrito
