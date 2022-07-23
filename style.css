@@ -398,7 +398,7 @@ main {
   align-items: center;
   border-bottom: 1px solid var(--colorNegro);
   padding-bottom: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .modal_carrito__encabezado button {
@@ -418,8 +418,20 @@ main {
   transform: scale(2.3);
 }
 
+.boton_repetir_pedido{
+  border: none;
+  background-color: inherit;
+  font-family: var(--fuenteSecundaria);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--colorLetra);
+  text-decoration: underline;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
 .modal_carrito__contenido {
-  height: 26rem;
+  height: 23rem;
   overflow: auto;
 }
 
@@ -577,4 +589,6 @@ CLASES AUXILIARES
 .alturaAuto {
   height: auto;
 }
+
+
 
