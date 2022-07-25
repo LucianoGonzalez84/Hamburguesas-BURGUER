@@ -558,8 +558,83 @@ FOOTER
 footer{
   width: 100%;
   height: 30rem;
-  background-color: var(--colorNegro);
+  background: linear-gradient(90deg, var(--colorNegro) 0%, rgba(43,43,43,1) 50%, var(--colorNegro) 100%);
   position: relative;
+}
+
+/* 
+SWEETALERT 
+*/
+
+.sweetAlert{
+  padding: 5rem 2rem 3rem 2rem;
+}
+
+.sweetAlert .fa-check-circle{
+  color: var(--colorVerde);
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.sweetAlert .fa-exclamation-circle{
+  color: var(--colorAmarillo);
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.sweetAlert h3{
+  font-family: var(--fuenteSecundaria);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.sweetAlert span{
+  font-family: var(--fuentePrincipal);
+  font-size: 1.2rem;
+}
+
+.sweetAlert b{
+  font-family: var(--fuenteSecundaria);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--colorLetra);
+}
+
+.volver_a_comprar{
+  font-family: var(--fuenteSecundaria);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--colorVerde);
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.boton_eliminar{
+  height: 2.9rem;
+  width: 14rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-family: var(--fuenteSecundaria);
+  font-size: 1.5rem;
+  font-weight: 800;
+  background-color: var(--colorBlanco);
+  color: var(--colorLetra);
+  border: none;
+  cursor: pointer;
+}
+.boton_no_eliminar{
+  height: 2.9rem;
+  width: 14rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-family: var(--fuenteSecundaria);
+  font-size: 1.5rem;
+  font-weight: 800;
+  background-color: var(--colorBlanco);
+  color: var(--colorVerde);
+  cursor: pointer;
+  border: none;
 }
 
 /*
@@ -589,6 +664,4 @@ CLASES AUXILIARES
 .alturaAuto {
   height: auto;
 }
-
-
 

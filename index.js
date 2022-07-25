@@ -256,7 +256,7 @@
     let DOMmodalCarrito = crearNodo("#modal-carrito");
     let DOMcarritoActivo = crearNodo("#carrito-seleccionado");
 
-    
+
 
     /*
     FUNCIONES
@@ -282,45 +282,65 @@
             DOMhamburguesa.precioAcumulado = DOMhamburguesa.precioUnitario * DOMhamburguesa.cantidad;
             carritoProductos.push(DOMhamburguesa);
         }
-        
+        Swal.fire({
+            position: 'center',
+            html: `
+                  <div class="sweetAlert">
+                  <i class="fas fa-check-circle"></i>
+                      <h3>Se agrego <span>${DOMhamburguesa.nombre}</span> al carrito</h3>
+                  </div>
+                  `,
+            showConfirmButton: false,
+            timer: 1500
+        })
+
         dibujarCarrito(carritoProductos);
     }
     //Funcion que elimina productos del carrito
     function eliminarProductoCarrito(productoId) {
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'boton_no_eliminar',
+                cancelButton: 'boton_eliminar'
+            },
+            buttonsStyling: false
+        })
         let DOMhamburguesa = carritoProductos.find(
             (hamburguesa) => hamburguesa.id === productoId
         );
-        let indice = carritoProductos.indexOf(DOMhamburguesa);
-        carritoProductos.splice(indice, 1);
-        DOMhamburguesa.cantidad = 1;
-        localStorage.setItem("carrito", JSON.stringify(carritoProductos));
-        dibujarCarrito(carritoProductos);
+        swalWithBootstrapButtons.fire({
+            html: `
+                 <div class="sweetAlert">
+                     <i class="fas fa-exclamation-circle"></i>
+                     <h3>Queres eliminar <span>${DOMhamburguesa.nombre}</span> del carrito</h3>
+                 </div>    
+                 `,
+            showCancelButton: true,
+            confirmButtonText: 'Si, eliminar!',
+            cancelButtonText: 'No, cancelar!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    position: 'center',
+                    html: `
+                          <div class="sweetAlert">
+                          <i class="fas fa-check-circle"></i>
+                              <h3>Se elimino <span>${DOMhamburguesa.nombre}</span></h3>
+                          </div>
+                          `,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                let indice = carritoProductos.indexOf(DOMhamburguesa);
+                carritoProductos.splice(indice, 1);
+                DOMhamburguesa.cantidad = 1;
+                localStorage.setItem("carrito", JSON.stringify(carritoProductos));
+                dibujarCarrito(carritoProductos);
+            } 
+        })
     }
-    //Funcion que renderiza el carrito
-    function dibujarCarrito() {
-        let DOMcarrito = crearNodo("#carrito");
-        DOMcarrito.innerHTML = "";
-        carritoProductos.forEach((elemento) => {
-            let DOMtemplateProductoCarrito = crearEiqueta("div");
-            DOMtemplateProductoCarrito.classList = "producto_agregado";
-            DOMtemplateProductoCarrito.innerHTML = `
-                                        <p>- ${elemento.nombre}</p>
-                                        <p>Precio: $${elemento.precioUnitario}</p>
-                                        <p>Cantidad: ${elemento.cantidad}</p>
-                                        <button id="eliminar${elemento.id}"><i class="fas fa-trash-alt"></i></button>`
-            DOMcarrito.appendChild(DOMtemplateProductoCarrito);
-            let DOMboton = crearNodo(`#eliminar${elemento.id}`);
-            DOMboton.addEventListener("click", () => {
-                eliminarProductoCarrito(elemento.id);
-            });
-            localStorage.setItem("carrito", JSON.stringify(carritoProductos));
-        });
-        crearNodo("#precio-total").innerText = carritoProductos.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0).toFixed(2);
-        crearNodo("#productos-en-carrito").innerText = carritoProductos.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.cantidad, 0);
-    }
-
-
-    //Funcion que renderiza ultima compra
+    //Funcion que renderiza el modal carrito
     function dibujarCarrito(productos) {
         let DOMcarrito = crearNodo("#carrito");
         DOMcarrito.innerHTML = "";
@@ -329,7 +349,7 @@
             DOMtemplateProductoCarrito.classList = "producto_agregado";
             DOMtemplateProductoCarrito.innerHTML = `
                                         <p>- ${elemento.nombre}</p>
-                                        <p>Precio: $${elemento.precioUnitario}</p>
+                                        <p>Precio: $${elemento.precioUnitario.toFixed(2)}</p>
                                         <p>Cantidad: ${elemento.cantidad}</p>
                                         <button id="eliminar${elemento.id}"><i class="fas fa-trash-alt"></i></button>`
             DOMcarrito.appendChild(DOMtemplateProductoCarrito);
@@ -342,9 +362,6 @@
         crearNodo("#precio-total").innerText = productos.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0).toFixed(2);
         crearNodo("#productos-en-carrito").innerText = productos.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.cantidad, 0);
     }
-
-     
-    
 
     /*
       EVENTOS
@@ -377,19 +394,58 @@
             })
         });
         //localStorage carrito
-        localStorage.getItem("carrito")?null:localStorage.setItem("carrito","[]");
+        localStorage.getItem("carrito") ? null : localStorage.setItem("carrito", "[]");
         carritoProductos = JSON.parse(localStorage.getItem("carrito"));
-        dibujarCarrito(carritoProductos);  
+        dibujarCarrito(carritoProductos);
         //localStorage ultima compra
-        localStorage.getItem("ultimaCompra")?null:localStorage.setItem("ultimaCompra","[]");
+        localStorage.getItem("ultimaCompra") ? null : localStorage.setItem("ultimaCompra", "[]");
         ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
-        dibujarCarrito(carritoProductos);  
+        dibujarCarrito(carritoProductos);
     });
     //Vacia el carrito por completo
+    
+    
     crearNodo("#vaciar-carrito").addEventListener("click", () => {
-        carritoProductos.length = 0;
-        localStorage.setItem("carrito", JSON.stringify(carritoProductos));
-        dibujarCarrito(carritoProductos);
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'boton_no_eliminar',
+                cancelButton: 'boton_eliminar'
+            },
+            buttonsStyling: false
+        })
+        
+        swalWithBootstrapButtons.fire({
+            html: `
+                 <div class="sweetAlert">
+                     <i class="fas fa-exclamation-circle"></i>
+                     <h3>Estas seguro de vaciar el carrito?</h3>
+                 </div>    
+                 `,
+            showCancelButton: true,
+            confirmButtonText: 'Si, vaciar!',
+            cancelButtonText: 'No, cancelar!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    position: 'center',
+                    html: `
+                          <div class="sweetAlert">
+                          <i class="check fas fa-check-circle"></i>
+                              <h3>El carrito esta vacio</h3>
+                          </div>
+                          `,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                carritoProductos.forEach(elemento => {
+                    elemento.cantidad = 1
+                })
+                carritoProductos.length = 0;
+                localStorage.setItem("carrito", JSON.stringify(carritoProductos));
+                dibujarCarrito(carritoProductos);
+            } 
+        })
     });
     //Abre el carrito
     DOMbotonCarrito.addEventListener("click", () => {
@@ -431,23 +487,29 @@
     });
     //Se procesa el pedido
     crearNodo("#procesar-compra").addEventListener("click", () => {
-        if (carritoProductos.length===0){
+        if (carritoProductos.length === 0) {
             Swal.fire({
-                icon: 'error',
-                title: 'No hay productos en el carrito...',
-                text: 'imposible procesar tu compra!',
-                footer: '<a href="">Why do I have this issue?</a>'
-              })
+                html: `
+                <div class="sweetAlert">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>No hay productos en el carrito<br><b>imposible procesar tu compra!</b></h3>
+                </div>
+                `,
+                showConfirmButton: true,
+                confirmButtonText: `Volver a comprar`,
+                buttonsStyling: false,
+                customClass: { confirmButton: `volver_a_comprar` },
+            })
         } else {
             localStorage.setItem("ultimaCompra", JSON.stringify(carritoProductos));
             ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
-            carritoProductos.length=0;
+            carritoProductos.length = 0;
             dibujarCarrito(carritoProductos);
             localStorage.setItem("carrito", JSON.stringify(carritoProductos));
         }
     });
     //Repite el ultimo pedido
-    crearNodo("#boton-repetir-pedido").addEventListener("click", ()=>{
+    crearNodo("#boton-repetir-pedido").addEventListener("click", () => {
         carritoProductos = JSON.parse(localStorage.getItem("ultimaCompra"));
         dibujarCarrito(ultimaCompra);
     })
