@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "nombre": "Hamburguesa americana simple",
+        "precioUnitario": 930,
+        "precioAcumulado": 0,
+        "tipo": "simple",
+        "ingredientes": "medallón de carne, cebolla, barbacoa, cheddar, panceta, huevo a la plancha",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Hamburguesa deluxe simple",
+        "precioUnitario": 920,
+        "precioAcumulado": 0,
+        "tipo": "simple",
+        "ingredientes": "medallón de carne, rúcula, tomates hidratados en vino blanco, queso suizo, cebolla morada, salsa alioli",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Hamburguesa cuatro quesos simple",
+        "precioUnitario": 900,
+        "precioAcumulado": 0,
+        "tipo": "simple",
+        "ingredientes": "medallón de carne, pasta de roquefort, mozzarella, queso tybo, crema de cheddar",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Hamburguesa mexicana simple",
+        "precioUnitario": 900,
+        "precioAcumulado": 0,
+        "tipo": "simple",
+        "ingredientes": "medallón de carne, cheddar, lechuga, tomate, cebolla, guacamole, salsa dragón",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Hamburguesa queso azul simple",
+        "precioUnitario": 900,
+        "precioAcumulado": 0,
+        "tipo": "simple",
+        "ingredientes": "medallón de carne, cebolla colorada, hongos rehogados, roquefort, mozzarella",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Hamburguesa clasica simple",
+        "precioUnitario": 880,
+        "precioAcumulado": 0,
+        "tipo": "simple",
+        "ingredientes": "medallón de carne, lechuga, tomate, queso provolone, tybo, mayonesa, ketchup",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Hamburguesa de pollo simple",
+        "precioUnitario": 880,
+        "precioAcumulado": 0,
+        "tipo": "simple",
+        "ingredientes": "medallón de pollo, colchón de hojas verdes, tomates , queso suizo, salsa alioli",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Hamburguesa de cheddar y panceta simple",
+        "precioUnitario": 880,
+        "precioAcumulado": 0,
+        "tipo": "simple",
+        "ingredientes": "medallón de carne, cheddar, panceta",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Hamburguesa americana doble",
+        "precioUnitario": 1120,
+        "precioAcumulado": 0,
+        "tipo": "doble",
+        "ingredientes": "doble medallón de carne, cebolla, barbacoa, cheddar, panceta, huevo a la plancha",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "Hamburguesa deluxe doble",
+        "precioUnitario": 1090,
+        "precioAcumulado": 0,
+        "tipo": "doble",
+        "ingredientes": "doble medallón de carne, rúcula, tomates hidratados en vino blanco, queso suizo, cebolla morada, salsa alioli",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "Hamburguesa cuatro quesos doble",
+        "precioUnitario": 1070,
+        "precioAcumulado": 0,
+        "tipo": "doble",
+        "ingredientes": "doble medallón de carne, pasta de roquefort, mozzarella, queso tybo, crema de cheddar.",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 12,
+        "nombre": "Hamburguesa mexicana doble",
+        "precioUnitario": 1085,
+        "precioAcumulado": 0,
+        "tipo": "doble",
+        "ingredientes": "doble medallón de carne, cheddar, lechuga, tomate, cebolla, guacamole, salsa dragón",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 13,
+        "nombre": "Hamburguesa queso azul doble",
+        "precioUnitario": 1075,
+        "precioAcumulado": 0,
+        "tipo": "doble",
+        "ingredientes": "doble medallón de carne, cebolla colorada, hongos rehogados, roquefort, mozzarella",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 14,
+        "nombre": "Hamburguesa clasica doble",
+        "precioUnitario": 1065,
+        "precioAcumulado": 0,
+        "tipo": "doble",
+        "ingredientes": "doble medallón de carne, lechuga, tomate, queso provolone, tybo, mayonesa, ketchup",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 15,
+        "nombre": "Hamburguesa de pollo doble",
+        "precioUnitario": 1080,
+        "precioAcumulado": 0,
+        "tipo": "doble",
+        "ingredientes": "doble medallón de pollo, colchón de hojas verdes, tomates , queso suizo, salsa alioli",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 16,
+        "nombre": "Hamburguesa de cheddar y panceta doble",
+        "precioUnitario": 1085,
+        "precioAcumulado": 0,
+        "tipo": "doble",
+        "ingredientes": "doble medallón de carne, cheddar, panceta",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 17,
+        "nombre": "Hamburguesa vegetariana simple",
+        "precioUnitario": 920,
+        "precioAcumulado": 0,
+        "tipo": "vegetariana",
+        "ingredientes": "medallón de lentejas, cebolla colorada, rúcula, mozarella, queso provolone, pasta de berenjenas",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 18,
+        "nombre": "Hamburguesa vegetariana doble",
+        "precioUnitario": 1050,
+        "precioAcumulado": 0,
+        "tipo": "vegetariana",
+        "ingredientes": "doble medallón de lentejas, cebolla colorada, rúcula, mozarella, queso provolone, pasta de berenjenas",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 19,
+        "nombre": "Hamburguesa simple sin TACC",
+        "precioUnitario": 1000,
+        "precioAcumulado": 0,
+        "tipo": "sin tacc",
+        "ingredientes": "medallón de carne, cheddar, panceta, pan sin TACC",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    },
+    {
+        "id": 20,
+        "nombre": "Hamburguesa doble sin TACC",
+        "precioUnitario": 1080,
+        "precioAcumulado": 0,
+        "tipo": "sin tacc",
+        "ingredientes": "doble medallón de carne, cheddar, panceta, pan sin TACC",
+        "cantidad": 1,
+        "img": "./assets/images/hamburguesa.jpg"
+    }
+]
