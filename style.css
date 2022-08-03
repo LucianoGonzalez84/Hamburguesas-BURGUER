@@ -253,10 +253,73 @@ main {
   opacity: .7;
 }
 
-.info{
+.informacion{
   width: 100%;
-  height: 50rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: inherit;
+  padding: 10rem 0 10rem 0;
+}
+.informacion h1{
+  width: 90%;
+  font-family: var(--fuentePrincipal);
+  font-size: 3.5rem;
+  color: var(--colorNegro);
+  text-align: center;
+  margin: 0 auto 5rem auto;
+  width: 90%;
+}
+.informacion h1::after,
+.informacion h1::before {
+    content: '';
+    position: absolute;
+    width: 20rem;
+    height: 0.2rem;
+    background-color: var(--colorNegro);
+    margin-top: 2.7rem;
+}
+.informacion h1::after {
+    right: 7rem;
+}
+.informacion h1::before {
+    left: 7rem;
+} 
+
+.informacion__burguer{
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.informacion__burguer div{
+  height: 21rem;
+  width: 30rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.informacion__burguer div i{
+  font-size: 5.5rem;
+  margin-bottom: 3rem;
+  color: var(--colorAmarillo);
+}
+.informacion__burguer div p{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+
+.informacion video{
+  width: 90%;
+  margin: 5rem auto 0 auto;
+  box-shadow: 0 0 1.5rem 0.2rem var(--colorNegro);
+  
+  
 }
 
 .catalogo_productos {
@@ -277,7 +340,7 @@ main {
 }
 .catalogo_productos__titulo h2 {
   font-family: var(--fuentePrincipal);
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: var(--colorBlanco);
   text-align: center;
   letter-spacing: 1rem;
@@ -557,9 +620,56 @@ FOOTER
 
 footer{
   width: 100%;
-  height: 30rem;
+  height: auto;
   background: linear-gradient(90deg, var(--colorNegro) 0%, rgba(43,43,43,1) 50%, var(--colorNegro) 100%);
   position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+footer div{
+  width: 22rem;
+  height: 7rem;
+  margin: 4rem 0 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__copyrigth p{
+  font-family: var(--fuentePrincipal);
+  font-size: 1.7rem;
+  color: var(--colorBlanco);
+}
+.footer__copyrigth span{
+  font-size: 1.7rem;
+  color: var(--colorAmarillo);
+}
+.footer__logo{
+  flex-direction: column;
+}
+.footer__logo img{
+  height: 4.7rem;
+}
+.footer__logo p{
+  font-family: var(--fuenteEnlaces);
+  color: var(--colorBlanco);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.footer__redes{
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+.footer__redes a i {
+  color: var(--colorBlanco);
+  font-size: 2.5rem;
+  transition: all 400ms;
+}
+.footer__redes a i:hover{
+  color: var(--colorAmarillo);
+  scale: 1.2;
 }
 
 /* 
