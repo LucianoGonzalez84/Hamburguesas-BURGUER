@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burguer | Finaliza tu pedido</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/images/favicon/favicon.png" type="image/x-icon">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/456b057e2f.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <section class="finalizar_pedido">
+        <div class="pedido">
+            <h3>Pedido</h3>
+            <div id="productos"></div>
+            <div class="precio">
+                <h4>Sub-Total = $ <span id="pedido-subTotal">0,00</span></h4>
+            </div>
+        </div>
+        <div class="datos_pedido">
+            <h3>datos del pedido</h3>
+            <div>
+                <h4>entrega</h4>
+                <select name="entrega" id="entrega" onchange="seleccionEntrega()">
+                    <option value="">-Selecciona una opcion-</option>
+                    <option value="take away">TAKE AWAY</option>
+                    <option value="domicilio">ENVIO A DOMICILIO</option>
+                </select>
+            </div>
+            <div>
+                <h4>A que hora queres tener tu pedido<br>(horario aproximado)</h4>
+                <select name="horario" id="horario" onchange="seleccionHorario()">
+                    <option value="">-Selecciona un horario-</option>
+                    <option value="20:00">20:00HS</option>
+                    <option value="20:30">20:30HS</option>
+                    <option value="21:00">21:00HS</option>
+                    <option value="21:30">21:30HS</option>
+                    <option value="22:00">22:00HS</option>
+                    <option value="22:30">22:30HS</option>
+                    <option value="23:00">23:00HS</option>
+                    <option value="23:30">23:30HS</option>
+                    
+                </select>
+            </div>
+            <div>
+                <h4>forma de pago</h4>
+                <select name="pago" id="pago" onchange="seleccionPago()">
+                    <option>-Selecciona una opcion-</option>
+                    <option value="efectivo">EFECTIVO</option>
+                    <option value="mercado pago">MERCADO PAGO</option>
+                </select>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer__copyrigth">
+            <p>©<span>2022</span>Burguer</p>
+        </div>
+        <div class="footer__logo">
+            <a href="index.html"><img src="./assets/images/iconoBlanco.png" alt="logo-burguer"></a>
+            <p>Hamburguesas deliciosas</p>
+        </div>
+        <div class="footer__redes">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></i></a>
+            <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="./pedido.js"></script>
+    <!-- SweetAlert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

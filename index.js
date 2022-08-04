@@ -151,7 +151,7 @@
             });
             localStorage.setItem("carrito", JSON.stringify(productos));
         });
-        crearNodo("#precio-total").innerText = productos.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0).toFixed(2);
+        crearNodo("#subTotal").innerText = productos.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0).toFixed(2);
         crearNodo("#productos-en-carrito").innerText = productos.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.cantidad, 0);
     }
 
@@ -267,11 +267,12 @@
                 customClass: { confirmButton: `volver_a_comprar` },
             });
         } else {
-            localStorage.setItem("ultimaCompra", JSON.stringify(carritoProductos));
-            ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
-            carritoProductos.length = 0;
+            // localStorage.setItem("ultimaCompra", JSON.stringify(carritoProductos));
+            // ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
+            // carritoProductos.length = 0;
             dibujarCarrito(carritoProductos);
-            localStorage.setItem("carrito", JSON.stringify(carritoProductos));
+            // localStorage.setItem("carrito", JSON.stringify(carritoProductos));
+            location.href="./pedido.html";
         };
     });
     //Repite el ultimo pedido
@@ -280,5 +281,6 @@
         dibujarCarrito(ultimaCompra);
     });
 })();
+
 
 
