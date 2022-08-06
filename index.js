@@ -58,7 +58,7 @@
         }
     }
     //Funcion que agrega los productos seleccionados al carrito
-    const agregarAlCarrito = async (productoId) =>{
+    const agregarAlCarrito = async (productoId) => {
         try {
             const baseDeDatos = await fetch(`./productos.json`);
             const productos = await baseDeDatos.json();
@@ -129,7 +129,7 @@
                 DOMhamburguesa.cantidad = 1;
                 localStorage.setItem("carrito", JSON.stringify(carritoProductos));
                 dibujarCarrito(carritoProductos);
-            }; 
+            };
         });
     };
     //Funcion que renderiza el modal carrito
@@ -158,7 +158,6 @@
     /*
       EVENTOS
     */
-
     document.addEventListener("DOMContentLoaded", () => {
         //Se insertan los productos en index.html
         insertarProductos();
@@ -170,7 +169,15 @@
         localStorage.getItem("ultimaCompra") ? null : localStorage.setItem("ultimaCompra", "[]");
         ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
         dibujarCarrito(carritoProductos);
+        //Lanza el loader
+        setTimeout(function () {
+            let DOMcontenedorLoader = crearNodo(".contenedor_loader");
+            DOMcontenedorLoader.classList.remove("contenedor_loader")
+            DOMcontenedorLoader.classList.add("inactivo")
+        }, 1500);
     });
+
+
     //Vacia el carrito por completo
     crearNodo("#vaciar-carrito").addEventListener("click", () => {
         const swalWithBootstrapButtons = Swal.mixin({
@@ -210,7 +217,7 @@
                 carritoProductos.length = 0;
                 localStorage.setItem("carrito", JSON.stringify(carritoProductos));
                 dibujarCarrito(carritoProductos);
-            }; 
+            };
         });
     });
     //Abre el carrito
@@ -226,11 +233,6 @@
         DOMmodalCarrito.classList.add("inactivo");
         DOMcarritoActivo.classList.remove("carrito_seleccionado");
         DOMcarritoActivo.classList.add("inactivo");
-    });
-    //Despliega opcion "nuestras hamburguesas" en el nav
-    crearNodo("#item-desplegable").addEventListener("click", () => {
-        crearNodo("#item-desplegable-icono").classList.toggle("rotacion");
-        crearNodo("#menu-desplegado").classList.toggle("alturaAuto");
     });
     //Cambia estilos del nav al scrollear
     let DOMnavegador = crearNodo("#navegador");
@@ -272,7 +274,7 @@
             // carritoProductos.length = 0;
             dibujarCarrito(carritoProductos);
             // localStorage.setItem("carrito", JSON.stringify(carritoProductos));
-            location.href="./pedido.html";
+            location.href = "./pedido.html";
         };
     });
     //Repite el ultimo pedido

@@ -17,7 +17,11 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body >
-    <div class="inactivo" id="carrito-seleccionado"></div>
+    <!-- Loader -->
+    <div class="contenedor_loader">
+        <div class="loader"></div>
+        <img src="./assets/images/hamburguesaLoader.png" alt="">
+    </div>
     <!-- Header -->
     <header>
         <nav class="navegador" id="navegador">
@@ -26,15 +30,7 @@
                 <img src="./assets/images/iconoBlanco.png" alt="icono" class="icono_blanco" id="icono-blanco">
             </div>
             <ul class="navegador__menu">
-                <li class="menu__items" id="item-desplegable"><a>Nuestras hamburguesas<i
-                            class="fas fa-angle-right item__desplegable__icono" id="item-desplegable-icono"></i></a>
-                    <ul class="menu_desplegado" id="menu-desplegado">
-                        <li><a href="#simples">Hamburguesas Simples</a></li>
-                        <li><a href="#dobles">Hamburguesas Dobles</a></li>
-                        <li><a href="#vegetarianas">Hamburguesas Vegetarianas</a></li>
-                        <li><a href="#sintacc">Hamburguesas Sin TACC</a></li>
-                    </ul>
-                </li>
+                <li class="menu__items" id="item-desplegable"><a>Nuestras hamburguesas</a></li>
                 <li class="menu__items"><a>Nosotros</a></li>
                 <li class="menu__items"><a>Faq's</a></li>
                 <li class="menu__items"><a>Contacto</a></li>
@@ -110,7 +106,6 @@
                 </div>
             </div>
         </section>
-        
     </main>
     <!-- Footer -->
     <footer>
@@ -127,6 +122,10 @@
             <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
+
+    
+    
+
     <!-- JavaScript -->
     <script src="./index.js"></script>
     <!-- SweetAlert -->

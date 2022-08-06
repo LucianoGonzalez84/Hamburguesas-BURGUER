@@ -18,7 +18,7 @@
   margin: 0;
   box-sizing: border-box;
   font-size: 62.5%;
-  scroll-behavior: smooth;
+  
 }
 
 body {
@@ -148,13 +148,6 @@ header .boton_pedido a {
   overflow: hidden;
   height: 2rem;
 }
-
-.item__desplegable__icono {
-  margin-left: 0.75rem;
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-
 .menu__items a {
   font-family: var(--fuenteSecundaria);
   font-size: 1.4rem;
@@ -165,33 +158,10 @@ header .boton_pedido a {
   transition: color 400ms;
   cursor: pointer;
 }
-
 .menu__items a:hover {
   color: var(--colorAmarillo);
 }
 
-.menu_desplegado {
-  position: absolute;
-  height: 0;
-  width: 105%;
-  transform: translateX(-6%);
-  list-style: none;
-  margin-top: 0.75rem;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 0.5rem;
-  transition: height 400ms;
-}
-
-.menu_desplegado li {
-  padding: 0.5rem 0 0.5rem 0;
-}
-
-.menu_desplegado li a {
-  font-size: 1.2rem;
-}
 
 .navegador__carrito {
   height: 5rem;
@@ -695,6 +665,11 @@ SWEETALERT
   font-size: 3.5rem;
   margin-bottom: 2rem;
 }
+.sweetAlert .fa-times-circle{
+  color: var(--colorLetra);
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
 
 .sweetAlert h3{
   font-family: var(--fuenteSecundaria);
@@ -791,11 +766,15 @@ CLASES AUXILIARES
 
 .finalizar_pedido{
   width: 65rem;
-  height: 50rem;
+  height: auto;
   box-shadow: 0rem 0rem 2rem var(--colorSombra);
   border: 0.1rem solid var(--colorBordeProducto);
-  margin: 0 auto;
-  padding: 0 1.5rem 0 1.5rem;
+  margin: auto;
+  padding: 1.5rem;
+  position: relative;
+  margin-bottom: 10rem;
+  top: 5rem;
+  
 }
 .pedido{
   width: 100%;
@@ -805,72 +784,214 @@ CLASES AUXILIARES
   font-family: var(--fuentePrincipal);
   font-size: 1.6rem;
   border-bottom: 0.2rem solid var(--colorNegro);
+  margin-bottom: 2.5rem;
 }
-.pedido .productos{
+.productos .producto{
   width: 100%;
   height: auto;
-  margin-top: 2.5rem;
-}
-.pedido .productos .producto{
   display: flex;
-  margin: 0 1rem;
 }
-.pedido .productos .producto p{
+.producto p{
   font-family: var(--fuenteSecundaria);
   font-size: 1.5rem;
   font-weight: 800;
-  width: auto;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
-.pedido .productos .producto p:first-child{
+.producto p:last-child{
+  margin-bottom: 5rem;
+}
+.producto p:nth-child(1){
   width: 33rem;
-  margin-right: 2rem;
   border-right: 0.1rem solid var(--colorBordeProducto);
+  padding-right: 1rem;
 }
-.pedido .productos .producto p:nth-child(2){
-  
-  width: 13rem;
-  margin-right: 2rem;
+.producto p:nth-child(2){
+  width: 14rem;
   border-right: 0.1rem solid var(--colorBordeProducto);
+  padding: 0 1rem 0 1rem;
 }
-.pedido .productos .producto p:last-child{
-  width: 10rem;
+.producto p:nth-child(3){
+  width: 11rem;
+  border-right: 0.1rem solid var(--colorBordeProducto);
+  padding: 0 1rem 0 1rem;
+} 
+.producto button {
+  border: none;
+  cursor: pointer;
+  color: var(--colorLetra);
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.producto button i{
+  scale: 2.8;
 }
 .pedido .precio{
   font-family: var(--fuentePrincipal);
-  font-size: 2rem;
+  font-size: 2.3rem;
   letter-spacing: 0.2rem;
-  margin: 1.5rem 1rem 0 1rem;
   text-align: end;
+  margin-top: 2.5rem;
 }
 .pedido .precio span{
   font-family: var(--fuentePrincipal);
   letter-spacing: 0.2rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+}
+.boton_volver_comprar{
+  border: none;
+  background-color: inherit;
+  font-family: var(--fuenteSecundaria);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--colorLetra);
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 2rem 0 2rem 0;
+  text-align: end;
+  width: 100%;
+}
 
+.titulo_datos_pedido{
+  font-family: var(--fuentePrincipal);
+  font-size: 1.6rem;
+  border-bottom: 0.2rem solid var(--colorNegro);
+  margin-bottom: 2.5rem;
+}
+
+.datos_pedido{
+  width: 40rem;
+  height: auto;
+  margin: 0 auto;
+}
+
+.datos_pedido h4{
+  font-family: var(--fuenteSecundaria);
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.datos_pedido h4 span{
+  font-family: var(--fuenteSecundaria);
+  font-size: 1.4rem;
+  text-transform:lowercase;
 }
 
 
 
-.datos_pedido{
+select{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.3rem;
+  height: 2rem;
+  width: 40rem;
+  border: 0.1rem solid var(--colorNegro);
+  padding-left: 0.5rem;
+  margin-bottom: 2rem;
+}
+select option{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.3rem;
+  font-weight: 400;
+  
+}
+
+.datos_domicilio{
   width: 100%;
   height: auto;
   
 }
-.datos_pedido h3{
-  font-family: var(--fuentePrincipal);
-  font-size: 1.6rem;
-  border-bottom: 0.2rem solid var(--colorNegro);
+.datos_domicilio div{
+  display: flex;
+  flex-direction: column;
+}
+.datos_domicilio div label{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.datos_domicilio div input{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.3rem;
+  font-weight: 500;
+  height: 2rem;
+  width: 40rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.datos_domicilio button{
+  font-size: 1.2rem;
+  border: none;
+  color: var(--colorVerde);
+  text-align: end;
+  width: 100%;
+  background-color: inherit;
+  cursor: pointer;
+}
+.datos_domicilio button i{
+  font-size: 1.2rem;
+  
+  color: var(--colorVerde);
+  margin: 1rem 0 2rem 0;
 }
 
-select{
+.datos_personales{
+  display: flex;
+  flex-direction: column;
+}
+.datos_personales label{
   font-family: var(--fuenteEnlaces);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.datos_personales input{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.3rem;
+  font-weight: 500;
   height: 2rem;
-  width: 30rem;
+  width: 40rem;
+  padding-left: 0.5rem;
+  margin-bottom: 2rem;
+
+}
+
+
+/* Loader */
+
+.contenedor_loader{
+  background-color: var(--colorNegro);
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  transition: all 1s ease;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
 }
-select option{
-  font-family: var(--fuenteEnlaces);
-  font-size: 1.2rem;
+.loader{
+  border: 0.7rem solid var(--colorAmarillo);
+  border-top-color: var(--colorLetra);
+  border-top-style: groove;
+  height: 12rem;
+  width: 12rem;
+  border-radius: 100%;
+  position: absolute;
+  animation: girar 1.5s linear infinite;
 }
+.contenedor_loader img{
+  scale: 0.13;
+}
+
+@keyframes girar{
+  from { transform: rotate(0deg);}
+  to { transform: rotate(360deg);}
+} 

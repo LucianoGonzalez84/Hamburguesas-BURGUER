@@ -17,7 +17,12 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
+    <!-- Loader -->
+    <div class="contenedor_loader">
+        <div class="loader"></div>
+        <img src="./assets/images/hamburguesaLoader.png" alt="">
+    </div>
+    
     <section class="finalizar_pedido">
         <div class="pedido">
             <h3>Pedido</h3>
@@ -25,19 +30,35 @@
             <div class="precio">
                 <h4>Sub-Total = $ <span id="pedido-subTotal">0,00</span></h4>
             </div>
+            <button class="boton_volver_comprar" id="boton-volver-comprar">Seguir comprando</button>
         </div>
-        <div class="datos_pedido">
-            <h3>datos del pedido</h3>
-            <div>
+        <h3 class="titulo_datos_pedido">datos del pedido</h3>
+        <form class="datos_pedido">
+            <div class="datos_entrega">
                 <h4>entrega</h4>
                 <select name="entrega" id="entrega" onchange="seleccionEntrega()">
                     <option value="">-Selecciona una opcion-</option>
                     <option value="take away">TAKE AWAY</option>
                     <option value="domicilio">ENVIO A DOMICILIO</option>
                 </select>
+                <div class="inactivo" id="datos-domicilio">
+                    <div>
+                        <label for="">domicilio de entrega</label>
+                        <input type="text" placeholder="Ejemplo: calle 44 1050, La Plata">
+                    </div>
+                    <div>
+                        <label for="">entre calles</label>
+                        <input type="text" placeholder="Ejemplo: 41 y 42">
+                    </div>
+                    <div>
+                        <label for="">detalle</label>
+                        <input type="text" placeholder="Ejemplo: 2B">
+                    </div>
+                    <button id="necesito-ayuda">Necesito ayuda <i class="far fa-question-circle"></i></button>
+                </div>
             </div>
-            <div>
-                <h4>A que hora queres tener tu pedido<br>(horario aproximado)</h4>
+            <div class="datos_horario" id="datos-horario">
+                <h4>A que hora queres tu pedido<br><span>(horario aproximado)</span></h4>
                 <select name="horario" id="horario" onchange="seleccionHorario()">
                     <option value="">-Selecciona un horario-</option>
                     <option value="20:00">20:00HS</option>
@@ -48,7 +69,6 @@
                     <option value="22:30">22:30HS</option>
                     <option value="23:00">23:00HS</option>
                     <option value="23:30">23:30HS</option>
-                    
                 </select>
             </div>
             <div>
@@ -59,8 +79,22 @@
                     <option value="mercado pago">MERCADO PAGO</option>
                 </select>
             </div>
+            <div class="datos_personales">
+                <label for="">Tu nombre</label>
+                <input type="text">
+            </div>
+            <div class="datos_personales">
+                <label for="">Tu telefono</label>
+                <input type="tel">
+            </div>
+                
+                
+
+        </form>
+        
             
-        </div>
+            
+        
     </section>
 
     <!-- Footer -->
@@ -78,6 +112,9 @@
             <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
+    
+    
+    
     
     <!-- JavaScript -->
     <script src="./pedido.js"></script>
