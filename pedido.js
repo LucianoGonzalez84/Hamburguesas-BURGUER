@@ -86,18 +86,27 @@ agregarProductosPedido(productosPedido)
 
 function seleccionEntrega() {
     let formaEntrega = crearNodo("#entrega").value;
-    
     if (formaEntrega === "domicilio") {
         crearNodo("#datos-domicilio").classList.remove("inactivo");
         crearNodo("#datos-domicilio").classList.add("datos_domicilio");
-        
-        
-
     } else if (formaEntrega != "domicilio") {
+        crearNodo("#datos-domicilio").classList.remove("datos_domicilio");
         crearNodo("#datos-domicilio").classList.add("inactivo")
-
     }
 };
+
+function seleccionPago() {
+    let formaPago = crearNodo("#pago").value;
+    if (formaPago === "efectivo") {
+        crearNodo("#pago-efectivo").classList.remove("inactivo");
+        crearNodo("#pago-efectivo").classList.add("pago_efectivo");
+    } else if (formaPago != "domicilio") {
+        crearNodo("#pago-efectivo").classList.remove("pago_efectivo");
+        crearNodo("#pago-efectivo").classList.add("inactivo");
+    }
+};
+
+
 
 
 
@@ -107,7 +116,7 @@ setTimeout(function(){
     let DOMcontenedorLoader = crearNodo(".contenedor_loader");
     DOMcontenedorLoader.classList.remove("contenedor_loader")
     DOMcontenedorLoader.classList.add("inactivo")
-}, 1500);
+}, 2000);
 
 crearNodo("#boton-volver-comprar").addEventListener("click", ()=>{
     location.href="./index.html#catalogo-productos";

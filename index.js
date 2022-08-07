@@ -158,6 +158,13 @@
     /*
       EVENTOS
     */
+    //Lanza el loader
+    setTimeout(function () {
+        let DOMcontenedorLoader = crearNodo(".contenedor_loader");
+        DOMcontenedorLoader.classList.remove("contenedor_loader")
+        DOMcontenedorLoader.classList.add("inactivo")
+    }, 2000);
+
     document.addEventListener("DOMContentLoaded", () => {
         //Se insertan los productos en index.html
         insertarProductos();
@@ -169,13 +176,8 @@
         localStorage.getItem("ultimaCompra") ? null : localStorage.setItem("ultimaCompra", "[]");
         ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
         dibujarCarrito(carritoProductos);
-        //Lanza el loader
-        setTimeout(function () {
-            let DOMcontenedorLoader = crearNodo(".contenedor_loader");
-            DOMcontenedorLoader.classList.remove("contenedor_loader")
-            DOMcontenedorLoader.classList.add("inactivo")
-        }, 1500);
     });
+
 
 
     //Vacia el carrito por completo

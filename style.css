@@ -867,7 +867,6 @@ CLASES AUXILIARES
   height: auto;
   margin: 0 auto;
 }
-
 .datos_pedido h4{
   font-family: var(--fuenteSecundaria);
   font-size: 1.4rem;
@@ -880,42 +879,49 @@ CLASES AUXILIARES
   font-size: 1.4rem;
   text-transform:lowercase;
 }
+.datos_pedido p{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--colorLetra);
+  margin-bottom: 1rem;
+}
 
-
-
-select{
+.datos_entrega{
+  
+  margin-bottom: 1.5rem;
+}
+.datos_entrega select{
   font-family: var(--fuenteEnlaces);
   font-size: 1.3rem;
   height: 2rem;
   width: 40rem;
   border: 0.1rem solid var(--colorNegro);
   padding-left: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
-select option{
+.datos_entrega select option{
   font-family: var(--fuenteEnlaces);
   font-size: 1.3rem;
   font-weight: 400;
-  
 }
 
-.datos_domicilio{
+.datos_entrega .datos_domicilio{
   width: 100%;
   height: auto;
-  
 }
-.datos_domicilio div{
+.datos_entrega .datos_domicilio div{
   display: flex;
   flex-direction: column;
 }
-.datos_domicilio div label{
+.datos_entrega .datos_domicilio div label{
   font-family: var(--fuenteEnlaces);
   font-size: 1.3rem;
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
-.datos_domicilio div input{
+.datos_entrega .datos_domicilio div input{
   font-family: var(--fuenteEnlaces);
   font-size: 1.3rem;
   font-weight: 500;
@@ -924,7 +930,7 @@ select option{
   padding-left: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.datos_domicilio button{
+.datos_entrega .datos_domicilio button{
   font-size: 1.2rem;
   border: none;
   color: var(--colorVerde);
@@ -933,13 +939,80 @@ select option{
   background-color: inherit;
   cursor: pointer;
 }
-.datos_domicilio button i{
-  font-size: 1.2rem;
-  
+.datos_entrega .datos_domicilio button i{
+  font-size: 1.3rem;
+  font-weight: 500;
   color: var(--colorVerde);
   margin: 1rem 0 2rem 0;
 }
 
+
+
+
+
+
+
+
+
+
+.datos_horario{
+  margin-bottom: 1.5rem;
+}
+.datos_horario select{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.3rem;
+  height: 2rem;
+  width: 40rem;
+  border: 0.1rem solid var(--colorNegro);
+  padding-left: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.datos_horario select option{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.datos_pago{
+  margin-bottom: 1.5rem;
+} 
+.datos_pago select{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.3rem;
+  height: 2rem;
+  width: 40rem;
+  border: 0.1rem solid var(--colorNegro);
+  padding-left: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.datos_pago select option{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.datos_pago .pago_efectivo{
+  width: 100%;
+  height: auto;
+}
+.datos_pago .pago_efectivo div{
+  display: flex;
+  flex-direction: column;
+}
+.datos_pago .pago_efectivo div label{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.datos_pago .pago_efectivo div input{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.3rem;
+  font-weight: 500;
+  height: 2rem;
+  width: 40rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .datos_personales{
   display: flex;
   flex-direction: column;
@@ -949,7 +1022,7 @@ select option{
   font-size: 1.3rem;
   font-weight: 600;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .datos_personales input{
   font-family: var(--fuenteEnlaces);
@@ -958,9 +1031,18 @@ select option{
   height: 2rem;
   width: 40rem;
   padding-left: 0.5rem;
-  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  
 
 }
+
+
+
+
+
+
+
 
 
 /* Loader */
