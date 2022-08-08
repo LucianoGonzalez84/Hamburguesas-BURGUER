@@ -4,6 +4,8 @@ INICIAMOS VARIABLES
 */
 
 let productosPedido = JSON.parse(localStorage.getItem("carrito"));
+crearNodo("#pedido-total").innerText=(productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
+crearNodo("#monto-abonar").innerText=(productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
 
 //Funcion que crea nodo
 function crearNodo(selector) {
@@ -78,33 +80,65 @@ function agregarProductosPedido(productos) {
             });
             localStorage.setItem("carrito", JSON.stringify(productos));
     });
-    let DOMsubtotal = crearNodo("#pedido-subTotal").innerText = productos.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0).toFixed(2);
     crearNodo("#pedido-subTotal").innerText = productos.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0).toFixed(2);
 }
 
 agregarProductosPedido(productosPedido)
 
 function seleccionEntrega() {
-    let formaEntrega = crearNodo("#entrega").value;
-    if (formaEntrega === "domicilio") {
+    let DOMentrega = crearNodo("#entrega").value;
+    if (DOMentrega === "domicilio") {
         crearNodo("#datos-domicilio").classList.remove("inactivo");
         crearNodo("#datos-domicilio").classList.add("datos_domicilio");
-    } else if (formaEntrega != "domicilio") {
+        crearNodo("#pedido-total").innerText=(productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)+200).toFixed(2);
+        crearNodo("#monto-abonar").innerText=(productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)+200).toFixed(2);
+    } else if (DOMentrega != "domicilio") {
         crearNodo("#datos-domicilio").classList.remove("datos_domicilio");
         crearNodo("#datos-domicilio").classList.add("inactivo")
+        crearNodo("#pedido-total").innerText=(productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
+        crearNodo("#monto-abonar").innerText=(productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
     }
+    return DOMentrega;
 };
 
+function seleccionHorario() {
+    let DOMhorario = crearNodo("#horario").value;
+    return DOMhorario;
+}
+
 function seleccionPago() {
-    let formaPago = crearNodo("#pago").value;
-    if (formaPago === "efectivo") {
+    let DOMpago = crearNodo("#pago").value;
+    if (DOMpago === "efectivo") {
         crearNodo("#pago-efectivo").classList.remove("inactivo");
         crearNodo("#pago-efectivo").classList.add("pago_efectivo");
-    } else if (formaPago != "domicilio") {
+    } else if (DOMpago != "domicilio") {
         crearNodo("#pago-efectivo").classList.remove("pago_efectivo");
         crearNodo("#pago-efectivo").classList.add("inactivo");
     }
+    return DOMpago;
 };
+
+//Formulario
+
+let DOMformularioDatosPedido = crearNodo("#formulario-datos-pedido");
+
+DOMformularioDatosPedido.addEventListener("submit", function(e){
+    e.preventDefault();
+    let DOMformaEntrega = seleccionEntrega();
+    let DOMcalle = crearNodo("#calle").value;
+    let DOMentreCalles = crearNodo("#entreCalles").value;
+    let DOMaltura = crearNodo("#altura").value;
+    let DOMdetalle = crearNodo("#detalle").value;
+    let DOMseleccionHorario = seleccionHorario();
+    let DOMformaPago = seleccionPago();
+    let DOMmontoPago = crearNodo("#montoPago").value;
+    let DOMnombre = crearNodo("#nombre").value;
+    let DOMtelefono = crearNodo("#telefono").value;
+    
+
+})
+
+
 
 
 
@@ -131,3 +165,4 @@ crearNodo("#necesito-ayuda").addEventListener("click", ()=>{
         showConfirmButton= true,
     )
 });
+

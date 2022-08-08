@@ -774,7 +774,18 @@ CLASES AUXILIARES
   position: relative;
   margin-bottom: 10rem;
   top: 5rem;
-  
+}
+.finalizar_pedido h5{
+  font-family: var(--fuentePrincipal);
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  text-align: end;
+  margin-top: 2.5rem;
+}
+.finalizar_pedido h5 span{
+  font-family: var(--fuentePrincipal);
+  letter-spacing: 0.2rem;
+  font-size: 1.5rem;
 }
 .pedido{
   width: 100%;
@@ -829,18 +840,6 @@ CLASES AUXILIARES
 .producto button i{
   scale: 2.8;
 }
-.pedido .precio{
-  font-family: var(--fuentePrincipal);
-  font-size: 2.3rem;
-  letter-spacing: 0.2rem;
-  text-align: end;
-  margin-top: 2.5rem;
-}
-.pedido .precio span{
-  font-family: var(--fuentePrincipal);
-  letter-spacing: 0.2rem;
-  font-size: 1.4rem;
-}
 .boton_volver_comprar{
   border: none;
   background-color: inherit;
@@ -863,9 +862,9 @@ CLASES AUXILIARES
 }
 
 .datos_pedido{
-  width: 40rem;
+  width: 100%;
   height: auto;
-  margin: 0 auto;
+  
 }
 .datos_pedido h4{
   font-family: var(--fuenteSecundaria);
@@ -886,7 +885,17 @@ CLASES AUXILIARES
   color: var(--colorLetra);
   margin-bottom: 1rem;
 }
-
+.datos_pedido p span{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--colorLetra);
+}
+.datos{
+  width: 40rem;
+  height: auto;
+  margin: 0 auto;
+}
 .datos_entrega{
   
   margin-bottom: 1.5rem;
@@ -931,7 +940,8 @@ CLASES AUXILIARES
   margin-bottom: 0.5rem;
 }
 .datos_entrega .datos_domicilio button{
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
   border: none;
   color: var(--colorVerde);
   text-align: end;
@@ -1033,6 +1043,29 @@ CLASES AUXILIARES
   padding-left: 0.5rem;
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
+  
+
+}
+.finalizar_compra{
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 0.2rem solid var(--colorNegro);
+}
+.finalizar_compra button{
+  height: 2.9rem;
+  width: 14rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-family: var(--fuenteSecundaria);
+  font-size: 1.4rem;
+  font-weight: 800;
+  background-color: var(--colorVerde);
+  color: var(--colorBlanco);
+  border: none;
+  cursor: pointer;
+  
   
 
 }
