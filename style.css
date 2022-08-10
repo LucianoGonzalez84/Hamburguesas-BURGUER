@@ -26,10 +26,12 @@ body {
   position: relative;
 }
 
+
+/*ESTILOS INDEX.HTML*/
+
 /* 
 HEADER
 */
-
 header {
   height: 100vh;
   width: 100%;
@@ -40,7 +42,6 @@ header {
   border-bottom: 1rem solid var(--colorAmarillo);
   position: relative;
 }
-
 header h2 {
   font-family: var(--fuenteEnlaces);
   font-size: 4rem;
@@ -51,7 +52,6 @@ header h2 {
   margin-left: 6rem;
   position: relative;
 }
-
 header h3 {
   font-family: var(--fuenteSecundaria);
   font-size: 2rem;
@@ -63,7 +63,6 @@ header h3 {
   position: relative;
   margin-top: 3rem;
 }
-
 header .boton_pedido {
   height: 2.9rem;
   width: 20rem;
@@ -79,7 +78,6 @@ header .boton_pedido {
   text-transform: uppercase;
   border-radius: 0.5rem;
 }
-
 header .boton_pedido a {
   font-family: var(--fuenteSecundaria);
   font-size: 1.6rem;
@@ -87,8 +85,7 @@ header .boton_pedido a {
   color: var(--colorBlanco);
   text-decoration: none;
 }
-
-/* NAVEGADOR */
+/* Navegador */
 .navegador {
   width: 100%;
   min-height: 10rem;
@@ -101,7 +98,6 @@ header .boton_pedido a {
   justify-content: space-around;
   align-items: center;
 }
-
 .navegadorScroll {
   width: 100%;
   min-height: 10rem;
@@ -117,7 +113,6 @@ header .boton_pedido a {
   box-shadow: 0rem 0rem 2rem var(--colorSombra);
   margin-bottom: 2.5rem;
 }
-
 .navegador__icono {
   height: 5rem;
   width: 16rem;
@@ -126,15 +121,12 @@ header .boton_pedido a {
   align-items: center;
   justify-content: center;
 }
-
 .navegador__icono .icono_negro {
   position: absolute;
 }
-
 .navegador__icono .icono_blanco {
   position: absolute;
 }
-
 .navegador__menu {
   display: flex;
   align-items: center;
@@ -142,7 +134,6 @@ header .boton_pedido a {
   width: 70rem;
   position: relative;
 }
-
 .menu__items {
   list-style: none;
   overflow: hidden;
@@ -161,8 +152,6 @@ header .boton_pedido a {
 .menu__items a:hover {
   color: var(--colorAmarillo);
 }
-
-
 .navegador__carrito {
   height: 5rem;
   width: 16rem;
@@ -171,7 +160,6 @@ header .boton_pedido a {
   align-items: center;
   justify-content: center;
 }
-
 .navegador__carrito button {
   cursor: pointer;
   height: auto;
@@ -179,12 +167,10 @@ header .boton_pedido a {
   border: none;
   background-color: inherit;
 }
-
 .navegador__carrito button i {
   font-size: 2.5rem;
   color: var(--colorNegro);
 }
-
 .navegador__carrito .cantidad_productos {
   height: 2rem;
   width: 2rem;
@@ -198,7 +184,6 @@ header .boton_pedido a {
   align-items: center;
   justify-content: center;
 }
-
 .navegador__carrito .cantidad_productos span {
   font-family: var(--fuenteSecundaria);
   font-size: 1.5rem;
@@ -213,16 +198,15 @@ main {
   position: relative;
   height: auto;
 }
-
 .modal_carrito_abierto {
   height: 100%;
   width: 100%;
   background-color: #000000;
-  z-index: 5;
+  z-index: 100;
   position: absolute;
   opacity: .7;
 }
-
+/* Informacion */
 .informacion{
   width: 100%;
   height: auto;
@@ -256,7 +240,6 @@ main {
 .informacion h1::before {
     left: 7rem;
 } 
-
 .informacion__burguer{
   display: flex;
   width: 90%;
@@ -286,21 +269,16 @@ main {
   font-weight: 400;
   text-align: center;
 }
-
-
 .informacion video{
   width: 90%;
   margin: 10rem auto 0 auto;
   box-shadow: 0 0 1.5rem 0.2rem var(--colorNegro);
-  
-  
 }
-
+/* Productos */
 .catalogo_productos {
   width: 100%;
   height: auto;
 }
-
 .catalogo_productos__titulo {
   width: 100%;
   height: 25rem;
@@ -319,7 +297,6 @@ main {
   text-align: center;
   letter-spacing: 1rem;
 }
-
 .lista_hamburguesas {
   width: 100%;
   height: auto;
@@ -328,8 +305,7 @@ main {
   justify-content: space-evenly;
   padding: 5rem 0 5rem 0;
 }
-
-/* TARJETA PRODUCTO */
+/* Tarjeta Productos*/
 .tarjeta_producto {
   position: relative;
   overflow: hidden;
@@ -342,13 +318,11 @@ main {
   padding: 1rem;
   display: flex;
 }
-
 .tarjeta_producto img {
   border-radius: 10px;
   height: 18rem;
   margin-right: 1.5rem;
 }
-
 .tarjeta_producto h3 {
   font-family: var(--fuentePrincipal);
   font-weight: 100;
@@ -362,7 +336,6 @@ main {
   margin-bottom: 1rem;
   text-align: center;
 }
-
 .tarjeta_producto p {
   font-family: var(--fuenteSecundaria);
   font-weight: 800;
@@ -372,20 +345,17 @@ main {
   height: 5.5rem;
   text-align: center;
 }
-
 .tarjeta_producto h4 {
   color: var(--colorLetra);
   font-family: var(--fuentePrincipal);
   font-size: 1.7rem;
   text-align: center;
 }
-
 .tarjetaAgregarCarrito {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-
 .tarjeta_producto button {
   height: 2.9rem;
   width: 14rem;
@@ -399,13 +369,11 @@ main {
   border: none;
   cursor: pointer;
 }
-
 .tarjeta_producto button i {
   transform: scale(1.8);
   margin-left: 1.2rem;
 }
-
-/* CARRITO */
+/* Modal carrito */
 .contenedor_carrito {
   position: fixed;
   width: 68rem;
@@ -416,20 +384,17 @@ main {
   background-color: var(--colorBlanco);
   border: 1px solid var(--colorBordeProducto);
   padding: 2rem;
-  z-index: 5;
+  z-index: 1000;
 }
-
 .contenedor_carrito h3 {
   font-family: var(--fuentePrincipal);
   font-size: 1.6rem;
 }
-
 .contenedor_carrito h4 {
   font-family: var(--fuentePrincipal);
   font-size: 1.4rem;
 }
-
-.modal_carrito__encabezado {
+.contenedor_carrito .modal_carrito__encabezado {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -437,8 +402,7 @@ main {
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
 }
-
-.modal_carrito__encabezado button {
+.contenedor_carrito .modal_carrito__encabezado button {
   height: 2rem;
   width: 2.5rem;
   background-color: var(--colorLetra);
@@ -449,13 +413,11 @@ main {
   align-items: center;
   cursor: pointer;
 }
-
-.modal_carrito__encabezado button i {
+.contenedor_carrito .modal_carrito__encabezado button i {
   color: var(--colorBlanco);
   transform: scale(2.3);
 }
-
-.boton_repetir_pedido{
+.contenedor_carrito .boton_repetir_pedido{
   border: none;
   background-color: inherit;
   font-family: var(--fuenteSecundaria);
@@ -466,25 +428,35 @@ main {
   cursor: pointer;
   margin-bottom: 2rem;
 }
-
-.modal_carrito__contenido {
+.contenedor_carrito .modal_carrito__contenido {
   height: 23rem;
   overflow: auto;
 }
 
-.modal_carrito__contenido::-webkit-scrollbar {
+.contenedor_carrito .modal_carrito__contenido h5{
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 9rem;
+}
+
+.contenedor_carrito .modal_carrito__contenido h5 i{
+  font-size: 2rem;
+} 
+.contenedor_carrito .modal_carrito__contenido::-webkit-scrollbar {
   -webkit-appearance: none;
 }
 
-.modal_carrito__contenido::-webkit-scrollbar:vertical {
+.contenedor_carrito .modal_carrito__contenido::-webkit-scrollbar:vertical {
   width: 10px;
 }
 
-.modal_carrito__contenido::-webkit-scrollbar:horizontal {
+.contenedor_carrito .modal_carrito__contenido::-webkit-scrollbar:horizontal {
   display: none;
 }
 
-.modal_carrito__contenido::-webkit-scrollbar-thumb {
+.contenedor_carrito .modal_carrito__contenido::-webkit-scrollbar-thumb {
   background-color: #797979;
   border-radius: 20px;
   border: 2px solid var(--colorBlanco);
@@ -536,7 +508,7 @@ main {
   scale: 2.8;
 }
 
-.modal_carrito__pie {
+.contenedor_carrito .modal_carrito__pie {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -544,7 +516,7 @@ main {
   margin-top: 2.5rem;
 }
 
-.modal_carrito__pie .precio {
+.contenedor_carrito .modal_carrito__pie .precio {
   margin-bottom: 1rem;
   text-align: end;
   position: relative;
@@ -554,13 +526,13 @@ main {
   transform: translateX(-100%);
 }
 
-.modal_carrito__pie .precio span {
+.contenedor_carrito .modal_carrito__pie .precio span {
   font-family: var(--fuentePrincipal);
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
 }
 
-.modal_carrito__pie .botones {
+.contenedor_carrito .modal_carrito__pie .botones {
   display: flex;
   justify-content: space-between;
   border-top: 0.1rem solid var(--colorNegro);
@@ -568,7 +540,7 @@ main {
   margin-bottom: 2.5rem;
 }
 
-.modal_carrito__pie .botones button {
+.contenedor_carrito .modal_carrito__pie .botones button {
   width: 15rem;
   height: 2.9rem;
   border-radius: 0.5rem;
@@ -580,11 +552,11 @@ main {
   cursor: pointer;
 }
 
-.modal_carrito__pie .botones button:first-child {
+.contenedor_carrito .modal_carrito__pie .botones button:first-child {
   background-color: var(--colorLetra);
 }
 
-.modal_carrito__pie .botones button:last-child {
+.contenedor_carrito .modal_carrito__pie .botones button:last-child {
   background-color: var(--colorVerde);
 }
 
@@ -595,11 +567,11 @@ FOOTER
 footer{
   width: 100%;
   height: auto;
-  background: linear-gradient(90deg, var(--colorNegro) 0%, rgba(43,43,43,1) 50%, var(--colorNegro) 100%);
-  position: relative;
+  background: linear-gradient(90deg, var(--colorNegro) 0%, rgb(78, 78, 78) 50%, var(--colorNegro) 100%);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  z-index: 0;
 }
 footer div{
   width: 22rem;
@@ -675,6 +647,9 @@ SWEETALERT
   font-family: var(--fuenteSecundaria);
   font-size: 1.5rem;
   font-weight: 800;
+}
+.sweetAlert h3:last-child{
+  margin-top: 2rem;
 }
 
 .sweetAlert span{
@@ -1110,3 +1085,4 @@ CLASES AUXILIARES
   from { transform: rotate(0deg);}
   to { transform: rotate(360deg);}
 } 
+

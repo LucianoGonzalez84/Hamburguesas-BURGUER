@@ -25,7 +25,7 @@
     
     <section class="finalizar_pedido">
         <div class="pedido">
-            <h3>Pedido</h3>
+            <h3>tu pedido</h3>
             <div id="productos"></div>
             <h5>Sub-Total = $ <span id="pedido-subTotal">0,00</span></h5>
             <button class="boton_volver_comprar" id="boton-volver-comprar">Seguir comprando</button>
@@ -43,7 +43,7 @@
                         <option value="domicilio">ENVIO A DOMICILIO</option>
                     </select>
                     <div class="inactivo" id="datos-domicilio">
-                        <p>El envio a domicilio tiene un costo de $200,00</p>
+                        <p>El envio a domicilio tiene un costo de $250,00</p>
                         <div>
                             <label for="calle">domicilio de entrega</label>
                             <input type="text" name="calle" id="calle" placeholder="Ejemplo: calle 44 1050, La Plata" required>
@@ -53,12 +53,8 @@
                             <input type="text" name="entreCalles" id="entreCalles" placeholder="Ejemplo: 41 y 42" required>
                         </div>
                         <div>
-                            <label for="altura">numero</label>
-                            <input type="number" name="altura" id="altura" placeholder="Ejemplo: 1512" required>
-                        </div>
-                        <div>
                             <label for="detalle">detalle</label>
-                            <input type="text" name="detalle" id="detalle" placeholder="Ejemplo: 2B">
+                            <input type="text" name="detalle" id="detalle" placeholder="Ejemplo: 2B" required>
                         </div>
                         <button id="necesito-ayuda" type="button">Necesito ayuda <i class="far fa-question-circle"></i></button>
                     </div>
@@ -111,15 +107,15 @@
             </div>
             <h5>Total = $ <span id="pedido-total">0,00</span></h5>
                 
-                <div class="finalizar_compra">
-                    <button type="submit" id="finalizar-compra">Finalizar compra</button>
-    
-                </div>
-            
-            
+            <div class="finalizar_compra">
+                <button type="submit" id="finalizar-compra">Finalizar compra</button>
+            </div>
+
+                
 
         </form>
-        
+
+                
         
             
             

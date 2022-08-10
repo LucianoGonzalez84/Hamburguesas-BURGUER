@@ -1,22 +1,27 @@
-
- /*
-INICIAMOS VARIABLES
+/*
+SE INICIAN VARIABLES
 */
 
 let productosPedido = JSON.parse(localStorage.getItem("carrito"));
-crearNodo("#pedido-total").innerText=(productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
-crearNodo("#monto-abonar").innerText=(productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
+crearNodo("#pedido-total").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
+crearNodo("#monto-abonar").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
 
-//Funcion que crea nodo
+
+/*
+FUNCIONES
+*/
+
+// Funcion que crea nodo
 function crearNodo(selector) {
     return document.querySelector(selector);
 };
-//Funcion que crea etiqueta html
+
+// Funcion que crea etiqueta html
 function crearEiqueta(elemento) {
     return document.createElement(elemento);
 }
 
-//Funcion que elimina productos del pedido
+// Funcion que elimina productos del pedido
 const eliminarProductoPedido = (productoId) => {
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
@@ -57,15 +62,16 @@ const eliminarProductoPedido = (productoId) => {
             DOMhamburguesa.cantidad = 1;
             localStorage.setItem("carrito", JSON.stringify(productosPedido));
             agregarProductosPedido(productosPedido);
-        }; 
+        };
     });
 };
 
-function agregarProductosPedido(productos) {
+// Funcion que renderiza los productos del pedido
+const agregarProductosPedido = (productos) => {
     let DOMpedido = crearNodo("#productos");
-    DOMpedido.innerHTML="";
+    DOMpedido.innerHTML = "";
     productos.forEach(elemento => {
-        let DOMtemplatePedido = crearEiqueta ("div");
+        let DOMtemplatePedido = crearEiqueta("div");
         DOMtemplatePedido.innerHTML = ` 
                                 <p>${elemento.nombre}</p>
                                 <p>Precio: $${elemento.precioUnitario.toFixed(2)}</p>
@@ -75,38 +81,37 @@ function agregarProductosPedido(productos) {
         DOMtemplatePedido.classList = "producto";
         DOMpedido.classList = "productos";
         let DOMboton = crearNodo(`#eliminar${elemento.id}`);
-            DOMboton.addEventListener("click", () => {
-                eliminarProductoPedido(elemento.id);
-            });
-            localStorage.setItem("carrito", JSON.stringify(productos));
+        DOMboton.addEventListener("click", () => {
+            eliminarProductoPedido(elemento.id);
+        });
+        localStorage.setItem("carrito", JSON.stringify(productos));
     });
     crearNodo("#pedido-subTotal").innerText = productos.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0).toFixed(2);
 }
 
-agregarProductosPedido(productosPedido)
-
-function seleccionEntrega() {
+// Funcion que seleccion opcion forma de entrega
+const seleccionEntrega = () => {
     let DOMentrega = crearNodo("#entrega").value;
     if (DOMentrega === "domicilio") {
         crearNodo("#datos-domicilio").classList.remove("inactivo");
         crearNodo("#datos-domicilio").classList.add("datos_domicilio");
-        crearNodo("#pedido-total").innerText=(productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)+200).toFixed(2);
-        crearNodo("#monto-abonar").innerText=(productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)+200).toFixed(2);
+        crearNodo("#pedido-total").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0) + 250).toFixed(2);
     } else if (DOMentrega != "domicilio") {
         crearNodo("#datos-domicilio").classList.remove("datos_domicilio");
         crearNodo("#datos-domicilio").classList.add("inactivo")
-        crearNodo("#pedido-total").innerText=(productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
-        crearNodo("#monto-abonar").innerText=(productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
+        crearNodo("#pedido-total").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
     }
     return DOMentrega;
-};
+}
 
-function seleccionHorario() {
+// Funcion que selecciona opcion horario de entrega
+const seleccionHorario = () => {
     let DOMhorario = crearNodo("#horario").value;
     return DOMhorario;
 }
 
-function seleccionPago() {
+// Funcion que selecciona opcion forma de pago
+const seleccionPago = () => {
     let DOMpago = crearNodo("#pago").value;
     if (DOMpago === "efectivo") {
         crearNodo("#pago-efectivo").classList.remove("inactivo");
@@ -118,11 +123,24 @@ function seleccionPago() {
     return DOMpago;
 };
 
-//Formulario
+/*
+EVENTOS
+*/
 
-let DOMformularioDatosPedido = crearNodo("#formulario-datos-pedido");
+document.addEventListener("DOMContentLoaded", () => {
+    //Se insertan los productos en el pedido
+    agregarProductosPedido(productosPedido);
+});
 
-DOMformularioDatosPedido.addEventListener("submit", function(e){
+// Lanza el loader
+setTimeout(function () {
+    let DOMcontenedorLoader = crearNodo(".contenedor_loader");
+    DOMcontenedorLoader.classList.remove("contenedor_loader")
+    DOMcontenedorLoader.classList.add("inactivo")
+}, 2000);
+
+// Formulario
+crearNodo("#formulario-datos-pedido").addEventListener("submit", function (e) {
     e.preventDefault();
     let DOMformaEntrega = seleccionEntrega();
     let DOMcalle = crearNodo("#calle").value;
@@ -134,35 +152,26 @@ DOMformularioDatosPedido.addEventListener("submit", function(e){
     let DOMmontoPago = crearNodo("#montoPago").value;
     let DOMnombre = crearNodo("#nombre").value;
     let DOMtelefono = crearNodo("#telefono").value;
-    
-
-})
-
-
-
-
-
-
-
-// EVENTOS
-//Lanza el loader
-setTimeout(function(){ 
-    let DOMcontenedorLoader = crearNodo(".contenedor_loader");
-    DOMcontenedorLoader.classList.remove("contenedor_loader")
-    DOMcontenedorLoader.classList.add("inactivo")
-}, 2000);
-
-crearNodo("#boton-volver-comprar").addEventListener("click", ()=>{
-    location.href="./index.html#catalogo-productos";
 });
 
-crearNodo("#necesito-ayuda").addEventListener("click", ()=>{
+// Evento boton volver a comprar
+crearNodo("#boton-volver-comprar").addEventListener("click", () => {
+    location.href = "./index.html#catalogo-productos";
+});
+
+// Evento boton necesito ayuda
+crearNodo("#necesito-ayuda").addEventListener("click", () => {
     Swal.fire(
-        html=`
+        html = `
             <p>Aca va lo de sucucho</p>
         
         `,
-        showConfirmButton= true,
+        showConfirmButton = true,
     )
 });
+
+
+
+
+
 

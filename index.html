@@ -17,11 +17,13 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body >
+    <div class="inactivo" id="carrito-seleccionado"></div>
     <!-- Loader -->
     <div class="contenedor_loader">
         <div class="loader"></div>
         <img src="./assets/images/hamburguesaLoader.png" alt="">
     </div>
+    
     <!-- Header -->
     <header>
         <nav class="navegador" id="navegador">
@@ -45,8 +47,7 @@
         <h2 id="limite-scroll">Siempre es un buen momento para una Burguer</h2>
         <h3>Queremos que experimentes sensaciones inigualables en cada bocado, por eso combinamos cuidadosamente cada
             ingrediente y los transformamos en la mejor hamburguesa.</h3>
-        <button class="boton_pedido"><a href="#catalogo-productos">Hace tu pedido</a>
-        </button>
+        <button class="boton_pedido"><a href="#catalogo-productos">Hace tu pedido</a></button>
     </header>
     <!-- Main -->
     <main>
@@ -69,6 +70,7 @@
             <video src="./assets/video/video-burguer.mp4" muted autoplay
             loop></video>
         </section>
+        
         <section id="catalogo-productos" class="catalogo_productos">
             <div class="catalogo_productos__titulo" id="simples">
                 <h2>hamburguesas simples</h2>
@@ -87,6 +89,7 @@
             </div>
             <div class="lista_hamburguesas" id="lista-hamburguesas-sintacc"></div>
         </section>
+        
         <section>
             <div class="inactivo" id="modal-carrito">
                 <div class="modal_carrito__encabezado">
@@ -107,6 +110,8 @@
             </div>
         </section>
     </main>
+
+
     <!-- Footer -->
     <footer>
         <div class="footer__copyrigth">
