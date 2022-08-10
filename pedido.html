@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,13 +17,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <!-- Loader -->
     <div class="contenedor_loader">
         <div class="loader"></div>
         <img src="./assets/images/hamburguesaLoader.png" alt="">
     </div>
-    
+
     <section class="finalizar_pedido">
         <div class="pedido">
             <h3>tu pedido</h3>
@@ -31,8 +33,8 @@
             <button class="boton_volver_comprar" id="boton-volver-comprar">Seguir comprando</button>
         </div>
         <h3 class="titulo_datos_pedido">datos del pedido</h3>
-        
-        
+
+
         <form class="datos_pedido" id="formulario-datos-pedido" method="post">
             <div class="datos">
                 <div class="datos_entrega">
@@ -46,20 +48,21 @@
                         <p>El envio a domicilio tiene un costo de $250,00</p>
                         <div>
                             <label for="calle">domicilio de entrega</label>
-                            <input type="text" name="calle" id="calle" placeholder="Ejemplo: calle 44 1050, La Plata" required>
+                            <input type="text" name="calle" id="calle" placeholder="Ejemplo: calle 44 1050, La Plata"
+                                required>
                         </div>
                         <div>
                             <label for="entreCalles">entre calles</label>
-                            <input type="text" name="entreCalles" id="entreCalles" placeholder="Ejemplo: 41 y 42" required>
+                            <input type="text" name="entreCalles" id="entreCalles" placeholder="Ejemplo: 41 y 42"
+                                required>
                         </div>
                         <div>
                             <label for="detalle">detalle</label>
                             <input type="text" name="detalle" id="detalle" placeholder="Ejemplo: 2B" required>
                         </div>
-                        <button id="necesito-ayuda" type="button">Necesito ayuda <i class="far fa-question-circle"></i></button>
                     </div>
                 </div>
-                
+
                 <div class="datos_horario" id="datos-horario">
                     <h4>¿A que hora queres tu pedido?<br><span>(el horario es aproximado)</span></h4>
                     <select name="horario" id="horario" onchange="seleccionHorario()">
@@ -74,15 +77,15 @@
                         <option value="23:30">23:30HS</option>
                     </select>
                 </div>
-                
+
                 <div class="datos_pago" id="datos-pago">
                     <h4>forma de pago</h4>
                     <select name="pago" id="pago" onchange="seleccionPago()">
                         <option>-Selecciona una opcion-</option>
                         <option value="efectivo">EFECTIVO</option>
-                        <option value="mercado pago">MERCADO PAGO</option>
+                        <option value="debito">DEBITO (Solo Salon)</option>
                     </select>
-                    <div class="inactivo" id="pago-efectivo"> 
+                    <div class="inactivo" id="pago-efectivo">
                         <div>
                             <p>El monto a abonar es $ <span id="monto-abonar"></span></p>
                             <label for="montoPago">con cuanto abonas?</label>
@@ -90,7 +93,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="datos_personales">
                     <div>
                         <label for="nombre">Tu nombre</label>
@@ -101,25 +104,27 @@
                         <input type="tel" name="telefono" id="telefono" required>
                     </div>
                 </div>
-    
-                
+
+
 
             </div>
             <h5>Total = $ <span id="pedido-total">0,00</span></h5>
-                
+
             <div class="finalizar_compra">
                 <button type="submit" id="finalizar-compra">Finalizar compra</button>
             </div>
 
-                
+            
+
+
 
         </form>
 
-                
-        
-            
-            
-        
+
+
+
+
+
     </section>
 
     <!-- Footer -->
@@ -137,13 +142,13 @@
             <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
-    
-    
-    
+
+
     
     <!-- JavaScript -->
     <script src="./pedido.js"></script>
     <!-- SweetAlert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+
 </html>

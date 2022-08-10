@@ -6,7 +6,6 @@ let productosPedido = JSON.parse(localStorage.getItem("carrito"));
 crearNodo("#pedido-total").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
 crearNodo("#monto-abonar").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
 
-
 /*
 FUNCIONES
 */
