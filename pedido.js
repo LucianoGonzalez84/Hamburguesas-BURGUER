@@ -206,18 +206,6 @@ crearNodo("#datos-pedido").addEventListener("submit", function (e) {
     location.href = "pedidoFinalizado.html";
 });
 
-
-
-// Evento finalizar comprar
-// crearNodo("#finalizar-compra").addEventListener("click", () => {
-//     localStorage.setItem("ultimaCompra", JSON.stringify(productosPedido));
-//     ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
-//     productosPedido.length = 0;
-//     localStorage.setItem("carrito", JSON.stringify(productosPedido));
-
-
-// })
-
 // Evento boton volver a comprar
 crearNodo("#boton-volver-comprar").addEventListener("click", () => {
     location.href = "./index.html#catalogo-productos";

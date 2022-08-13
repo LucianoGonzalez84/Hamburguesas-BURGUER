@@ -1066,6 +1066,9 @@ MAIN
 MAIN
 */
 
+.main_pedido_finalizado{
+  height: 60vh;
+}
 .pedido_finalizado{
   width: 65rem;
   height: auto;
@@ -1078,10 +1081,35 @@ MAIN
   top: 5rem;
 
 }
-
-.culo{
-  font-size: 5rem;
+.pedido_finalizado h3 {
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem
 }
+.pedido_finalizado h3 span {
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.6rem;
+  font-weight: 900;
+
+}
+
+.pedido_finalizado h3 a {
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  
+}
+.pedido_finalizado h3 i {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--colorLetra);
+  margin-left: 0.5rem;
+}
+
+
 
 
 
