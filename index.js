@@ -14,12 +14,12 @@
     function crearNodo(selector) {
         return document.querySelector(selector);
     };
-    
+
     // Funcion que crea etiqueta html
     function crearEiqueta(elemento) {
         return document.createElement(elemento);
     }
-    
+
     // Funcion que inserta los productos en index.html
     const insertarProductos = async () => {
         try {
@@ -52,7 +52,7 @@
             console.log(error);
         }
     }
-    
+
     // Funcion que agrega los productos seleccionados al carrito
     const agregarAlCarrito = async (productoId) => {
         try {
@@ -84,7 +84,7 @@
             console.log(error);
         };
     };
-    
+
     // Funcion que elimina productos del carrito
     const eliminarProductoCarrito = (productoId) => {
         const swalWithBootstrapButtons = Swal.mixin({
@@ -129,15 +129,15 @@
             };
         });
     };
-    
+
     // Funcion que renderiza el modal carrito
     function dibujarCarrito(productos) {
         if (productos.length === 0) {
             crearNodo("#carrito").innerHTML = "";
-            let carritoVacio = crearEiqueta("div");
-            carritoVacio.innerHTML = `
+            let DOMcarritoVacio = crearEiqueta("div");
+            DOMcarritoVacio.innerHTML = `
                                     <h5>El carrito se encuentra vacio <i class="far fa-frown"></i></h5>`
-            crearNodo("#carrito").appendChild(carritoVacio);
+            crearNodo("#carrito").appendChild(DOMcarritoVacio);
             crearNodo("#subTotal").innerText = (0).toFixed(2);
             crearNodo("#productos-en-carrito").innerText = 0;
         } else {
@@ -164,7 +164,7 @@
     /*
     EVENTOS
     */
-    
+
     document.addEventListener("DOMContentLoaded", () => {
         //Se insertan los productos en index.html
         insertarProductos();
@@ -176,17 +176,19 @@
         localStorage.getItem("ultimaCompra") ? null : localStorage.setItem("ultimaCompra", "[]");
         ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
         dibujarCarrito(carritoProductos);
+        //localStorage datos del pedido
+        localStorage.getItem("datosPedido") ? null : localStorage.setItem("datosPedido", "[]");
         //Icono carrito oculto
         crearNodo("#boton-carrito").style.opacity = 0;
     });
-    
+
     // Lanza el loader
-    setTimeout(function () {
-        let DOMcontenedorLoader = crearNodo(".contenedor_loader");
-        DOMcontenedorLoader.classList.remove("contenedor_loader")
-        DOMcontenedorLoader.classList.add("inactivo")
-    }, 2000);
-    
+    // setTimeout(function () {
+    //     let DOMcontenedorLoader = crearNodo(".contenedor_loader");
+    //     DOMcontenedorLoader.classList.remove("contenedor_loader")
+    //     DOMcontenedorLoader.classList.add("inactivo")
+    // }, 2000);
+
     // Vacia el carrito por completo
     crearNodo("#vaciar-carrito").addEventListener("click", () => {
         if (carritoProductos.length === 0) {
@@ -242,7 +244,7 @@
         crearNodo("#carrito-seleccionado").classList.remove("inactivo");
         crearNodo("#carrito-seleccionado").classList.add("carrito_seleccionado");
     });
-    
+
     // Cierra el carrito
     crearNodo("#boton-cerrar-carrito").addEventListener("click", () => {
         crearNodo("#modal-carrito").classList.remove("contenedor_carrito");
@@ -250,7 +252,7 @@
         crearNodo("#carrito-seleccionado").classList.remove("carrito_seleccionado");
         crearNodo("#carrito-seleccionado").classList.add("inactivo");
     });
-    
+
     // Cambia estilos al scrollear
     window.addEventListener("scroll", () => {
         if (window.scrollY >= crearNodo("#limite-scroll").offsetTop) {
@@ -264,12 +266,12 @@
             crearNodo("#icono-negro").classList = "transparente";
             crearNodo("#boton-carrito").style.opacity = 0;
             crearNodo("#modal-carrito").classList.remove("contenedor_carrito");
-        crearNodo("#modal-carrito").classList.add("inactivo");
-        crearNodo("#carrito-seleccionado").classList.remove("carrito_seleccionado");
-        crearNodo("#carrito-seleccionado").classList.add("inactivo");
+            crearNodo("#modal-carrito").classList.add("inactivo");
+            crearNodo("#carrito-seleccionado").classList.remove("carrito_seleccionado");
+            crearNodo("#carrito-seleccionado").classList.add("inactivo");
         }
     });
-    
+
     // Se procesa el pedido
     crearNodo("#procesar-compra").addEventListener("click", () => {
         if (carritoProductos.length === 0) {
@@ -278,24 +280,28 @@
                 <div class="sweetAlert">
                     <i class="fas fa-exclamation-circle"></i>
                     <h3>No hay productos en el carrito<br><b>imposible procesar tu compra!</b></h3>
-                    <h3>Volviendo a la tienda...</h3>
+                    <h3>Volviendo a la tienda <span id="conteo">3</span> ...</h3>
                 </div>
                 `,
                 showConfirmButton: false,
-                timer: 3000,
+                timer: 4000,
             });
+            let DOMconteo = document.getElementById("conteo");
+            setTimeout(function () { DOMconteo.innerText = 2 }, 1000);
+            setTimeout(function () { DOMconteo.innerText = 1 }, 2000);
+            setTimeout(function () { DOMconteo.innerText = 0 }, 3000);
             setTimeout(function () {
                 crearNodo("#modal-carrito").classList.remove("contenedor_carrito");
                 crearNodo("#modal-carrito").classList.add("inactivo");
                 crearNodo("#carrito-seleccionado").classList.remove("carrito_seleccionado");
                 crearNodo("#carrito-seleccionado").classList.add("inactivo");
-                location.href = "./index.html";
-            }, 3000);
+                location.href = "index.html#catalogo-productos";
+            }, 4000);
         } else {
             location.href = "./pedido.html";
         };
     });
-    
+
     // Repite el ultimo pedido
     crearNodo("#boton-repetir-pedido").addEventListener("click", () => {
         carritoProductos = JSON.parse(localStorage.getItem("ultimaCompra"));

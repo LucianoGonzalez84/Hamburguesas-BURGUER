@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,16 +17,16 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
-<body >
+
+<body>
     <div class="inactivo" id="carrito-seleccionado"></div>
-    <!-- Loader -->
+    <!-- Loader
     <div class="contenedor_loader">
         <div class="loader"></div>
         <img src="./assets/images/hamburguesaLoader.png" alt="">
-    </div>
-    
+    </div> -->
     <!-- Header -->
-    <header>
+    <header class="header_index">
         <nav class="navegador" id="navegador">
             <div class="navegador__icono">
                 <img src="./assets/images/iconoNegro.png" alt="icono" class="icono_negro" id="icono-negro">
@@ -56,21 +57,22 @@
             <div class="informacion__burguer">
                 <div>
                     <i class="fas fa-award"></i>
-                    <p>Todas nuestras hamburguesas estan realizadas con ingredientes de la mas alta calidad. En BURGUER nos gusta hacer las cosas no solo bien, sino de manera excelente.</p>
+                    <p>Todas nuestras hamburguesas estan realizadas con ingredientes de la mas alta calidad. En BURGUER
+                        nos gusta hacer las cosas no solo bien, sino de manera excelente.</p>
                 </div>
                 <div>
                     <i class="fas fa-dollar-sign"></i>
-                    <p>Comer una hamurguesa de calidad no es sinonimo de comer una hamburguesa costosa. Queremos que todos puedan probar una BURGUER.</p>
+                    <p>Comer una hamurguesa de calidad no es sinonimo de comer una hamburguesa costosa. Queremos que
+                        todos puedan probar una BURGUER.</p>
                 </div>
                 <div>
                     <i class="fas fa-motorcycle"></i>
-                    <p>Podes retirar tu hamburguesa por nuestro local, pero para mayor comodidad tambien contamos con servicio de delivery dentro de la ciudad de La Plata y alrededores.</p>
+                    <p>Podes retirar tu hamburguesa por nuestro local, pero para mayor comodidad tambien contamos con
+                        servicio de delivery dentro de la ciudad de La Plata y alrededores.</p>
                 </div>
             </div>
-            <video src="./assets/video/video-burguer.mp4" muted autoplay
-            loop></video>
+            <video src="./assets/video/video-burguer.mp4" muted autoplay loop></video>
         </section>
-        
         <section id="catalogo-productos" class="catalogo_productos">
             <div class="catalogo_productos__titulo" id="simples">
                 <h2>hamburguesas simples</h2>
@@ -89,7 +91,6 @@
             </div>
             <div class="lista_hamburguesas" id="lista-hamburguesas-sintacc"></div>
         </section>
-        
         <section>
             <div class="inactivo" id="modal-carrito">
                 <div class="modal_carrito__encabezado">
@@ -110,8 +111,6 @@
             </div>
         </section>
     </main>
-
-
     <!-- Footer -->
     <footer>
         <div class="footer__copyrigth">
@@ -128,12 +127,10 @@
         </div>
     </footer>
 
-    
-    
-
     <!-- JavaScript -->
     <script src="./index.js"></script>
     <!-- SweetAlert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+
 </html>

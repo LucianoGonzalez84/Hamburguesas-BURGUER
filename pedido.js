@@ -3,6 +3,8 @@ SE INICIAN VARIABLES
 */
 
 let productosPedido = JSON.parse(localStorage.getItem("carrito"));
+let ultimaCompra = [];
+let costoEnvio = 250;
 crearNodo("#pedido-total").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
 crearNodo("#monto-abonar").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
 
@@ -61,6 +63,34 @@ const eliminarProductoPedido = (productoId) => {
             DOMhamburguesa.cantidad = 1;
             localStorage.setItem("carrito", JSON.stringify(productosPedido));
             agregarProductosPedido(productosPedido);
+            if (seleccionEntrega() === "domicilio") {
+                if (productosPedido.length > 0) {
+                    crearNodo("#pedido-total").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0) + costoEnvio).toFixed(2);
+                    crearNodo("#monto-abonar").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0) + costoEnvio).toFixed(2);
+                } else {
+                    crearNodo("#pedido-total").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
+                };
+            };
+            if (productosPedido.length === 0) {
+                Swal.fire({
+                    html: `
+                    <div class="sweetAlert">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>No hay productos en tu pedido<br><b>No es posible finalizar tu compra!</b></h3>
+                        <h3>Volviendo a la tienda <span id="conteo">3</span> ...</h3>
+                    </div>
+                    `,
+                    showConfirmButton: false,
+                    timer: 4000,
+                });
+                let DOMconteo = document.getElementById("conteo");
+                setTimeout(function () { DOMconteo.innerText = 2 }, 1000);
+                setTimeout(function () { DOMconteo.innerText = 1 }, 2000);
+                setTimeout(function () { DOMconteo.innerText = 0 }, 3000);
+                setTimeout(function () {
+                    location.href = "./index.html#catalogo-productos";
+                }, 4000);
+            }
         };
     });
 };
@@ -94,11 +124,13 @@ const seleccionEntrega = () => {
     if (DOMentrega === "domicilio") {
         crearNodo("#datos-domicilio").classList.remove("inactivo");
         crearNodo("#datos-domicilio").classList.add("datos_domicilio");
-        crearNodo("#pedido-total").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0) + 250).toFixed(2);
+        crearNodo("#pedido-total").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0) + costoEnvio).toFixed(2);
+        crearNodo("#monto-abonar").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0) + costoEnvio).toFixed(2);
     } else if (DOMentrega != "domicilio") {
         crearNodo("#datos-domicilio").classList.remove("datos_domicilio");
         crearNodo("#datos-domicilio").classList.add("inactivo")
         crearNodo("#pedido-total").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
+        crearNodo("#monto-abonar").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
     }
     return DOMentrega;
 }
@@ -132,42 +164,65 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Lanza el loader
-setTimeout(function () {
-    let DOMcontenedorLoader = crearNodo(".contenedor_loader");
-    DOMcontenedorLoader.classList.remove("contenedor_loader")
-    DOMcontenedorLoader.classList.add("inactivo")
-}, 2000);
+// setTimeout(function () {
+//     let DOMcontenedorLoader = crearNodo(".contenedor_loader");
+//     DOMcontenedorLoader.classList.remove("contenedor_loader")
+//     DOMcontenedorLoader.classList.add("inactivo")
+// }, 2000);
 
 // Formulario
-crearNodo("#formulario-datos-pedido").addEventListener("submit", function (e) {
+crearNodo("#datos-pedido").addEventListener("submit", function (e) {
     e.preventDefault();
+    let datosPedido = [];
     let DOMformaEntrega = seleccionEntrega();
-    let DOMcalle = crearNodo("#calle").value;
-    let DOMentreCalles = crearNodo("#entreCalles").value;
-    let DOMaltura = crearNodo("#altura").value;
-    let DOMdetalle = crearNodo("#detalle").value;
+    datosPedido.push({"forma de entrega":DOMformaEntrega});
+    if (DOMformaEntrega === "domicilio") {
+        let DOMcalle = crearNodo("#calle").value;
+        datosPedido.push({"calle":DOMcalle});
+        let DOMentreCalles = crearNodo("#entreCalles").value;
+        datosPedido.push({"entre calles":DOMentreCalles});
+        let DOMdetalle = crearNodo("#detalle").value;
+        datosPedido.push({"detalle":DOMdetalle});
+    }
     let DOMseleccionHorario = seleccionHorario();
+    datosPedido.push({"horario de entrega":DOMseleccionHorario});
     let DOMformaPago = seleccionPago();
-    let DOMmontoPago = crearNodo("#montoPago").value;
+    datosPedido.push({"forma de pago":DOMformaPago});
+    if (DOMformaPago === "efectivo") {
+        let DOMmontoPago = crearNodo("#montoPago").value;
+        datosPedido.push({"monto pago":DOMmontoPago});
+    }
     let DOMnombre = crearNodo("#nombre").value;
+    datosPedido.push({"nombre":DOMnombre});
     let DOMtelefono = crearNodo("#telefono").value;
+    datosPedido.push({"telefono":DOMtelefono});
+    // Trabajo sobre localStorage
+    localStorage.setItem("ultimaCompra", JSON.stringify(productosPedido));
+    ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
+    productosPedido.length = 0;
+    localStorage.setItem("carrito", JSON.stringify(productosPedido));
+    localStorage.setItem("datosPedido", JSON.stringify(datosPedido));
+    // Re-dirige a pedidoFinalizado.html
+    location.href = "pedidoFinalizado.html";
 });
+
+
+
+// Evento finalizar comprar
+// crearNodo("#finalizar-compra").addEventListener("click", () => {
+//     localStorage.setItem("ultimaCompra", JSON.stringify(productosPedido));
+//     ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
+//     productosPedido.length = 0;
+//     localStorage.setItem("carrito", JSON.stringify(productosPedido));
+
+
+// })
 
 // Evento boton volver a comprar
 crearNodo("#boton-volver-comprar").addEventListener("click", () => {
     location.href = "./index.html#catalogo-productos";
 });
 
-// Evento boton necesito ayuda
-crearNodo("#necesito-ayuda").addEventListener("click", () => {
-    Swal.fire(
-        html = `
-            <p>Aca va lo de sucucho</p>
-        
-        `,
-        showConfirmButton = true,
-    )
-});
 
 
 

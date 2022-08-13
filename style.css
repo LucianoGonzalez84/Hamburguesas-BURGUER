@@ -32,7 +32,7 @@ body {
 /* 
 HEADER
 */
-header {
+.header_index {
   height: 100vh;
   width: 100%;
   background-image: url(./assets/images/hamburguesa1.jpg);
@@ -42,7 +42,7 @@ header {
   border-bottom: 1rem solid var(--colorAmarillo);
   position: relative;
 }
-header h2 {
+.header_index h2 {
   font-family: var(--fuenteEnlaces);
   font-size: 4rem;
   font-weight: 800;
@@ -52,7 +52,7 @@ header h2 {
   margin-left: 6rem;
   position: relative;
 }
-header h3 {
+.header_index h3 {
   font-family: var(--fuenteSecundaria);
   font-size: 2rem;
   font-weight: 600;
@@ -63,7 +63,7 @@ header h3 {
   position: relative;
   margin-top: 3rem;
 }
-header .boton_pedido {
+.header_index .boton_pedido {
   height: 2.9rem;
   width: 20rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
@@ -78,14 +78,14 @@ header .boton_pedido {
   text-transform: uppercase;
   border-radius: 0.5rem;
 }
-header .boton_pedido a {
+.header_index .boton_pedido a {
   font-family: var(--fuenteSecundaria);
   font-size: 1.6rem;
   font-weight: 800;
   color: var(--colorBlanco);
   text-decoration: none;
 }
-/* Navegador */
+/* Navegador index.html */
 .navegador {
   width: 100%;
   min-height: 10rem;
@@ -560,6 +560,11 @@ main {
   background-color: var(--colorVerde);
 }
 
+
+
+
+
+
 /*
 FOOTER
 */
@@ -651,6 +656,11 @@ SWEETALERT
 .sweetAlert h3:last-child{
   margin-top: 2rem;
 }
+.sweetAlert h3 span{
+  font-family: var(--fuenteSecundaria);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
 
 .sweetAlert span{
   font-family: var(--fuentePrincipal);
@@ -736,9 +746,28 @@ CLASES AUXILIARES
 
 
 
+/* ESTILOS PEDIDOS.HTML */
 
+/*
+HEADER
+*/
+.navegador_pedido{
+  width: 100%;
+  min-height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid var(--colorBordeProducto);
+  box-shadow: 0rem 0rem 2rem var(--colorSombra);
+}
+.espacio_carrito{
+  height: 5rem;
+  width: 16rem;
+}
 
-
+/*
+MAIN
+*/
 .finalizar_pedido{
   width: 65rem;
   height: auto;
@@ -930,16 +959,6 @@ CLASES AUXILIARES
   color: var(--colorVerde);
   margin: 1rem 0 2rem 0;
 }
-
-
-
-
-
-
-
-
-
-
 .datos_horario{
   margin-bottom: 1.5rem;
 }
@@ -1018,8 +1037,6 @@ CLASES AUXILIARES
   padding-left: 0.5rem;
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
-  
-
 }
 .finalizar_compra{
   display: flex;
@@ -1040,12 +1057,31 @@ CLASES AUXILIARES
   color: var(--colorBlanco);
   border: none;
   cursor: pointer;
-  
-  
-
 }
 
 
+/* ESTILOS PEDIDOFINALIZADO.HTML */
+
+/*
+MAIN
+*/
+
+.pedido_finalizado{
+  width: 65rem;
+  height: auto;
+  box-shadow: 0rem 0rem 2rem var(--colorSombra);
+  border: 0.1rem solid var(--colorBordeProducto);
+  margin: auto;
+  padding: 1.5rem;
+  position: relative;
+  margin-bottom: 10rem;
+  top: 5rem;
+
+}
+
+.culo{
+  font-size: 5rem;
+}
 
 
 

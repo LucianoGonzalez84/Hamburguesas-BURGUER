@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -20,11 +20,26 @@
 
 <body>
     <!-- Loader -->
-    <div class="contenedor_loader">
+    <!-- <div class="contenedor_loader">
         <div class="loader"></div>
         <img src="./assets/images/hamburguesaLoader.png" alt="">
-    </div>
-
+    </div> -->
+    <!-- Header -->
+    <header>
+        <nav class="navegador_pedido" id="navegador">
+            <div class="navegador__icono">
+                <img src="./assets/images/iconoNegro.png" alt="icono" class="icono_negro" id="icono-negro">
+            </div>
+            <ul class="navegador__menu">
+                <li class="menu__items" id="item-desplegable"><a>Nuestras hamburguesas</a></li>
+                <li class="menu__items"><a>Nosotros</a></li>
+                <li class="menu__items"><a>Faq's</a></li>
+                <li class="menu__items"><a>Contacto</a></li>
+            </ul>
+            <div class="espacio_carrito"></div>
+        </nav>
+    </header>
+    <!-- Main -->
     <section class="finalizar_pedido">
         <div class="pedido">
             <h3>tu pedido</h3>
@@ -33,9 +48,7 @@
             <button class="boton_volver_comprar" id="boton-volver-comprar">Seguir comprando</button>
         </div>
         <h3 class="titulo_datos_pedido">datos del pedido</h3>
-
-
-        <form class="datos_pedido" id="formulario-datos-pedido" method="post">
+        <form class="datos_pedido" id="datos-pedido" method="post">
             <div class="datos">
                 <div class="datos_entrega">
                     <h4>entrega</h4>
@@ -48,21 +61,18 @@
                         <p>El envio a domicilio tiene un costo de $250,00</p>
                         <div>
                             <label for="calle">domicilio de entrega</label>
-                            <input type="text" name="calle" id="calle" placeholder="Ejemplo: calle 44 1050, La Plata"
-                                required>
+                            <input type="text" name="calle" id="calle" placeholder="Ejemplo: calle 44 1050, La Plata">
                         </div>
                         <div>
                             <label for="entreCalles">entre calles</label>
-                            <input type="text" name="entreCalles" id="entreCalles" placeholder="Ejemplo: 41 y 42"
-                                required>
+                            <input type="text" name="entreCalles" id="entreCalles" placeholder="Ejemplo: 41 y 42">
                         </div>
                         <div>
                             <label for="detalle">detalle</label>
-                            <input type="text" name="detalle" id="detalle" placeholder="Ejemplo: 2B" required>
+                            <input type="text" name="detalle" id="detalle" placeholder="Ejemplo: 2B">
                         </div>
                     </div>
                 </div>
-
                 <div class="datos_horario" id="datos-horario">
                     <h4>¿A que hora queres tu pedido?<br><span>(el horario es aproximado)</span></h4>
                     <select name="horario" id="horario" onchange="seleccionHorario()">
@@ -77,7 +87,6 @@
                         <option value="23:30">23:30HS</option>
                     </select>
                 </div>
-
                 <div class="datos_pago" id="datos-pago">
                     <h4>forma de pago</h4>
                     <select name="pago" id="pago" onchange="seleccionPago()">
@@ -89,44 +98,27 @@
                         <div>
                             <p>El monto a abonar es $ <span id="monto-abonar"></span></p>
                             <label for="montoPago">con cuanto abonas?</label>
-                            <input type="number" name="montoPago" id="montoPago" required>
+                            <input type="number" name="montoPago" id="montoPago">
                         </div>
                     </div>
                 </div>
-
                 <div class="datos_personales">
                     <div>
                         <label for="nombre">Tu nombre</label>
-                        <input type="text" name="nombre" id="nombre" required>
+                        <input type="text" name="nombre" id="nombre">
                     </div>
                     <div>
                         <label for="telefono">Tu telefono</label>
-                        <input type="tel" name="telefono" id="telefono" required>
+                        <input type="tel" name="telefono" id="telefono">
                     </div>
                 </div>
-
-
-
             </div>
             <h5>Total = $ <span id="pedido-total">0,00</span></h5>
-
             <div class="finalizar_compra">
                 <button type="submit" id="finalizar-compra">Finalizar compra</button>
             </div>
-
-            
-
-
-
         </form>
-
-
-
-
-
-
     </section>
-
     <!-- Footer -->
     <footer>
         <div class="footer__copyrigth">
@@ -142,8 +134,6 @@
             <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
-
-
     
     <!-- JavaScript -->
     <script src="./pedido.js"></script>
