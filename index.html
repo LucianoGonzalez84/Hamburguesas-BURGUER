@@ -20,20 +20,20 @@
 
 <body>
     <div class="inactivo" id="carrito-seleccionado"></div>
-    <!-- Loader
+    <!-- Loader -->
     <div class="contenedor_loader">
         <div class="loader"></div>
         <img src="./assets/images/hamburguesaLoader.png" alt="">
-    </div> -->
+    </div>
     <!-- Header -->
     <header class="header_index">
         <nav class="navegador" id="navegador">
             <div class="navegador__icono">
-                <img src="./assets/images/iconoNegro.png" alt="icono" class="icono_negro" id="icono-negro">
+                <img src="./assets/images/iconoNegro.png" alt="icono" class="transparente" id="icono-negro">
                 <img src="./assets/images/iconoBlanco.png" alt="icono" class="icono_blanco" id="icono-blanco">
             </div>
             <ul class="navegador__menu">
-                <li class="menu__items" id="item-desplegable"><a>Nuestras hamburguesas</a></li>
+                <li class="menu__items"><a>Nuestras hamburguesas</a></li>
                 <li class="menu__items"><a>Nosotros</a></li>
                 <li class="menu__items"><a>Faq's</a></li>
                 <li class="menu__items"><a>Contacto</a></li>
@@ -45,6 +45,34 @@
                 </div>
             </div>
         </nav>
+        
+        <nav class="navegador_desplegable" id="navegador-desplegable">
+            <div class="navegador_desplegable__icono">
+                <img src="./assets/images/iconoNegro.png" alt="icono" class="transparente" id="icono-negro-desplegable">
+                <img src="./assets/images/iconoBlanco.png" alt="icono" class="icono_blanco-desplegable" id="icono-blanco-desplegable">
+            </div>
+            <div class="navegador_desplegable__carrito" id="boton-carrito-desplegable">
+                <button><i class="fas fa-shopping-cart"></i></button>
+                <div class="navegador_desplegable__carrito__cantidad_productos">
+                    <span id="productos-en-carrito-desplegable">0</span>
+                </div>
+            </div>
+            <label for="check" class="boton_menu">
+                <input id="check" type="checkbox">
+                <span class="top" id="menu-desplegable-arriba"></span>
+                <span class="middle" id="menu-desplegable-medio"></span>
+                <span class="bottom" id="menu-desplegable-abajo"></span>
+            </label>
+            <div class="inactivo scale-in-ver-top" id="menu-desplegable">
+                <ul class="menu_desplegable__items">
+                    <li><a>Nuestras hamburguesas</a></li>
+                    <li><a>Nosotros</a></li>
+                    <li><a>Faq's</a></li>
+                    <li><a>Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        
         <h2 id="limite-scroll">Siempre es un buen momento para una Burguer</h2>
         <h3>Queremos que experimentes sensaciones inigualables en cada bocado, por eso combinamos cuidadosamente cada
             ingrediente y los transformamos en la mejor hamburguesa.</h3>
@@ -73,26 +101,28 @@
             </div>
             <video src="./assets/video/video-burguer.mp4" muted autoplay loop></video>
         </section>
+        
         <section id="catalogo-productos" class="catalogo_productos">
             <div class="catalogo_productos__titulo" id="simples">
-                <h2>hamburguesas simples</h2>
+                <h2>burguers simples</h2>
             </div>
             <div class="lista_hamburguesas" id="lista-hamburguesas-simples"></div>
             <div class="catalogo_productos__titulo" id="dobles">
-                <h2>hamburguesas dobles</h2>
+                <h2>burguers dobles</h2>
             </div>
             <div class="lista_hamburguesas" id="lista-hamburguesas-dobles"></div>
             <div class="catalogo_productos__titulo" id="vegetarianas">
-                <h2>hamburguesas vegetarianas</h2ss=>
+                <h2>burguers vegetarianas</h2ss=>
             </div>
             <div class="lista_hamburguesas" id="lista-hamburguesas-vegetarianas"></div>
             <div class="catalogo_productos__titulo" id="sintacc">
-                <h2>hamburguesas sin tacc</h2s=>
+                <h2>burguers sin tacc</h2s=>
             </div>
             <div class="lista_hamburguesas" id="lista-hamburguesas-sintacc"></div>
         </section>
+        
         <section>
-            <div class="inactivo" id="modal-carrito">
+            <div class="modal_carrito fade-in" id="modal-carrito">
                 <div class="modal_carrito__encabezado">
                     <h3>tu pedido</h3>
                     <button id="boton-cerrar-carrito"><i class="fas fa-times"></i></button>

@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "nombre": "Hamburguesa americana simple",
+        "nombre": "Burguer americana simple",
         "precioUnitario": 930,
         "precioAcumulado": 0,
         "tipo": "simple",
@@ -11,7 +11,7 @@
     },
     {
         "id": 2,
-        "nombre": "Hamburguesa deluxe simple",
+        "nombre": "Burguer deluxe simple",
         "precioUnitario": 920,
         "precioAcumulado": 0,
         "tipo": "simple",
@@ -21,7 +21,7 @@
     },
     {
         "id": 3,
-        "nombre": "Hamburguesa cuatro quesos simple",
+        "nombre": "Burguer cuatro quesos simple",
         "precioUnitario": 900,
         "precioAcumulado": 0,
         "tipo": "simple",
@@ -31,7 +31,7 @@
     },
     {
         "id": 4,
-        "nombre": "Hamburguesa mexicana simple",
+        "nombre": "Burguer mexicana simple",
         "precioUnitario": 900,
         "precioAcumulado": 0,
         "tipo": "simple",
@@ -41,7 +41,7 @@
     },
     {
         "id": 5,
-        "nombre": "Hamburguesa queso azul simple",
+        "nombre": "Burguer queso azul simple",
         "precioUnitario": 900,
         "precioAcumulado": 0,
         "tipo": "simple",
@@ -51,7 +51,7 @@
     },
     {
         "id": 6,
-        "nombre": "Hamburguesa clasica simple",
+        "nombre": "Burguer clasica simple",
         "precioUnitario": 880,
         "precioAcumulado": 0,
         "tipo": "simple",
@@ -61,7 +61,7 @@
     },
     {
         "id": 7,
-        "nombre": "Hamburguesa de pollo simple",
+        "nombre": "Burguer de pollo simple",
         "precioUnitario": 880,
         "precioAcumulado": 0,
         "tipo": "simple",
@@ -71,7 +71,7 @@
     },
     {
         "id": 8,
-        "nombre": "Hamburguesa de cheddar y panceta simple",
+        "nombre": "Burguer de cheddar y panceta simple",
         "precioUnitario": 880,
         "precioAcumulado": 0,
         "tipo": "simple",
@@ -81,7 +81,7 @@
     },
     {
         "id": 9,
-        "nombre": "Hamburguesa americana doble",
+        "nombre": "Burguer americana doble",
         "precioUnitario": 1120,
         "precioAcumulado": 0,
         "tipo": "doble",
@@ -91,7 +91,7 @@
     },
     {
         "id": 10,
-        "nombre": "Hamburguesa deluxe doble",
+        "nombre": "Burguer deluxe doble",
         "precioUnitario": 1090,
         "precioAcumulado": 0,
         "tipo": "doble",
@@ -101,7 +101,7 @@
     },
     {
         "id": 11,
-        "nombre": "Hamburguesa cuatro quesos doble",
+        "nombre": "Burguer cuatro quesos doble",
         "precioUnitario": 1070,
         "precioAcumulado": 0,
         "tipo": "doble",
@@ -111,7 +111,7 @@
     },
     {
         "id": 12,
-        "nombre": "Hamburguesa mexicana doble",
+        "nombre": "Burguer mexicana doble",
         "precioUnitario": 1085,
         "precioAcumulado": 0,
         "tipo": "doble",
@@ -121,7 +121,7 @@
     },
     {
         "id": 13,
-        "nombre": "Hamburguesa queso azul doble",
+        "nombre": "Burguer queso azul doble",
         "precioUnitario": 1075,
         "precioAcumulado": 0,
         "tipo": "doble",
@@ -131,7 +131,7 @@
     },
     {
         "id": 14,
-        "nombre": "Hamburguesa clasica doble",
+        "nombre": "Burguer clasica doble",
         "precioUnitario": 1065,
         "precioAcumulado": 0,
         "tipo": "doble",
@@ -141,7 +141,7 @@
     },
     {
         "id": 15,
-        "nombre": "Hamburguesa de pollo doble",
+        "nombre": "Burguer de pollo doble",
         "precioUnitario": 1080,
         "precioAcumulado": 0,
         "tipo": "doble",
@@ -151,7 +151,7 @@
     },
     {
         "id": 16,
-        "nombre": "Hamburguesa de cheddar y panceta doble",
+        "nombre": "Burguer de cheddar y panceta doble",
         "precioUnitario": 1085,
         "precioAcumulado": 0,
         "tipo": "doble",
@@ -161,7 +161,7 @@
     },
     {
         "id": 17,
-        "nombre": "Hamburguesa vegetariana simple",
+        "nombre": "Burguer vegetariana simple",
         "precioUnitario": 920,
         "precioAcumulado": 0,
         "tipo": "vegetariana",
@@ -171,7 +171,7 @@
     },
     {
         "id": 18,
-        "nombre": "Hamburguesa vegetariana doble",
+        "nombre": "Burguer vegetariana doble",
         "precioUnitario": 1050,
         "precioAcumulado": 0,
         "tipo": "vegetariana",
@@ -181,7 +181,7 @@
     },
     {
         "id": 19,
-        "nombre": "Hamburguesa simple sin TACC",
+        "nombre": "Burguer sin TACC simple",
         "precioUnitario": 1000,
         "precioAcumulado": 0,
         "tipo": "sin tacc",
@@ -191,7 +191,7 @@
     },
     {
         "id": 20,
-        "nombre": "Hamburguesa doble sin TACC",
+        "nombre": "Burguer sin TACC doble",
         "precioUnitario": 1080,
         "precioAcumulado": 0,
         "tipo": "sin tacc",
