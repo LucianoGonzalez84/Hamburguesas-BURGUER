@@ -23,7 +23,7 @@
     // Funcion que inserta los productos en index.html
     const insertarProductos = async () => {
         try {
-            const baseDeDatos = await fetch(`productos.json`);
+            const baseDeDatos = await fetch(`./productos.json`);
             const productos = await baseDeDatos.json();
             productos.forEach(producto => {
                 let DOMtarjeta = crearEiqueta("div");
@@ -336,24 +336,17 @@
     });
 
     // Despliega opciones de menu en nav
-    crearNodo("#check").addEventListener("click", () => {
-        crearNodo("#menu-desplegable").classList.remove("inactivo");
-        crearNodo("#menu-desplegable").classList.add("menu_desplegable");
-
-    })
-
-    // Despliega opciones de menu en nav
     let opcion = "abierto";
-    function despliegaMenu() {        
-        if (opcion == "abierto"){
+    function despliegaMenu() {
+        if (opcion == "abierto") {
             crearNodo("#menu-desplegable").classList.remove("inactivo");
             crearNodo("#menu-desplegable").classList.add("menu_desplegable");
-            opcion="cerrado";
-        } else{
+            opcion = "cerrado";
+        } else {
             crearNodo("#menu-desplegable").classList.remove("menu_desplegable");
             crearNodo("#menu-desplegable").classList.add("inactivo");
-            opcion="cerrado";
-            opcion="abierto";
+            opcion = "cerrado";
+            opcion = "abierto";
         }
     }
     crearNodo("#check").addEventListener("click", () => {

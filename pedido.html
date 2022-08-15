@@ -20,12 +20,13 @@
 
 <body>
     <!-- Loader -->
-    <!-- <div class="contenedor_loader">
+    <div class="contenedor_loader">
         <div class="loader"></div>
         <img src="./assets/images/hamburguesaLoader.png" alt="">
-    </div> -->
+    </div>
     <!-- Header -->
     <header>
+        <!-- Navegador vista laptop -->
         <nav class="navegador_pedido" id="navegador">
             <div class="navegador__icono">
                 <img src="./assets/images/iconoNegro.png" alt="icono" class="icono_negro" id="icono-negro">
@@ -38,6 +39,26 @@
             </ul>
             <div class="espacio_carrito"></div>
         </nav>
+        <!-- Navegador vista movil -->
+        <nav class="navegador_pedido_desplegable" id="navegador-desplegable">
+            <div class="navegador_pedido_desplegable__icono">
+                <img src="./assets/images/iconoNegro.png" alt="icono" class="icono-negro-desplegable" id="icono-negro-desplegable">
+            </div>
+            <label for="check" class="boton_menu">
+                <input id="check" type="checkbox">
+                <span class="top" id="menu-desplegable-arriba"></span>
+                <span class="middle" id="menu-desplegable-medio"></span>
+                <span class="bottom" id="menu-desplegable-abajo"></span>
+            </label>
+            <div class="inactivo scale-in-ver-top" id="menu-desplegable">
+                <ul class="menu_desplegable__items">
+                    <li><a>Nuestras hamburguesas</a></li>
+                    <li><a>Nosotros</a></li>
+                    <li><a>Faq's</a></li>
+                    <li><a>Contacto</a></li>
+                </ul>
+            </div>
+        </nav>            
     </header>
     <!-- Main -->
     <section class="finalizar_pedido">
@@ -92,7 +113,7 @@
                     <select name="pago" id="pago" onchange="seleccionPago()">
                         <option>-Selecciona una opcion-</option>
                         <option value="efectivo">EFECTIVO</option>
-                        <option value="debito">DEBITO (Solo Salon)</option>
+                        <option value="debito">DEBITO/CREDITO</option>
                     </select>
                     <div class="inactivo" id="pago-efectivo">
                         <div>
@@ -101,15 +122,31 @@
                             <input type="number" name="montoPago" id="montoPago">
                         </div>
                     </div>
+                    <div class="inactivo" id="pago-tarjeta">
+                        <div>
+                            <label for="numeroTarjeta">numero de tarjeta</label>
+                            <input type="text" name="numeroTarjeta" id="numero-tarjeta">
+                            <p id="tarjeta-incorrecta" class="inactivo">El numero de tarjeta es incorrecto, recorda que debe contener 16 caracteres</p>
+                            
+                            <label for="titularTarjeta">titular de la tarjeta</label>
+                            <input type="text" name="titularTarjeta" id="titularTarjeta">
+                            <label for="vencimientoTarjeta">fecha de vencimiento</label>
+                            <input type="month" name="vencimientoTarjeta" id="vencimientoTarjeta">
+                            
+                            <label for="codigoVerificacion">codigo de verificacion</label>
+                            <input type="text" name="codigoVerificacion" id="codigo-verificacion">
+                            <p id="codigo-verificacion-incorrecto" class="inactivo">El codigo de verificacion es incorrecto, recorda que debe contener 3 caracteres</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="datos_personales">
                     <div>
                         <label for="nombre">Tu nombre</label>
-                        <input type="text" name="nombre" id="nombre">
+                        <input type="text" name="nombre" id="nombre" required>
                     </div>
                     <div>
                         <label for="telefono">Tu telefono</label>
-                        <input type="tel" name="telefono" id="telefono">
+                        <input type="tel" name="telefono" id="telefono" required>
                     </div>
                 </div>
             </div>

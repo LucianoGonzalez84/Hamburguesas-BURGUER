@@ -147,12 +147,47 @@ const seleccionPago = () => {
     if (DOMpago === "efectivo") {
         crearNodo("#pago-efectivo").classList.remove("inactivo");
         crearNodo("#pago-efectivo").classList.add("pago_efectivo");
-    } else if (DOMpago != "domicilio") {
+        crearNodo("#pago-tarjeta").classList.remove("pago_tarjeta");
+        crearNodo("#pago-tarjeta").classList.add("inactivo");
+    } else if (DOMpago == "debito") {
+        crearNodo("#pago-tarjeta").classList.remove("inactivo");
+        crearNodo("#pago-tarjeta").classList.add("pago_tarjeta");
         crearNodo("#pago-efectivo").classList.remove("pago_efectivo");
         crearNodo("#pago-efectivo").classList.add("inactivo");
+    } else {
+        crearNodo("#pago-efectivo").classList.add("inactivo");
+        crearNodo("#pago-tarjeta").classList.add("inactivo");
     }
     return DOMpago;
 };
+
+// Funcion que verifica el numero de tarjeta
+const verificarNumeroTarjeta = () => {
+    let DOMnumeroTarjeta = crearNodo("#numero-tarjeta").value;
+    if (DOMnumeroTarjeta.length != 16) {
+        crearNodo("#tarjeta-incorrecta").classList.remove("inactivo");
+        crearNodo("#tarjeta-incorrecta").classList.add("tarjeta_incorrecta");
+    } else {
+        crearNodo("#tarjeta-incorrecta").classList.remove("tarjeta_incorrecta");
+        crearNodo("#tarjeta-incorrecta").classList.add("inactivo");
+    }
+    return (DOMnumeroTarjeta.length)
+}
+
+// Funcion que verifica el numero de tarjeta
+const codigoVerificacion = () => {
+    let DOMcodigoVerificacion = crearNodo("#codigo-verificacion").value;
+    if (DOMcodigoVerificacion.length != 3) {
+        crearNodo("#codigo-verificacion-incorrecto").classList.remove("inactivo");
+        crearNodo("#codigo-verificacion-incorrecto").classList.add("codigo_verificacion_incorrecto");
+    } else {
+        crearNodo("#codigo-verificacion-incorrecto").classList.remove("codigo_verificacion_incorrecto");
+        crearNodo("#codigo-verificacion-incorrecto").classList.add("inactivo");
+    }
+    return (DOMcodigoVerificacion.length)
+}
+
+
 
 /*
 EVENTOS
@@ -164,47 +199,84 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Lanza el loader
-// setTimeout(function () {
-//     let DOMcontenedorLoader = crearNodo(".contenedor_loader");
-//     DOMcontenedorLoader.classList.remove("contenedor_loader")
-//     DOMcontenedorLoader.classList.add("inactivo")
-// }, 2000);
+setTimeout(function () {
+    let DOMcontenedorLoader = crearNodo(".contenedor_loader");
+    DOMcontenedorLoader.classList.remove("contenedor_loader")
+    DOMcontenedorLoader.classList.add("inactivo")
+}, 2000);
 
 // Formulario
 crearNodo("#datos-pedido").addEventListener("submit", function (e) {
     e.preventDefault();
     let datosPedido = [];
     let DOMformaEntrega = seleccionEntrega();
-    datosPedido.push({"forma de entrega":DOMformaEntrega});
-    if (DOMformaEntrega === "domicilio") {
-        let DOMcalle = crearNodo("#calle").value;
-        datosPedido.push({"calle":DOMcalle});
-        let DOMentreCalles = crearNodo("#entreCalles").value;
-        datosPedido.push({"entre calles":DOMentreCalles});
-        let DOMdetalle = crearNodo("#detalle").value;
-        datosPedido.push({"detalle":DOMdetalle});
-    }
+    datosPedido.push({ "forma de entrega": DOMformaEntrega });
+    let DOMcalle = crearNodo("#calle").value;
+    datosPedido.push({ "calle": DOMcalle });
+    let DOMentreCalles = crearNodo("#entreCalles").value;
+    datosPedido.push({ "entre calles": DOMentreCalles });
+    let DOMdetalle = crearNodo("#detalle").value;
+    datosPedido.push({ "detalle": DOMdetalle });
     let DOMseleccionHorario = seleccionHorario();
-    datosPedido.push({"horario de entrega":DOMseleccionHorario});
+    datosPedido.push({ "horario de entrega": DOMseleccionHorario });
     let DOMformaPago = seleccionPago();
-    datosPedido.push({"forma de pago":DOMformaPago});
-    if (DOMformaPago === "efectivo") {
-        let DOMmontoPago = crearNodo("#montoPago").value;
-        datosPedido.push({"monto pago":DOMmontoPago});
-    }
+    datosPedido.push({ "forma de pago": DOMformaPago });
+    let DOMmontoPago = crearNodo("#montoPago").value;
+    datosPedido.push({ "monto pago": DOMmontoPago });
     let DOMnombre = crearNodo("#nombre").value;
-    datosPedido.push({"nombre":DOMnombre});
+    datosPedido.push({ "nombre": DOMnombre });
     let DOMtelefono = crearNodo("#telefono").value;
-    datosPedido.push({"telefono":DOMtelefono});
-    // Trabajo sobre localStorage
-    localStorage.setItem("ultimaCompra", JSON.stringify(productosPedido));
-    ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
-    productosPedido.length = 0;
-    localStorage.setItem("carrito", JSON.stringify(productosPedido));
-    localStorage.setItem("datosPedido", JSON.stringify(datosPedido));
-    // Re-dirige a pedidoFinalizado.html
-    location.href = "pedidoFinalizado.html";
+    datosPedido.push({ "telefono": DOMtelefono });
+    // Dirige a pedidoFinalizado.html
+    if (DOMformaPago === "debito") {
+        if (verificarNumeroTarjeta() === 16 && codigoVerificacion() === 3) {
+            Swal.fire({
+                position: 'center',
+                html: `
+                      <div class="sweetAlert">
+                      <i class="fas fa-check-circle"></i>
+                          <h3>El pago fue aprobado</h3>
+                      </div>
+                      `,
+                showConfirmButton: false,
+                timer: 5000,
+            });
+            // Trabajo sobre localStorage
+            localStorage.setItem("ultimaCompra", JSON.stringify(productosPedido));
+            ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
+            productosPedido.length = 0;
+            localStorage.setItem("carrito", JSON.stringify(productosPedido));
+            localStorage.setItem("datosPedido", JSON.stringify(datosPedido));
+            location.href = "./pedidoFinalizado.html";
+        } 
+    } else {
+        // Trabajo sobre localStorage
+        localStorage.setItem("ultimaCompra", JSON.stringify(productosPedido));
+        ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
+        productosPedido.length = 0;
+        localStorage.setItem("carrito", JSON.stringify(productosPedido));
+        localStorage.setItem("datosPedido", JSON.stringify(datosPedido));
+        location.href = "./pedidoFinalizado.html";
+    }
 });
+
+// Despliega opciones de menu en nav
+let opcion = "abierto";
+function despliegaMenu() {
+    if (opcion == "abierto") {
+        crearNodo("#menu-desplegable").classList.remove("inactivo");
+        crearNodo("#menu-desplegable").classList.add("menu_desplegable");
+        opcion = "cerrado";
+    } else {
+        crearNodo("#menu-desplegable").classList.remove("menu_desplegable");
+        crearNodo("#menu-desplegable").classList.add("inactivo");
+        opcion = "cerrado";
+        opcion = "abierto";
+    }
+}
+crearNodo("#check").addEventListener("click", () => {
+    despliegaMenu()
+})
 
 // Evento boton volver a comprar
 crearNodo("#boton-volver-comprar").addEventListener("click", () => {

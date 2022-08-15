@@ -87,6 +87,31 @@ function crearEiqueta(elemento) {
     return document.createElement(elemento);
 };
 
+// Lanza el loader
+setTimeout(function () {
+    let DOMcontenedorLoader = crearNodo(".contenedor_loader");
+    DOMcontenedorLoader.classList.remove("contenedor_loader")
+    DOMcontenedorLoader.classList.add("inactivo")
+}, 2000);
+
+// Despliega opciones de menu en nav
+let opcion = "abierto";
+function despliegaMenu() {
+    if (opcion == "abierto") {
+        crearNodo("#menu-desplegable").classList.remove("inactivo");
+        crearNodo("#menu-desplegable").classList.add("menu_desplegable");
+        opcion = "cerrado";
+    } else {
+        crearNodo("#menu-desplegable").classList.remove("menu_desplegable");
+        crearNodo("#menu-desplegable").classList.add("inactivo");
+        opcion = "cerrado";
+        opcion = "abierto";
+    }
+}
+crearNodo("#check").addEventListener("click", () => {
+    despliegaMenu()
+})
+
 
 
 

@@ -18,12 +18,13 @@
 </head>
 <body>
     <!-- Loader -->
-    <!-- <div class="contenedor_loader">
+    <div class="contenedor_loader">
         <div class="loader"></div>
         <img src="./assets/images/hamburguesaLoader.png" alt="">
-    </div> -->
+    </div>
     <!-- Header -->
     <header>
+        <!-- Navegador vista laptop -->
         <nav class="navegador_pedido" id="navegador">
             <div class="navegador__icono">
                 <img src="./assets/images/iconoNegro.png" alt="icono" class="icono_negro" id="icono-negro">
@@ -36,8 +37,27 @@
             </ul>
             <div class="espacio_carrito"></div>
         </nav>
+        <!-- Navegador vista movil -->
+        <nav class="navegador_pedido_desplegable" id="navegador-desplegable">
+            <div class="navegador_pedido_desplegable__icono">
+                <img src="./assets/images/iconoNegro.png" alt="icono" class="icono-negro-desplegable" id="icono-negro-desplegable">
+            </div>
+            <label for="check" class="boton_menu">
+                <input id="check" type="checkbox">
+                <span class="top" id="menu-desplegable-arriba"></span>
+                <span class="middle" id="menu-desplegable-medio"></span>
+                <span class="bottom" id="menu-desplegable-abajo"></span>
+            </label>
+            <div class="inactivo scale-in-ver-top" id="menu-desplegable">
+                <ul class="menu_desplegable__items">
+                    <li><a>Nuestras hamburguesas</a></li>
+                    <li><a>Nosotros</a></li>
+                    <li><a>Faq's</a></li>
+                    <li><a>Contacto</a></li>
+                </ul>
+            </div>
+        </nav>            
     </header>
-    
     <!-- Main -->
     <main class="main_pedido_finalizado">
         <section class="pedido_finalizado" id="pedido-finalizado">
