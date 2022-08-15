@@ -2,52 +2,50 @@
 
 const productosPedido = JSON.parse(localStorage.getItem("ultimaCompra"));
 const datosPedido = JSON.parse(localStorage.getItem("datosPedido"));
-
 let formaDeEntrega = datosPedido.find(element => {
     if (Object.keys(element) == `forma de entrega`) {
         return (Object.values(element));
-    }
+    };
 });
 let calle = datosPedido.find(element => {
     if (Object.keys(element) == `calle`) {
         return (Object.values(element));
-    }
+    };
 });
 let entreCalles = datosPedido.find(element => {
     if (Object.keys(element) == `entre calles`) {
         return (Object.values(element));
-    }
+    };
 });
 let detalle = datosPedido.find(element => {
     if (Object.keys(element) == `detalle`) {
         return (Object.values(element));
-    }
+    };
 });
-
 let horarioDeEntrega = datosPedido.find(element => {
     if (Object.keys(element) == `horario de entrega`) {
         return (Object.values(element));
-    }
+    };
 });
 let formaDePago = datosPedido.find(element => {
     if (Object.keys(element) == `forma de pago`) {
         return (Object.values(element));
-    }
+    };
 });
 let montoPago = datosPedido.find(element => {
     if (Object.keys(element) == `monto pago`) {
         return (Object.values(element));
-    }
+    };
 });
 let nombre = datosPedido.find(element => {
     if (Object.keys(element) == `nombre`) {
         return (Object.values(element));
-    }
+    };
 });
 let telefono = datosPedido.find(element => {
     if (Object.keys(element) == `telefono`) {
         return (Object.values(element));
-    }
+    };
 });
 let DOMnombre=crearNodo("#nombre");
 DOMnombre.innerText=Object.values(nombre);
@@ -64,18 +62,9 @@ DOMhorarioDeEntrega.innerText=Object.values(horarioDeEntrega);
 let DOMtelefono=crearNodo("#telefono");
 DOMtelefono.innerText=Object.values(telefono);
 
-const tipoEntrega = ()=>{
-    if (Object.values(formaDeEntrega) == "domicilio") {
-        crearNodo("#entrega-domicilio").classList.remove("inactivo");
-    } else {
-        crearNodo("#takeAway").classList.remove("inactivo");
-    }
-}
-
-tipoEntrega()
-
-
-
+/*
+FUNCIONES
+*/
 
 // Funcion que crea nodo
 function crearNodo(selector) {
@@ -94,6 +83,23 @@ setTimeout(function () {
     DOMcontenedorLoader.classList.add("inactivo")
 }, 2000);
 
+// Funcion que determina el tipo de entrega: domicilio o take away
+const tipoEntrega = ()=>{
+    if (Object.values(formaDeEntrega) == "domicilio") {
+        crearNodo("#entrega-domicilio").classList.remove("inactivo");
+    } else {
+        crearNodo("#takeAway").classList.remove("inactivo");
+    };
+};
+
+/*
+EVENTOS
+*/
+
+document.addEventListener("DOMContentLoaded", () => {
+    tipoEntrega()
+});
+
 // Despliega opciones de menu en nav
 let opcion = "abierto";
 function despliegaMenu() {
@@ -106,11 +112,11 @@ function despliegaMenu() {
         crearNodo("#menu-desplegable").classList.add("inactivo");
         opcion = "cerrado";
         opcion = "abierto";
-    }
-}
+    };
+};
 crearNodo("#check").addEventListener("click", () => {
     despliegaMenu()
-})
+});
 
 
 
@@ -119,20 +125,10 @@ crearNodo("#check").addEventListener("click", () => {
 
 
 
-console.log();
 
 
 
 
-// const pedidoFinalizado = (productosPedido, datosPedido) => {
-//     DOMpedidoFinalizado = crearNodo("#pedido-finalizado")
-//     let DOMtemplateEntrega = crearEiqueta("div");
-//     DOMtemplateEntrega.innerHTML = `
-//     <h5 class="culo">${Object.values(nombre)}, Tu pedido esta siendo procesado!</h5>
-//     <h5 class="culo">Podes pasar a buscarlo por nuestro local, a partir de las ${Object.values(horarioDeEntrega)}  Hs (+/- 20 minutos)</h5>`
-//     DOMpedidoFinalizado.appendChild(DOMtemplateEntrega);
 
-// }
 
-// pedidoFinalizado()
 

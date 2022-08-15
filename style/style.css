@@ -59,6 +59,13 @@ CLASES AUXILIARES
   height: auto;
 }
 
+.asterisco {
+  font-family: var(--fuenteEnlaces);
+  color: var(--colorLetra);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 
 /* 
   SWEETALERT 
@@ -100,6 +107,12 @@ CLASES AUXILIARES
   font-family: var(--fuentePrincipal);
   font-size: 1.2rem;
   font-weight: 800;
+}
+
+.sweetAlert h3 .conteo {
+  font-family: var(--fuenteEnlaces);
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 .sweetAlert b {
@@ -147,6 +160,17 @@ CLASES AUXILIARES
   border: none;
 }
 
+.contenedor_aviso_horario {
+  margin: 2.5rem 1rem 2.5rem 1rem;
+}
+
+.aviso_horario {
+  font-family: var(--fuenteSecundaria);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   /*ESTILOS INDEX.HTML*/
 
@@ -157,7 +181,7 @@ CLASES AUXILIARES
   .header_index {
     height: 100vh;
     width: 100vw;
-    background-image: url(./assets/images/hamburguesa1.jpg);
+    background-image: url(../assets/images/wallpaperbetter.jpg);
     object-fit: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -375,6 +399,7 @@ CLASES AUXILIARES
     background-color: rgba(0, 0, 0, 0.75);
     text-align: center;
     padding: 1.5rem 0;
+    z-index: 500;
   }
 
   .menu_desplegable__items {
@@ -479,7 +504,10 @@ CLASES AUXILIARES
   }
 
   .informacion video {
+    overflow: hidden;
+    object-fit: cover;
     width: 100%;
+    height: 30rem;
     margin: 5rem auto 0 auto;
     box-shadow: 0 0 1.5rem 0.2rem var(--colorNegro);
   }
@@ -493,7 +521,7 @@ CLASES AUXILIARES
   .catalogo_productos__titulo {
     width: 100%;
     height: 20rem;
-    background-image: url(./assets/images/wallpaperbetter.jpg);
+    background-image: url(../assets/images/wallpaperbetter.jpg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -611,7 +639,7 @@ CLASES AUXILIARES
 
   .contenedor_carrito h3 {
     font-family: var(--fuentePrincipal);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .contenedor_carrito h4 {
@@ -638,6 +666,7 @@ CLASES AUXILIARES
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transform: scale(1.1);
   }
 
   .contenedor_carrito .modal_carrito__encabezado button i {
@@ -649,7 +678,7 @@ CLASES AUXILIARES
     border: none;
     background-color: inherit;
     font-family: var(--fuenteSecundaria);
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 800;
     color: var(--colorLetra);
     text-decoration: underline;
@@ -664,7 +693,7 @@ CLASES AUXILIARES
 
   .contenedor_carrito .modal_carrito__contenido h5 {
     font-family: var(--fuenteEnlaces);
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 500;
     text-align: center;
     padding-top: 9rem;
@@ -741,7 +770,7 @@ CLASES AUXILIARES
   }
 
   .producto_agregado button i {
-    scale: 3.2;
+    scale: 3.4;
   }
 
   .contenedor_carrito .modal_carrito__pie {
@@ -764,7 +793,7 @@ CLASES AUXILIARES
 
   .contenedor_carrito .modal_carrito__pie .precio span {
     font-family: var(--fuentePrincipal);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     letter-spacing: 0.2rem;
   }
 
@@ -801,11 +830,11 @@ CLASES AUXILIARES
   /*
   HEADER
   */
-  .navegador_pedido{
+  .navegador_pedido {
     display: none;
   }
 
-  .navegador_pedido_desplegable{
+  .navegador_pedido_desplegable {
     width: 100%;
     min-height: 10rem;
     background-color: var(--colorBlanco);
@@ -1057,6 +1086,7 @@ CLASES AUXILIARES
     font-weight: 500;
     color: var(--colorLetra);
     margin-bottom: 1rem;
+    margin-top: 0;
   }
 
   .datos_pedido p span {
@@ -1139,6 +1169,13 @@ CLASES AUXILIARES
     margin: 1rem 0 2rem 0;
   }
 
+  .seleccion_entrega {
+    font-family: var(--fuenteEnlaces);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--colorLetra);
+  }
+
   .datos_horario {
     margin-bottom: 1.5rem;
   }
@@ -1208,17 +1245,18 @@ CLASES AUXILIARES
     margin-bottom: 0.5rem;
   }
 
-  .datos_pago .pago_tarjeta{
+  .datos_pago .pago_tarjeta {
     width: 100%;
     height: auto;
     margin-bottom: 2.5rem;
   }
 
-  .datos_pago .pago_tarjeta div{
+  .datos_pago .pago_tarjeta div {
     display: flex;
     flex-direction: column;
   }
-  .datos_pago .pago_tarjeta div label{
+
+  .datos_pago .pago_tarjeta div label {
     font-family: var(--fuenteEnlaces);
     font-size: 1.3rem;
     font-weight: 600;
@@ -1226,7 +1264,7 @@ CLASES AUXILIARES
     margin-bottom: 0.5rem;
   }
 
-  .datos_pago .pago_tarjeta div input{
+  .datos_pago .pago_tarjeta div input {
     font-family: var(--fuenteEnlaces);
     font-size: 1.3rem;
     font-weight: 500;
@@ -1236,7 +1274,7 @@ CLASES AUXILIARES
     margin-bottom: 0.5rem;
   }
 
-  .tarjeta_incorrecta{
+  .tarjeta_incorrecta {
     font-family: var(--fuenteEnlaces);
     font-size: 1.3rem;
     font-weight: 500;
@@ -1244,7 +1282,7 @@ CLASES AUXILIARES
     margin-bottom: 1rem;
   }
 
-  .codigo_verificacion_incorrecto{
+  .codigo_verificacion_incorrecto {
     font-family: var(--fuenteEnlaces);
     font-size: 1.3rem;
     font-weight: 500;
@@ -1276,7 +1314,7 @@ CLASES AUXILIARES
     margin-bottom: 3rem;
   }
 
-  .datos_personales input:last-child{
+  .datos_personales input:last-child {
     margin-bottom: 1.5rem;
   }
 
@@ -1475,7 +1513,7 @@ CLASES AUXILIARES
 }
 
 @media only screen and (min-width : 1224px) {
-/*ESTILOS INDEX.HTML*/
+  /*ESTILOS INDEX.HTML*/
 
   /* 
 HEADER
@@ -1483,7 +1521,7 @@ HEADER
   .header_index {
     height: 100vh;
     width: 100%;
-    background-image: url(./assets/images/hamburguesa1.jpg);
+    background-image: url(../assets/images/hamburguesa1.jpg);
     object-fit: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1769,7 +1807,7 @@ HEADER
   .catalogo_productos__titulo {
     width: 100%;
     height: 25rem;
-    background-image: url(./assets/images/wallpaperbetter.jpg);
+    background-image: url(../assets/images/wallpaperbetter.jpg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -2068,10 +2106,11 @@ HEADER
   /*
   HEADER
   */
-  
-  .navegador_pedido_desplegable{
+
+  .navegador_pedido_desplegable {
     display: none;
   }
+
   .navegador_pedido {
     width: 100%;
     min-height: 10rem;
@@ -2376,17 +2415,18 @@ HEADER
     margin-bottom: 0.5rem;
   }
 
-  .datos_pago .pago_tarjeta{
+  .datos_pago .pago_tarjeta {
     width: 100%;
     height: auto;
     margin-bottom: 2.5rem;
   }
 
-  .datos_pago .pago_tarjeta div{
+  .datos_pago .pago_tarjeta div {
     display: flex;
     flex-direction: column;
   }
-  .datos_pago .pago_tarjeta div label{
+
+  .datos_pago .pago_tarjeta div label {
     font-family: var(--fuenteEnlaces);
     font-size: 1.3rem;
     font-weight: 600;
@@ -2394,7 +2434,7 @@ HEADER
     margin-bottom: 0.5rem;
   }
 
-  .datos_pago .pago_tarjeta div input{
+  .datos_pago .pago_tarjeta div input {
     font-family: var(--fuenteEnlaces);
     font-size: 1.3rem;
     font-weight: 500;
@@ -2404,7 +2444,7 @@ HEADER
     margin-bottom: 0.5rem;
   }
 
-  .tarjeta_incorrecta{
+  .tarjeta_incorrecta {
     font-family: var(--fuenteEnlaces);
     font-size: 1.3rem;
     font-weight: 500;
@@ -2412,7 +2452,7 @@ HEADER
     margin-bottom: 1rem;
   }
 
-  .codigo_verificacion_incorrecto{
+  .codigo_verificacion_incorrecto {
     font-family: var(--fuenteEnlaces);
     font-size: 1.3rem;
     font-weight: 500;
@@ -2444,7 +2484,7 @@ HEADER
     margin-bottom: 3rem;
   }
 
-  .datos_personales input:last-child{
+  .datos_personales input:last-child {
     margin-bottom: 1.5rem;
   }
 
@@ -2521,7 +2561,7 @@ HEADER
     margin-left: 0.5rem;
   }
 
-/*
+  /*
   FOOTER
   */
 
@@ -2630,16 +2670,6 @@ HEADER
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 /* ANIMACIONES */
 
@@ -2752,6 +2782,6 @@ HEADER
 }
 
 
-.rojo{
+.rojo {
   background-color: red;
 }

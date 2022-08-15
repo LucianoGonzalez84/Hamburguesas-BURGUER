@@ -20,7 +20,7 @@ function crearNodo(selector) {
 // Funcion que crea etiqueta html
 function crearEiqueta(elemento) {
     return document.createElement(elemento);
-}
+};
 
 // Funcion que elimina productos del pedido
 const eliminarProductoPedido = (productoId) => {
@@ -30,7 +30,7 @@ const eliminarProductoPedido = (productoId) => {
             cancelButton: 'boton_eliminar'
         },
         buttonsStyling: false
-    })
+    });
     let DOMhamburguesa = productosPedido.find(
         (hamburguesa) => hamburguesa.id === productoId
     );
@@ -77,7 +77,7 @@ const eliminarProductoPedido = (productoId) => {
                     <div class="sweetAlert">
                         <i class="fas fa-exclamation-circle"></i>
                         <h3>No hay productos en tu pedido<br><b>No es posible finalizar tu compra!</b></h3>
-                        <h3>Volviendo a la tienda <span id="conteo">3</span> ...</h3>
+                        <h3>Volviendo a la tienda <span id="conteo" class="conteo">3</span> ...</h3>
                     </div>
                     `,
                     showConfirmButton: false,
@@ -88,9 +88,9 @@ const eliminarProductoPedido = (productoId) => {
                 setTimeout(function () { DOMconteo.innerText = 1 }, 2000);
                 setTimeout(function () { DOMconteo.innerText = 0 }, 3000);
                 setTimeout(function () {
-                    location.href = "./index.html#catalogo-productos";
+                    location.href = "../index.html#catalogo-productos";
                 }, 4000);
-            }
+            };
         };
     });
 };
@@ -116,7 +116,7 @@ const agregarProductosPedido = (productos) => {
         localStorage.setItem("carrito", JSON.stringify(productos));
     });
     crearNodo("#pedido-subTotal").innerText = productos.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0).toFixed(2);
-}
+};
 
 // Funcion que seleccion opcion forma de entrega
 const seleccionEntrega = () => {
@@ -131,15 +131,15 @@ const seleccionEntrega = () => {
         crearNodo("#datos-domicilio").classList.add("inactivo")
         crearNodo("#pedido-total").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
         crearNodo("#monto-abonar").innerText = (productosPedido.reduce((acumulador, hamburguesa) => acumulador + hamburguesa.precioAcumulado, 0)).toFixed(2);
-    }
+    };
     return DOMentrega;
-}
+};
 
 // Funcion que selecciona opcion horario de entrega
 const seleccionHorario = () => {
     let DOMhorario = crearNodo("#horario").value;
     return DOMhorario;
-}
+};
 
 // Funcion que selecciona opcion forma de pago
 const seleccionPago = () => {
@@ -157,11 +157,11 @@ const seleccionPago = () => {
     } else {
         crearNodo("#pago-efectivo").classList.add("inactivo");
         crearNodo("#pago-tarjeta").classList.add("inactivo");
-    }
+    };
     return DOMpago;
 };
 
-// Funcion que verifica el numero de tarjeta
+// Funcion que verifica el numero de tarjeta de credito/debito
 const verificarNumeroTarjeta = () => {
     let DOMnumeroTarjeta = crearNodo("#numero-tarjeta").value;
     if (DOMnumeroTarjeta.length != 16) {
@@ -170,11 +170,11 @@ const verificarNumeroTarjeta = () => {
     } else {
         crearNodo("#tarjeta-incorrecta").classList.remove("tarjeta_incorrecta");
         crearNodo("#tarjeta-incorrecta").classList.add("inactivo");
-    }
+    };
     return (DOMnumeroTarjeta.length)
-}
+};
 
-// Funcion que verifica el numero de tarjeta
+// Funcion que verifica el codigo de verificacion de la tarjeta de credito/debito
 const codigoVerificacion = () => {
     let DOMcodigoVerificacion = crearNodo("#codigo-verificacion").value;
     if (DOMcodigoVerificacion.length != 3) {
@@ -183,11 +183,9 @@ const codigoVerificacion = () => {
     } else {
         crearNodo("#codigo-verificacion-incorrecto").classList.remove("codigo_verificacion_incorrecto");
         crearNodo("#codigo-verificacion-incorrecto").classList.add("inactivo");
-    }
+    };
     return (DOMcodigoVerificacion.length)
-}
-
-
+};
 
 /*
 EVENTOS
@@ -228,36 +226,60 @@ crearNodo("#datos-pedido").addEventListener("submit", function (e) {
     let DOMtelefono = crearNodo("#telefono").value;
     datosPedido.push({ "telefono": DOMtelefono });
     // Dirige a pedidoFinalizado.html
-    if (DOMformaPago === "debito") {
-        if (verificarNumeroTarjeta() === 16 && codigoVerificacion() === 3) {
-            Swal.fire({
-                position: 'center',
-                html: `
-                      <div class="sweetAlert">
-                      <i class="fas fa-check-circle"></i>
-                          <h3>El pago fue aprobado</h3>
-                      </div>
-                      `,
-                showConfirmButton: false,
-                timer: 5000,
-            });
-            // Trabajo sobre localStorage
-            localStorage.setItem("ultimaCompra", JSON.stringify(productosPedido));
-            ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
-            productosPedido.length = 0;
-            localStorage.setItem("carrito", JSON.stringify(productosPedido));
-            localStorage.setItem("datosPedido", JSON.stringify(datosPedido));
-            location.href = "./pedidoFinalizado.html";
-        } 
+    if (seleccionEntrega()==="") {
+        crearNodo("#asterisco-entrega").classList.remove("inactivo");
+        crearNodo("#asterisco-entrega").classList.add("asterisco");
+        location.href = "./pedido.html#formulario-incompleto";
     } else {
-        // Trabajo sobre localStorage
-        localStorage.setItem("ultimaCompra", JSON.stringify(productosPedido));
-        ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
-        productosPedido.length = 0;
-        localStorage.setItem("carrito", JSON.stringify(productosPedido));
-        localStorage.setItem("datosPedido", JSON.stringify(datosPedido));
-        location.href = "./pedidoFinalizado.html";
-    }
+        crearNodo("#asterisco-entrega").classList.remove("asterisco");
+        crearNodo("#asterisco-entrega").classList.add("inactivo");
+        if (seleccionHorario()==="") {
+            crearNodo("#asterisco-horario").classList.remove("inactivo");
+            crearNodo("#asterisco-horario").classList.add("asterisco");
+            location.href = "./pedido.html#formulario-incompleto";
+        } else {
+            crearNodo("#asterisco-horario").classList.remove("asterisco");
+            crearNodo("#asterisco-horario").classList.add("inactivo");
+            if (seleccionPago()==="") {
+                crearNodo("#asterisco-pago").classList.remove("inactivo");
+                crearNodo("#asterisco-pago").classList.add("asterisco");
+                location.href = "./pedido.html#formulario-incompleto";
+            } else {
+                crearNodo("#asterisco-pago").classList.remove("asterisco");
+                crearNodo("#asterisco-pago").classList.add("inactivo");
+                if (DOMformaPago === "debito") {
+                    if (verificarNumeroTarjeta() === 16 && codigoVerificacion() === 3) {
+                        Swal.fire({
+                            position: 'center',
+                            html: `
+                                  <div class="sweetAlert">
+                                  <i class="fas fa-check-circle"></i>
+                                      <h3>El pago fue aprobado</h3>
+                                  </div>
+                                  `,
+                            showConfirmButton: false,
+                            timer: 5000,
+                        });
+                        // Trabajo sobre localStorage
+                        localStorage.setItem("ultimaCompra", JSON.stringify(productosPedido));
+                        ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
+                        productosPedido.length = 0;
+                        localStorage.setItem("carrito", JSON.stringify(productosPedido));
+                        localStorage.setItem("datosPedido", JSON.stringify(datosPedido));
+                        location.href = "../pages/pedidoFinalizado.html";
+                    }; 
+                } else {
+                    // Trabajo sobre localStorage
+                    localStorage.setItem("ultimaCompra", JSON.stringify(productosPedido));
+                    ultimaCompra = JSON.parse(localStorage.getItem("ultimaCompra"));
+                    productosPedido.length = 0;
+                    localStorage.setItem("carrito", JSON.stringify(productosPedido));
+                    localStorage.setItem("datosPedido", JSON.stringify(datosPedido));
+                    location.href = "../pages/pedidoFinalizado.html";
+                };
+            };
+        };
+    };
 });
 
 // Despliega opciones de menu en nav
@@ -272,15 +294,15 @@ function despliegaMenu() {
         crearNodo("#menu-desplegable").classList.add("inactivo");
         opcion = "cerrado";
         opcion = "abierto";
-    }
-}
+    };
+};
 crearNodo("#check").addEventListener("click", () => {
     despliegaMenu()
-})
+});
 
 // Evento boton volver a comprar
 crearNodo("#boton-volver-comprar").addEventListener("click", () => {
-    location.href = "./index.html#catalogo-productos";
+    location.href = "../index.html#catalogo-productos";
 });
 
 

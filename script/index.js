@@ -18,12 +18,12 @@
     // Funcion que crea etiqueta html
     function crearEiqueta(elemento) {
         return document.createElement(elemento);
-    }
+    };
 
     // Funcion que inserta los productos en index.html
     const insertarProductos = async () => {
         try {
-            const baseDeDatos = await fetch(`./productos.json`);
+            const baseDeDatos = await fetch(`./dates/productos.json`);
             const productos = await baseDeDatos.json();
             productos.forEach(producto => {
                 let DOMtarjeta = crearEiqueta("div");
@@ -56,7 +56,7 @@
     // Funcion que agrega los productos seleccionados al carrito
     const agregarAlCarrito = async (productoId) => {
         try {
-            const baseDeDatos = await fetch(`productos.json`);
+            const baseDeDatos = await fetch(`./dates/productos.json`);
             const productos = await baseDeDatos.json();
             let DOMhamburguesa = productos.find(
                 (hamburguesa) => hamburguesa.id === productoId
@@ -73,7 +73,7 @@
                 html: `
                       <div class="sweetAlert">
                       <i class="fas fa-check-circle"></i>
-                          <h3>Se agrego <span>${DOMhamburguesa.nombre}</span> al carrito</h3>
+                          <h3>Se agregó <span>${DOMhamburguesa.nombre}</span> al carrito</h3>
                       </div>
                       `,
                 showConfirmButton: false,
@@ -115,7 +115,7 @@
                     html: `
                           <div class="sweetAlert">
                           <i class="fas fa-check-circle"></i>
-                              <h3>Se elimino <span>${DOMhamburguesa.nombre}</span></h3>
+                              <h3>Se eliminó <span>${DOMhamburguesa.nombre}</span></h3>
                           </div>
                           `,
                     showConfirmButton: false,
@@ -141,7 +141,6 @@
             crearNodo("#subTotal").innerText = (0).toFixed(2);
             crearNodo("#productos-en-carrito-desplegable").innerText = 0;
             crearNodo("#productos-en-carrito").innerText = 0;
-
         } else {
             crearNodo("#carrito").innerHTML = "";
             productos.forEach((elemento) => {
@@ -184,7 +183,6 @@
         //Icono carrito oculto
         crearNodo("#boton-carrito").style.opacity = 0;
         crearNodo("#boton-carrito-desplegable").style.opacity = 0;
-
     });
 
     // Lanza el loader
@@ -238,8 +236,7 @@
                     dibujarCarrito(carritoProductos);
                 };
             });
-
-        }
+        };
     });
 
     // Abre el carrito
@@ -256,7 +253,7 @@
         crearNodo("#modal-carrito").classList.add("contenedor_carrito");
         crearNodo("#carrito-seleccionado").classList.remove("inactivo");
         crearNodo("#carrito-seleccionado").classList.add("carrito_seleccionado");
-    })
+    });
 
     // Cierra el carrito
     crearNodo("#boton-cerrar-carrito").addEventListener("click", () => {
@@ -296,7 +293,7 @@
             crearNodo("#modal-carrito").classList.add("inactivo");
             crearNodo("#carrito-seleccionado").classList.remove("carrito_seleccionado");
             crearNodo("#carrito-seleccionado").classList.add("inactivo");
-        }
+        };
     });
 
     // Se procesa el pedido
@@ -307,7 +304,7 @@
                 <div class="sweetAlert">
                     <i class="fas fa-exclamation-circle"></i>
                     <h3>No hay productos en el carrito<br><b>imposible procesar tu compra!</b></h3>
-                    <h3>Volviendo a la tienda <span id="conteo">3</span> ...</h3>
+                    <h3>Volviendo a la tienda <span id="conteo" class="conteo">3</span> ...</h3>
                 </div>
                 `,
                 showConfirmButton: false,
@@ -325,7 +322,7 @@
                 location.href = "index.html#catalogo-productos";
             }, 4000);
         } else {
-            location.href = "./pedido.html";
+            location.href = "../pages/pedido.html";
         };
     });
 
@@ -347,8 +344,8 @@
             crearNodo("#menu-desplegable").classList.add("inactivo");
             opcion = "cerrado";
             opcion = "abierto";
-        }
-    }
+        };
+    };
     crearNodo("#check").addEventListener("click", () => {
         despliegaMenu()
     })

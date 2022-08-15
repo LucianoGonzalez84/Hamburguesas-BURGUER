@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,20 +15,22 @@
         href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
+
 <body>
     <!-- Loader -->
     <div class="contenedor_loader">
         <div class="loader"></div>
-        <img src="./assets/images/hamburguesaLoader.png" alt="">
+        <img src="../assets/images/hamburguesaLoader.png" alt="">
     </div>
     <!-- Header -->
     <header>
         <!-- Navegador vista laptop -->
         <nav class="navegador_pedido" id="navegador">
             <div class="navegador__icono">
-                <img src="./assets/images/iconoNegro.png" alt="icono" class="icono_negro" id="icono-negro">
+                <a href="../index.html" class="icono_negro" id="icono-negro"><img src="../assets/images/iconoNegro.png"
+                        alt="icono"></a>
             </div>
             <ul class="navegador__menu">
                 <li class="menu__items" id="item-desplegable"><a>Nuestras hamburguesas</a></li>
@@ -40,7 +43,9 @@
         <!-- Navegador vista movil -->
         <nav class="navegador_pedido_desplegable" id="navegador-desplegable">
             <div class="navegador_pedido_desplegable__icono">
-                <img src="./assets/images/iconoNegro.png" alt="icono" class="icono-negro-desplegable" id="icono-negro-desplegable">
+                <a href="../index.html" class="icono-negro-desplegable" id="icono-negro-desplegable"><img
+                        src="../assets/images/iconoNegro.png" alt="icono"></a>
+
             </div>
             <label for="check" class="boton_menu">
                 <input id="check" type="checkbox">
@@ -56,51 +61,46 @@
                     <li><a>Contacto</a></li>
                 </ul>
             </div>
-        </nav>            
+        </nav>
     </header>
     <!-- Main -->
     <main class="main_pedido_finalizado">
         <section class="pedido_finalizado" id="pedido-finalizado">
             <h3><span id="nombre"></span>, Tu pedido esta siendo procesado!</h3>
             <div>
-                <h3 class="inactivo" id="entrega-domicilio">Llegara a tu domicilio: <span id="calle"></span>, entre calles <span id="entre-calles"></span> <span id="detalle"></span>. Al rededor de las <span id="horario-de-entrega-domicilio"></span> Hs. En caso de que el repartidor no encuentre tu domicilio te llamara al numero <span id="telefono"></span></h3>
-                <h3 class="inactivo" id="takeAway">Podes retirarlo por nuestro local <a href="https://www.google.es/maps">( mapa<i class="fas fa-map-marker-alt"></i> )</a>. Al rededor de las <span id="horario-de-entrega"></span> Hs.</h3>
+                <h3 class="inactivo" id="entrega-domicilio">Llegará a tu domicilio: <span id="calle"></span>, entre
+                    calles <span id="entre-calles"></span> <span id="detalle"></span>. Al rededor de las <span
+                        id="horario-de-entrega-domicilio"></span> Hs. En caso de que el repartidor no encuentre tu
+                    domicilio te llamará al número <span id="telefono"></span></h3>
+                <h3 class="inactivo" id="takeAway">Podes retirarlo por nuestro local <a
+                        href="https://www.google.es/maps" target="_blank">( mapa<i class="fas fa-map-marker-alt"></i>
+                        )</a>. Al rededor
+                    de las <span id="horario-de-entrega"></span> Hs.</h3>
             </div>
-            <h3>Recorda que ante cualquier duda podes comunicarte a nuestro whatsapp</h3>
+            <h3>Recordá que ante cualquier duda podes comunicarte a nuestro whatsapp</h3>
             <h3>Muchas gracias por tu compra!!!</h3>
-    
-    
         </section>
-    
-
     </main>
-    
-    
-
-    
-
     <!-- Footer -->
     <footer>
         <div class="footer__copyrigth">
             <p>©<span>2022</span>Burguer</p>
         </div>
         <div class="footer__logo">
-            <a href="index.html"><img src="./assets/images/iconoBlanco.png" alt="logo-burguer"></a>
+            <a href="../index.html"><img src="../assets/images/iconoBlanco.png" alt="logo-burguer"></a>
             <p>Hamburguesas deliciosas</p>
         </div>
         <div class="footer__redes">
-            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></i></a>
-            <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></i></a>
+            <a href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
-
-
     
     <!-- JavaScript -->
-    <script src="./pedidoFinalizado.js"></script>
+    <script src="../script/pedidoFinalizado.js"></script>
     <!-- SweetAlert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
 </body>
+
 </html>

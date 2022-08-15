@@ -15,7 +15,7 @@
         href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 
 <body>
@@ -30,8 +30,11 @@
         <!-- Navegador vista laptop -->
         <nav class="navegador" id="navegador">
             <div class="navegador__icono">
-                <img src="./assets/images/iconoNegro.png" alt="icono" class="transparente" id="icono-negro">
-                <img src="./assets/images/iconoBlanco.png" alt="icono" class="icono_blanco" id="icono-blanco">
+                <a href="./index.html" class="transparente" id="icono-negro"><img src="./assets/images/iconoNegro.png"
+                        alt="icono"></a>
+                <a href="./index.html" class="icono_blanco" id="icono-blanco"><img src="./assets/images/iconoBlanco.png"
+                        alt="icono"></a>
+
             </div>
             <ul class="navegador__menu">
                 <li class="menu__items"><a>Nuestras hamburguesas</a></li>
@@ -86,17 +89,17 @@
             <div class="informacion__burguer">
                 <div>
                     <i class="fas fa-award"></i>
-                    <p>Todas nuestras hamburguesas estan realizadas con ingredientes de la mas alta calidad. En BURGUER
+                    <p>Todas nuestras hamburguesas están realizadas con ingredientes de la mas alta calidad. En BURGUER
                         nos gusta hacer las cosas no solo bien, sino de manera excelente.</p>
                 </div>
                 <div>
                     <i class="fas fa-dollar-sign"></i>
-                    <p>Comer una hamurguesa de calidad no es sinonimo de comer una hamburguesa costosa. Queremos que
+                    <p>Comer una hamburguesa de calidad no es sinonimo de comer una hamburguesa costosa. Queremos que
                         todos puedan probar una BURGUER.</p>
                 </div>
                 <div>
                     <i class="fas fa-motorcycle"></i>
-                    <p>Podes retirar tu hamburguesa por nuestro local, pero para mayor comodidad tambien contamos con
+                    <p>Podes retirar tu hamburguesa por nuestro local, pero para mayor comodidad también contamos con
                         servicio de delivery dentro de la ciudad de La Plata y alrededores.</p>
                 </div>
             </div>
@@ -121,12 +124,12 @@
             <div class="lista_hamburguesas" id="lista-hamburguesas-sintacc"></div>
         </section>
         <section>
-            <div class="modal_carrito fade-in" id="modal-carrito">
+            <div class="inactivo fade-in" id="modal-carrito">
                 <div class="modal_carrito__encabezado">
                     <h3>tu pedido</h3>
                     <button id="boton-cerrar-carrito"><i class="fas fa-times"></i></button>
                 </div>
-                <button class="boton_repetir_pedido" id="boton-repetir-pedido">Repetir ultimo pedido</button>
+                <button class="boton_repetir_pedido" id="boton-repetir-pedido">Repetir último pedido</button>
                 <div class="modal_carrito__contenido" id="carrito"></div>
                 <div class="modal_carrito__pie">
                     <div class="precio">
@@ -150,14 +153,14 @@
             <p>Hamburguesas deliciosas</p>
         </div>
         <div class="footer__redes">
-            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></i></a>
-            <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></i></a>
+            <a href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="./index.js"></script>
+    <script src="./script/index.js"></script>
     <!-- SweetAlert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>

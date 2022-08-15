@@ -15,21 +15,22 @@
         href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 
 <body>
     <!-- Loader -->
     <div class="contenedor_loader">
         <div class="loader"></div>
-        <img src="./assets/images/hamburguesaLoader.png" alt="">
+        <img src="../assets/images/hamburguesaLoader.png" alt="">
     </div>
     <!-- Header -->
     <header>
         <!-- Navegador vista laptop -->
         <nav class="navegador_pedido" id="navegador">
             <div class="navegador__icono">
-                <img src="./assets/images/iconoNegro.png" alt="icono" class="icono_negro" id="icono-negro">
+                <a href="../index.html" class="icono_negro" id="icono-negro"><img src="../assets/images/iconoNegro.png"
+                        alt="icono"></a>
             </div>
             <ul class="navegador__menu">
                 <li class="menu__items" id="item-desplegable"><a>Nuestras hamburguesas</a></li>
@@ -42,7 +43,8 @@
         <!-- Navegador vista movil -->
         <nav class="navegador_pedido_desplegable" id="navegador-desplegable">
             <div class="navegador_pedido_desplegable__icono">
-                <img src="./assets/images/iconoNegro.png" alt="icono" class="icono-negro-desplegable" id="icono-negro-desplegable">
+                <a href="../index.html" class="icono-negro-desplegable" id="icono-negro-desplegable"><img
+                        src="../assets/images/iconoNegro.png" alt="icono"></a>
             </div>
             <label for="check" class="boton_menu">
                 <input id="check" type="checkbox">
@@ -58,7 +60,7 @@
                     <li><a>Contacto</a></li>
                 </ul>
             </div>
-        </nav>            
+        </nav>
     </header>
     <!-- Main -->
     <section class="finalizar_pedido">
@@ -68,18 +70,18 @@
             <h5>Sub-Total = $ <span id="pedido-subTotal">0,00</span></h5>
             <button class="boton_volver_comprar" id="boton-volver-comprar">Seguir comprando</button>
         </div>
-        <h3 class="titulo_datos_pedido">datos del pedido</h3>
+        <h3 class="titulo_datos_pedido" id="formulario-incompleto">datos del pedido</h3>
         <form class="datos_pedido" id="datos-pedido" method="post">
             <div class="datos">
                 <div class="datos_entrega">
-                    <h4>entrega</h4>
+                    <h4>entrega <span id="asterisco-entrega" class="inactivo">(x)</span></h4>
                     <select name="entrega" id="entrega" onchange="seleccionEntrega()">
-                        <option value="">-Selecciona una opcion-</option>
+                        <option value="">-Seleccioná una opcion-</option>
                         <option value="take away">TAKE AWAY</option>
                         <option value="domicilio">ENVIO A DOMICILIO</option>
                     </select>
                     <div class="inactivo" id="datos-domicilio">
-                        <p>El envio a domicilio tiene un costo de $250,00</p>
+                        <p>El envío a domicilio tiene un costo de $250,00</p>
                         <div>
                             <label for="calle">domicilio de entrega</label>
                             <input type="text" name="calle" id="calle" placeholder="Ejemplo: calle 44 1050, La Plata">
@@ -94,10 +96,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="datos_horario" id="datos-horario">
-                    <h4>¿A que hora queres tu pedido?<br><span>(el horario es aproximado)</span></h4>
+                <div class="datos_horario">
+                    <h4>¿A que hora queres tu pedido? <span id="asterisco-horario" class="inactivo">(x)</span></h4>
                     <select name="horario" id="horario" onchange="seleccionHorario()">
-                        <option value="">-Selecciona un horario-</option>
+                        <option value="">-Seleccioná un horario-</option>
                         <option value="20:00">20:00HS</option>
                         <option value="20:30">20:30HS</option>
                         <option value="21:00">21:00HS</option>
@@ -109,9 +111,9 @@
                     </select>
                 </div>
                 <div class="datos_pago" id="datos-pago">
-                    <h4>forma de pago</h4>
+                    <h4>forma de pago <span id="asterisco-pago" class="inactivo">(x)</span></h4>
                     <select name="pago" id="pago" onchange="seleccionPago()">
-                        <option>-Selecciona una opcion-</option>
+                        <option value="">-Seleccioná una opcion-</option>
                         <option value="efectivo">EFECTIVO</option>
                         <option value="debito">DEBITO/CREDITO</option>
                     </select>
@@ -126,16 +128,18 @@
                         <div>
                             <label for="numeroTarjeta">numero de tarjeta</label>
                             <input type="text" name="numeroTarjeta" id="numero-tarjeta">
-                            <p id="tarjeta-incorrecta" class="inactivo">El numero de tarjeta es incorrecto, recorda que debe contener 16 caracteres</p>
-                            
+                            <p id="tarjeta-incorrecta" class="inactivo">El número de tarjeta es incorrecto, recorda que
+                                debe contener 16 caracteres</p>
+
                             <label for="titularTarjeta">titular de la tarjeta</label>
                             <input type="text" name="titularTarjeta" id="titularTarjeta">
                             <label for="vencimientoTarjeta">fecha de vencimiento</label>
                             <input type="month" name="vencimientoTarjeta" id="vencimientoTarjeta">
-                            
+
                             <label for="codigoVerificacion">codigo de verificacion</label>
                             <input type="text" name="codigoVerificacion" id="codigo-verificacion">
-                            <p id="codigo-verificacion-incorrecto" class="inactivo">El codigo de verificacion es incorrecto, recorda que debe contener 3 caracteres</p>
+                            <p id="codigo-verificacion-incorrecto" class="inactivo">El código de verificación es
+                                incorrecto, recorda que debe contener 3 caracteres</p>
                         </div>
                     </div>
                 </div>
@@ -162,18 +166,18 @@
             <p>©<span>2022</span>Burguer</p>
         </div>
         <div class="footer__logo">
-            <a href="index.html"><img src="./assets/images/iconoBlanco.png" alt="logo-burguer"></a>
+            <a href="index.html"><img src="../assets/images/iconoBlanco.png" alt="logo-burguer"></a>
             <p>Hamburguesas deliciosas</p>
         </div>
         <div class="footer__redes">
-            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></i></a>
-            <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></i></a>
+            <a href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
-    
+
     <!-- JavaScript -->
-    <script src="./pedido.js"></script>
+    <script src="../script/pedido.js"></script>
     <!-- SweetAlert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
