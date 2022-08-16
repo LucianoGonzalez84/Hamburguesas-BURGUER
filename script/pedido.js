@@ -105,7 +105,7 @@ const agregarProductosPedido = (productos) => {
                                 <p>${elemento.nombre}</p>
                                 <p>Precio: $${elemento.precioUnitario.toFixed(2)}</p>
                                 <p>Cantidad: ${elemento.cantidad}</p>
-                                <button id="eliminar${elemento.id}"><i class="fas fa-trash-alt"></i></button>`
+                                <button id="eliminar${elemento.id}"><i class="fas fa-trash"></i></button>`
         DOMpedido.appendChild(DOMtemplatePedido);
         DOMtemplatePedido.classList = "producto";
         DOMpedido.classList = "productos";

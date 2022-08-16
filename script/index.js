@@ -150,7 +150,7 @@
                                         <p>${elemento.nombre}</p>
                                         <p>Precio: $${elemento.precioUnitario.toFixed(2)}</p>
                                         <p>Cantidad: ${elemento.cantidad}</p>
-                                        <button id="eliminar${elemento.id}"><i class="fas fa-trash-alt"></i></button>`
+                                        <button id="eliminar${elemento.id}"><i class="fas fa-trash"></i></button>`
                 crearNodo("#carrito").appendChild(DOMtemplateProductoCarrito);
                 crearNodo(`#eliminar${elemento.id}`).addEventListener("click", () => {
                     eliminarProductoCarrito(elemento.id);

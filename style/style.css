@@ -659,7 +659,7 @@ CLASES AUXILIARES
   .contenedor_carrito .modal_carrito__encabezado button {
     height: 2rem;
     width: 2.5rem;
-    background-color: var(--colorLetra);
+    background-color: var(--colorBlanco);
     border: none;
     border-radius: 5px;
     display: flex;
@@ -670,8 +670,8 @@ CLASES AUXILIARES
   }
 
   .contenedor_carrito .modal_carrito__encabezado button i {
-    color: var(--colorBlanco);
-    transform: scale(2.5);
+    color: var(--colorLetra);
+    transform: scale(4);
   }
 
   .contenedor_carrito .boton_repetir_pedido {
@@ -728,11 +728,8 @@ CLASES AUXILIARES
     flex-direction: column;
     align-items: center;
     margin-bottom: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 0.1rem solid var(--colorBordeProducto);
-  }
-
-  .producto_agregado:last-child {
-    border-bottom: none;
   }
 
   .producto_agregado p {
@@ -770,7 +767,7 @@ CLASES AUXILIARES
   }
 
   .producto_agregado button i {
-    scale: 3.4;
+    scale: 3.7;
   }
 
   .contenedor_carrito .modal_carrito__pie {
@@ -801,7 +798,7 @@ CLASES AUXILIARES
     display: flex;
     justify-content: space-between;
     border-top: 0.1rem solid var(--colorNegro);
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     margin-bottom: 2.5rem;
   }
 
@@ -1033,11 +1030,11 @@ CLASES AUXILIARES
     position: relative;
     text-align: end;
     padding-right: 3rem;
-    bottom: 2.5rem;
+    bottom: 2.6rem;
   }
 
   .producto button i {
-    scale: 3.5;
+    scale: 3.7;
   }
 
   .boton_volver_comprar {
@@ -1944,7 +1941,7 @@ HEADER
   .contenedor_carrito .modal_carrito__encabezado button {
     height: 2rem;
     width: 2.5rem;
-    background-color: var(--colorLetra);
+    background-color: var(--colorBlanco);
     border: none;
     border-radius: 5px;
     display: flex;
@@ -1954,8 +1951,8 @@ HEADER
   }
 
   .contenedor_carrito .modal_carrito__encabezado button i {
-    color: var(--colorBlanco);
-    transform: scale(2.3);
+    color: var(--colorLetra);
+    transform: scale(4);
   }
 
   .contenedor_carrito .boton_repetir_pedido {
@@ -2046,7 +2043,7 @@ HEADER
   }
 
   .producto_agregado button i {
-    scale: 2.8;
+    scale: 3;
   }
 
   .contenedor_carrito .modal_carrito__pie {
@@ -2215,7 +2212,7 @@ HEADER
   }
 
   .producto button i {
-    scale: 2.8;
+    scale: 3;
   }
 
   .boton_volver_comprar {
