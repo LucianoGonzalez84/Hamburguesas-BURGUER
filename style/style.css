@@ -22,11 +22,9 @@ VARIABLES INICIALES
   margin: 0;
   box-sizing: border-box;
   font-size: 62.5%;
-
 }
 
 body {
-  background-color: var(--colorBlanco);
   position: relative;
 }
 
@@ -160,18 +158,7 @@ CLASES AUXILIARES
   border: none;
 }
 
-.contenedor_aviso_horario {
-  margin: 2.5rem 1rem 2.5rem 1rem;
-}
-
-.aviso_horario {
-  font-family: var(--fuenteSecundaria);
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media screen and (max-width: 600px){
   /*ESTILOS INDEX.HTML*/
 
   /* 
@@ -180,13 +167,14 @@ CLASES AUXILIARES
 
   .header_index {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-image: url(../assets/images/wallpaperbetter.jpg);
     object-fit: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-bottom: 1rem solid var(--colorAmarillo);
     position: relative;
+    padding: 0 2rem 0 2rem;
   }
 
   .header_index h2 {
@@ -195,9 +183,8 @@ CLASES AUXILIARES
     font-weight: 800;
     width: 100%;
     color: var(--colorBlanco);
-    top: 23rem;
+    top: 20rem;
     position: relative;
-    padding: 0 1rem 0 1rem;
   }
 
   .header_index h3 {
@@ -206,8 +193,7 @@ CLASES AUXILIARES
     font-weight: 600;
     width: 100%;
     color: var(--colorBlanco);
-    top: 23rem;
-    padding: 0 1rem 0 1rem;
+    top: 20rem;
     position: relative;
     margin-top: 3rem;
   }
@@ -221,9 +207,8 @@ CLASES AUXILIARES
     border: none;
     cursor: pointer;
     position: relative;
-    top: 23rem;
+    top: 20rem;
     margin-top: 3rem;
-    margin-left: 1rem;
     text-transform: uppercase;
     border-radius: 0.5rem;
   }
@@ -465,7 +450,7 @@ CLASES AUXILIARES
     color: var(--colorNegro);
     text-align: center;
     margin: 0 auto 7.5rem auto;
-    width: 95%;
+    
   }
 
   .informacion__burguer {
@@ -478,7 +463,7 @@ CLASES AUXILIARES
 
   .informacion__burguer div {
     height: auto;
-    width: 30rem;
+    max-width: 30rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -488,6 +473,10 @@ CLASES AUXILIARES
     padding: 3rem 1rem 3rem 1rem;
     margin-bottom: 2.5rem;
     border-radius: 1rem;
+  }
+
+  .informacion__burguer div:last-child{
+      margin-bottom: 0;
   }
 
   .informacion__burguer div i {
@@ -553,7 +542,7 @@ CLASES AUXILIARES
   .tarjeta_producto {
     position: relative;
     overflow: hidden;
-    width: 90%;
+    max-width: 90%;
     height: auto;
     background-color: var(--colorBlanco);
     margin: 0 auto 2.5rem auto;
@@ -1509,8 +1498,8 @@ CLASES AUXILIARES
   }
 }
 
-@media only screen and (min-width : 1224px) {
-  /*ESTILOS INDEX.HTML*/
+@media only screen and (min-width : 601px) {
+/*ESTILOS INDEX.HTML*/
 
   /* 
 HEADER
@@ -1524,16 +1513,16 @@ HEADER
     background-repeat: no-repeat;
     border-bottom: 1rem solid var(--colorAmarillo);
     position: relative;
+    padding: 0 6rem 0 6rem;
   }
 
   .header_index h2 {
     font-family: var(--fuenteEnlaces);
     font-size: 4rem;
     font-weight: 800;
-    width: 110rem;
+    width: auto;
     color: var(--colorBlanco);
     top: 23rem;
-    margin-left: 6rem;
     position: relative;
   }
 
@@ -1541,10 +1530,9 @@ HEADER
     font-family: var(--fuenteSecundaria);
     font-size: 2rem;
     font-weight: 600;
-    width: 110rem;
+    width: auto;
     color: var(--colorBlanco);
     top: 23rem;
-    margin-left: 6rem;
     position: relative;
     margin-top: 3rem;
   }
@@ -1560,7 +1548,6 @@ HEADER
     position: relative;
     top: 23rem;
     margin-top: 3rem;
-    margin-left: 6rem;
     text-transform: uppercase;
     border-radius: 0.5rem;
   }
@@ -1738,26 +1725,9 @@ HEADER
     width: 90%;
   }
 
-  .informacion h1::after,
-  .informacion h1::before {
-    content: '';
-    position: absolute;
-    width: 20rem;
-    height: 0.2rem;
-    background-color: var(--colorNegro);
-    margin-top: 2.7rem;
-  }
-
-  .informacion h1::after {
-    right: 7rem;
-  }
-
-  .informacion h1::before {
-    left: 7rem;
-  }
-
   .informacion__burguer {
     display: flex;
+    flex-wrap: wrap;
     width: 90%;
     margin: 0 auto;
     justify-content: space-between;
@@ -1766,7 +1736,7 @@ HEADER
   .informacion__burguer div {
     height: auto;
     width: 30rem;
-    margin: 0 auto;
+    margin: 0 auto 3rem auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1834,7 +1804,7 @@ HEADER
   .tarjeta_producto {
     position: relative;
     overflow: hidden;
-    width: 60rem;
+    max-width: 60rem;
     height: 20rem;
     background-color: var(--colorBlanco);
     margin: 2rem;
@@ -1842,6 +1812,7 @@ HEADER
     border: 0.1rem solid var(--colorBordeProducto);
     padding: 1rem;
     display: flex;
+    
   }
 
   .tarjeta_producto img {
@@ -2127,7 +2098,7 @@ HEADER
   MAIN
   */
   .finalizar_pedido {
-    width: 65rem;
+    max-width: 65rem;
     height: auto;
     box-shadow: 0rem 0rem 2rem var(--colorSombra);
     border: 0.1rem solid var(--colorBordeProducto);

@@ -16,6 +16,7 @@
         rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/movile.css">
 </head>
 
 <body>
@@ -63,103 +64,106 @@
         </nav>
     </header>
     <!-- Main -->
-    <section class="finalizar_pedido">
-        <div class="pedido">
-            <h3>tu pedido</h3>
-            <div id="productos"></div>
-            <h5>Sub-Total = $ <span id="pedido-subTotal">0,00</span></h5>
-            <button class="boton_volver_comprar" id="boton-volver-comprar">Seguir comprando</button>
-        </div>
-        <h3 class="titulo_datos_pedido" id="formulario-incompleto">datos del pedido</h3>
-        <form class="datos_pedido" id="datos-pedido" method="post">
-            <div class="datos">
-                <div class="datos_entrega">
-                    <h4>entrega <span id="asterisco-entrega" class="inactivo">(x)</span></h4>
-                    <select name="entrega" id="entrega" onchange="seleccionEntrega()">
-                        <option value="">-Seleccioná una opcion-</option>
-                        <option value="take away">TAKE AWAY</option>
-                        <option value="domicilio">ENVIO A DOMICILIO</option>
-                    </select>
-                    <div class="inactivo" id="datos-domicilio">
-                        <p>El envío a domicilio tiene un costo de $250,00</p>
-                        <div>
-                            <label for="calle">domicilio de entrega</label>
-                            <input type="text" name="calle" id="calle" placeholder="Ejemplo: calle 44 1050, La Plata">
-                        </div>
-                        <div>
-                            <label for="entreCalles">entre calles</label>
-                            <input type="text" name="entreCalles" id="entreCalles" placeholder="Ejemplo: 41 y 42">
-                        </div>
-                        <div>
-                            <label for="detalle">detalle</label>
-                            <input type="text" name="detalle" id="detalle" placeholder="Ejemplo: 2B">
-                        </div>
-                    </div>
-                </div>
-                <div class="datos_horario">
-                    <h4>¿A que hora queres tu pedido? <span id="asterisco-horario" class="inactivo">(x)</span></h4>
-                    <select name="horario" id="horario" onchange="seleccionHorario()">
-                        <option value="">-Seleccioná un horario-</option>
-                        <option value="20:00">20:00HS</option>
-                        <option value="20:30">20:30HS</option>
-                        <option value="21:00">21:00HS</option>
-                        <option value="21:30">21:30HS</option>
-                        <option value="22:00">22:00HS</option>
-                        <option value="22:30">22:30HS</option>
-                        <option value="23:00">23:00HS</option>
-                        <option value="23:30">23:30HS</option>
-                    </select>
-                </div>
-                <div class="datos_pago" id="datos-pago">
-                    <h4>forma de pago <span id="asterisco-pago" class="inactivo">(x)</span></h4>
-                    <select name="pago" id="pago" onchange="seleccionPago()">
-                        <option value="">-Seleccioná una opcion-</option>
-                        <option value="efectivo">EFECTIVO</option>
-                        <option value="debito">DEBITO/CREDITO</option>
-                    </select>
-                    <div class="inactivo" id="pago-efectivo">
-                        <div>
-                            <p>El monto a abonar es $ <span id="monto-abonar"></span></p>
-                            <label for="montoPago">con cuanto abonas?</label>
-                            <input type="number" name="montoPago" id="montoPago">
-                        </div>
-                    </div>
-                    <div class="inactivo" id="pago-tarjeta">
-                        <div>
-                            <label for="numeroTarjeta">numero de tarjeta</label>
-                            <input type="text" name="numeroTarjeta" id="numero-tarjeta">
-                            <p id="tarjeta-incorrecta" class="inactivo">El número de tarjeta es incorrecto, recorda que
-                                debe contener 16 caracteres</p>
-
-                            <label for="titularTarjeta">titular de la tarjeta</label>
-                            <input type="text" name="titularTarjeta" id="titularTarjeta">
-                            <label for="vencimientoTarjeta">fecha de vencimiento</label>
-                            <input type="month" name="vencimientoTarjeta" id="vencimientoTarjeta">
-
-                            <label for="codigoVerificacion">codigo de verificacion</label>
-                            <input type="text" name="codigoVerificacion" id="codigo-verificacion">
-                            <p id="codigo-verificacion-incorrecto" class="inactivo">El código de verificación es
-                                incorrecto, recorda que debe contener 3 caracteres</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="datos_personales">
-                    <div>
-                        <label for="nombre">Tu nombre</label>
-                        <input type="text" name="nombre" id="nombre" required>
-                    </div>
-                    <div>
-                        <label for="telefono">Tu telefono</label>
-                        <input type="tel" name="telefono" id="telefono" required>
-                    </div>
-                </div>
+    <main class="main_pedido">
+        <section class="finalizar_pedido">
+            <div class="pedido">
+                <h3>tu pedido</h3>
+                <div id="productos"></div>
+                <h5>Sub-Total = $ <span id="pedido-subTotal">0,00</span></h5>
+                <button class="boton_volver_comprar" id="boton-volver-comprar">Seguir comprando</button>
             </div>
-            <h5>Total = $ <span id="pedido-total">0,00</span></h5>
-            <div class="finalizar_compra">
-                <button type="submit" id="finalizar-compra">Finalizar compra</button>
-            </div>
-        </form>
-    </section>
+            <h3 class="titulo_datos_pedido" id="formulario-incompleto">datos del pedido</h3>
+            <form class="datos_pedido" id="datos-pedido" method="post">
+                <div class="datos">
+                    <div class="datos_entrega">
+                        <h4>entrega <span id="asterisco-entrega" class="inactivo">(x)</span></h4>
+                        <select name="entrega" id="entrega" onchange="seleccionEntrega()">
+                            <option value="">-Seleccioná una opcion-</option>
+                            <option value="take away">TAKE AWAY</option>
+                            <option value="domicilio">ENVIO A DOMICILIO</option>
+                        </select>
+                        <div class="inactivo" id="datos-domicilio">
+                            <p>El envío a domicilio tiene un costo de $250,00</p>
+                            <div>
+                                <label for="calle">domicilio de entrega</label>
+                                <input type="text" name="calle" id="calle"
+                                    placeholder="Ejemplo: calle 44 1050, La Plata">
+                            </div>
+                            <div>
+                                <label for="entreCalles">entre calles</label>
+                                <input type="text" name="entreCalles" id="entreCalles" placeholder="Ejemplo: 41 y 42">
+                            </div>
+                            <div>
+                                <label for="detalle">detalle</label>
+                                <input type="text" name="detalle" id="detalle" placeholder="Ejemplo: 2B">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="datos_horario">
+                        <h4>¿A que hora queres tu pedido? <span id="asterisco-horario" class="inactivo">(x)</span></h4>
+                        <select name="horario" id="horario" onchange="seleccionHorario()">
+                            <option value="">-Seleccioná un horario-</option>
+                            <option value="20:00">20:00HS</option>
+                            <option value="20:30">20:30HS</option>
+                            <option value="21:00">21:00HS</option>
+                            <option value="21:30">21:30HS</option>
+                            <option value="22:00">22:00HS</option>
+                            <option value="22:30">22:30HS</option>
+                            <option value="23:00">23:00HS</option>
+                            <option value="23:30">23:30HS</option>
+                        </select>
+                    </div>
+                    <div class="datos_pago" id="datos-pago">
+                        <h4>forma de pago <span id="asterisco-pago" class="inactivo">(x)</span></h4>
+                        <select name="pago" id="pago" onchange="seleccionPago()">
+                            <option value="">-Seleccioná una opcion-</option>
+                            <option value="efectivo">EFECTIVO</option>
+                            <option value="debito">DEBITO/CREDITO</option>
+                        </select>
+                        <div class="inactivo" id="pago-efectivo">
+                            <div>
+                                <p>El monto a abonar es $ <span id="monto-abonar"></span></p>
+                                <label for="montoPago">con cuanto abonas?</label>
+                                <input type="number" name="montoPago" id="montoPago">
+                            </div>
+                        </div>
+                        <div class="inactivo" id="pago-tarjeta">
+                            <div>
+                                <label for="numeroTarjeta">numero de tarjeta</label>
+                                <input type="text" name="numeroTarjeta" id="numero-tarjeta">
+                                <p id="tarjeta-incorrecta" class="inactivo">El número de tarjeta es incorrecto, recorda
+                                    que
+                                    debe contener 16 caracteres</p>
+                                <label for="titularTarjeta">titular de la tarjeta</label>
+                                <input type="text" name="titularTarjeta" id="titularTarjeta">
+                                <label for="vencimientoTarjeta">fecha de vencimiento</label>
+                                <input type="month" name="vencimientoTarjeta" id="vencimientoTarjeta">
+
+                                <label for="codigoVerificacion">codigo de verificacion</label>
+                                <input type="text" name="codigoVerificacion" id="codigo-verificacion">
+                                <p id="codigo-verificacion-incorrecto" class="inactivo">El código de verificación es
+                                    incorrecto, recorda que debe contener 3 caracteres</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="datos_personales">
+                        <div>
+                            <label for="nombre">Tu nombre</label>
+                            <input type="text" name="nombre" id="nombre" required>
+                        </div>
+                        <div>
+                            <label for="telefono">Tu telefono</label>
+                            <input type="tel" name="telefono" id="telefono" required>
+                        </div>
+                    </div>
+                </div>
+                <h5>Total = $ <span id="pedido-total">0,00</span></h5>
+                <div class="finalizar_compra">
+                    <button type="submit" id="finalizar-compra">Finalizar compra</button>
+                </div>
+            </form>
+        </section>
+    </main>
     <!-- Footer -->
     <footer>
         <div class="footer__copyrigth">

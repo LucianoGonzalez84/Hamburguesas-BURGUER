@@ -16,6 +16,7 @@
         rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/movile.css">
 </head>
 
 <body>
@@ -25,57 +26,56 @@
         <div class="loader"></div>
         <img src="./assets/images/hamburguesaLoader.png" alt="">
     </div>
+    <!-- Navegador vista laptop -->
+    <nav class="navegador" id="navegador">
+        <div class="navegador__icono">
+            <a href="./index.html" class="transparente" id="icono-negro"><img src="./assets/images/iconoNegro.png"
+                    alt="icono"></a>
+            <a href="./index.html" class="icono_blanco" id="icono-blanco"><img src="./assets/images/iconoBlanco.png"
+                    alt="icono"></a>
+        </div>
+        <ul class="navegador__menu">
+            <li class="menu__items"><a>Nuestras hamburguesas</a></li>
+            <li class="menu__items"><a>Nosotros</a></li>
+            <li class="menu__items"><a>Faq's</a></li>
+            <li class="menu__items"><a>Contacto</a></li>
+        </ul>
+        <div class="navegador__carrito" id="boton-carrito">
+            <button><i class="fas fa-shopping-cart"></i></button>
+            <div class="cantidad_productos">
+                <span id="productos-en-carrito">0</span>
+            </div>
+        </div>
+    </nav>
+    <!-- Navegador vista movil -->
+    <nav class="navegador_desplegable" id="navegador-desplegable">
+        <div class="navegador_desplegable__icono">
+            <a href="./index.html" class="transparente" id="icono-negro-desplegable"><img src="./assets/images/iconoNegro.png" alt="icono" ></a>
+            <a href="./index.html" class="icono_blanco-desplegable" id="icono-blanco-desplegable"><img src="./assets/images/iconoBlanco.png" alt="icono"></a>
+        </div>
+        <div class="navegador_desplegable__carrito" id="boton-carrito-desplegable" style="opacity: 0;">
+            <button><i class="fas fa-shopping-cart"></i></button>
+            <div class="navegador_desplegable__carrito__cantidad_productos">
+                <span id="productos-en-carrito-desplegable">0</span>
+            </div>
+        </div>
+        <label for="check" class="boton_menu">
+            <input id="check" type="checkbox">
+            <span class="top" id="menu-desplegable-arriba" style="background: white;"></span>
+            <span class="middle" id="menu-desplegable-medio" style="background: white;"></span>
+            <span class="bottom" id="menu-desplegable-abajo" style="background: white;"></span>
+        </label>
+        <div class="inactivo scale-in-ver-top" id="menu-desplegable">
+            <ul class="menu_desplegable__items">
+                <li><a>Nuestras hamburguesas</a></li>
+                <li><a>Nosotros</a></li>
+                <li><a>Faq's</a></li>
+                <li><a>Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
     <!-- Header -->
     <header class="header_index">
-        <!-- Navegador vista laptop -->
-        <nav class="navegador" id="navegador">
-            <div class="navegador__icono">
-                <a href="./index.html" class="transparente" id="icono-negro"><img src="./assets/images/iconoNegro.png"
-                        alt="icono"></a>
-                <a href="./index.html" class="icono_blanco" id="icono-blanco"><img src="./assets/images/iconoBlanco.png"
-                        alt="icono"></a>
-
-            </div>
-            <ul class="navegador__menu">
-                <li class="menu__items"><a>Nuestras hamburguesas</a></li>
-                <li class="menu__items"><a>Nosotros</a></li>
-                <li class="menu__items"><a>Faq's</a></li>
-                <li class="menu__items"><a>Contacto</a></li>
-            </ul>
-            <div class="navegador__carrito" id="boton-carrito">
-                <button><i class="fas fa-shopping-cart"></i></button>
-                <div class="cantidad_productos">
-                    <span id="productos-en-carrito">0</span>
-                </div>
-            </div>
-        </nav>
-        <!-- Navegador vista movil -->
-        <nav class="navegador_desplegable" id="navegador-desplegable">
-            <div class="navegador_desplegable__icono">
-                <a href="./index.html" class="transparente" id="icono-negro-desplegable"><img src="./assets/images/iconoNegro.png" alt="icono" ></a>
-                <a href="./index.html" class="icono_blanco-desplegable" id="icono-blanco-desplegable"><img src="./assets/images/iconoBlanco.png" alt="icono"></a>
-            </div>
-            <div class="navegador_desplegable__carrito" id="boton-carrito-desplegable">
-                <button><i class="fas fa-shopping-cart"></i></button>
-                <div class="navegador_desplegable__carrito__cantidad_productos">
-                    <span id="productos-en-carrito-desplegable">0</span>
-                </div>
-            </div>
-            <label for="check" class="boton_menu">
-                <input id="check" type="checkbox">
-                <span class="top" id="menu-desplegable-arriba"></span>
-                <span class="middle" id="menu-desplegable-medio"></span>
-                <span class="bottom" id="menu-desplegable-abajo"></span>
-            </label>
-            <div class="inactivo scale-in-ver-top" id="menu-desplegable">
-                <ul class="menu_desplegable__items">
-                    <li><a>Nuestras hamburguesas</a></li>
-                    <li><a>Nosotros</a></li>
-                    <li><a>Faq's</a></li>
-                    <li><a>Contacto</a></li>
-                </ul>
-            </div>
-        </nav>
         <h2 id="limite-scroll">Siempre es un buen momento para una Burguer</h2>
         <h3>Queremos que experimentes sensaciones inigualables en cada bocado, por eso combinamos cuidadosamente cada
             ingrediente y los transformamos en la mejor hamburguesa.</h3>
@@ -84,7 +84,7 @@
     <!-- Main -->
     <main>
         <section class="informacion">
-            <h1>proba nuestras hamburguesas</h1>
+            <h1>proba nuestras BURGUERS</h1>
             <div class="informacion__burguer">
                 <div>
                     <i class="fas fa-award"></i>
